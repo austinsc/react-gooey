@@ -26,6 +26,9 @@
     "react": "^0.14.7",
     "react-dom": "^0.14.7"
   },
+  "peerDependencies": {
+    "bulma": "0.0.16"
+  },
   "devDependencies": {
     "babel-cli": "^6.5.1",
     "babel-core": "^6.5.2",
