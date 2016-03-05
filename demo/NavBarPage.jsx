@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
-import Fork from 'react-ghfork';
-import pkgInfo from '../package.json';
-import Demo from './Demo.jsx';
+//import {Section} from '../src';
 
 export default class NavBarPage extends Component {
   render() {
     return (
-      <section className="section">
+      <section>
         <div className="container">
           <h1 className="title">Navbar</h1>
           <h2 className="subtitle">A multi-purpose <strong>horizontal navbar</strong>, which can contain almost any other element</h2>
