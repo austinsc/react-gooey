@@ -1,8 +1,8 @@
 {
-  "name": "react-component-boilerplate",
+  "name": "react-gooey",
   "description": "Boilerplate for React.js components",
-  "author": "Juho Vepsalainen",
-  "user": "survivejs",
+  "author": "Stephen C. Austin",
+  "user": "austinsc",
   "version": "2.3.1",
   "scripts": {
     "start": "webpack-dev-server",
@@ -24,7 +24,8 @@
   "main": "dist-modules",
   "dependencies": {
     "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "react-dom": "^0.14.7",
+    "react-style-decorator": "0.0.8"
   },
   "peerDependencies": {
     "bulma": "0.0.16"
@@ -61,6 +62,7 @@
     "karma-spec-reporter": "0.0.24",
     "karma-webpack": "^1.7.0",
     "mocha": "^2.4.5",
+    "node-sass": "^3.4.2",
     "phantomjs-polyfill": "0.0.1",
     "phantomjs-prebuilt": "^2.1.4",
     "purecss": "^0.6.0",
@@ -68,6 +70,7 @@
     "react-ghfork": "^0.3.2",
     "remark": "^4.1.1",
     "remark-react": "^2.0.0",
+    "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
     "sync-exec": "^0.6.2",
     "system-bell-webpack-plugin": "^1.0.0",
@@ -78,11 +81,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/survivejs/react-component-boilerplate.git"
+    "url": "https://github.com/austinsc/react-gooey.git"
   },
-  "homepage": "https://survivejs.github.io/react-component-boilerplate/",
+  "homepage": "https://austinsc.github.io/react-gooey/",
   "bugs": {
-    "url": "https://github.com/survivejs/react-component-boilerplate/issues"
+    "url": "https://github.com/austinsc/react-gooey/issues"
   },
   "keywords": [
     "react",

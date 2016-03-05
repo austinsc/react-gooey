@@ -47,7 +47,7 @@ process.env.BABEL_ENV = TARGET;
 
 const demoCommon = {
   resolve: {
-    extensions: ['', '.js', '.jsx', '.css', '.png', '.jpg']
+    extensions: ['', '.js', '.jsx', '.css', '.png', '.jpg', '.sass', '.scss']
   },
   module: {
     preLoaders: [
@@ -75,6 +75,11 @@ const demoCommon = {
         test: /\.json$/,
         loader: 'json',
         include: path.join(ROOT_PATH, 'package.json')
+      },
+      {
+        test: /\.s[ac]ss$/,
+        loader: 'style/useable!css!autoprefixer?browsers=last 4 version!sass',
+        include: /node_modules/
       }
     ]
   },
