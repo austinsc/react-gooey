@@ -1,28 +1,7 @@
 /* TODO: insert main styles of your demo here */
 
-body {
-    background: #fefefe;
-
-    font-family: Sans-Serif;
-
-    line-height: 1.5;
-}
-
 form label {
     display: block;
-}
-
-header {
-    position: fixed;
-    padding: 0.5em;
-    top: 0;
-
-    text-align: center;
-
-    color: #333;
-    border: 0.1em solid #bbb;
-
-    background-image: url(./images/bgnoise_lg.png);
 }
 
 header h1 {
