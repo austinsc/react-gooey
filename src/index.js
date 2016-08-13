@@ -1,1 +1,2 @@
-export {Section} from './Section';
+// this should be the entry point to your library
+module.exports = {};
