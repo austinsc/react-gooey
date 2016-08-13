@@ -22,7 +22,6 @@ const config = {
   filename: 'react-gooey',
   library: 'Gooey'
 };
-console.dir(config);
 process.env.BABEL_ENV = TARGET;
 
 const common = {
