@@ -19,10 +19,10 @@ const config = {
     docs: path.join(ROOT_PATH, 'docs'),
     tests: path.join(ROOT_PATH, 'tests')
   },
-  filename: 'boilerplate',
-  library: 'Boilerplate'
+  filename: 'react-gooey',
+  library: 'Gooey'
 };
-
+console.dir(config);
 process.env.BABEL_ENV = TARGET;
 
 const common = {
