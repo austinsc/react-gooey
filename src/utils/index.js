@@ -1,2 +1,2 @@
 export colors from '!!sass-variable-loader!../css/variables';
-export * as PropTypes from './PropTypes';
+export * as GooeyPropTypes from './PropTypes';
