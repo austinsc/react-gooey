@@ -1,6 +1,5 @@
 import * as fs from 'fs';
 import * as path from 'path';
-
 import React from 'react';
 import ReactDOM from 'react-dom/server';
 import remark from 'remark';

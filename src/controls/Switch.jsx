@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React, {Component, PropTypes} from 'react';
 import {createFieldClass, getField, controls} from 'react-redux-form';
-import {Style} from 'decorators';
+import {Style} from 'react-style-decorator';
 
 const SelectField = createFieldClass({}, {
   'Switch': controls.checkbox

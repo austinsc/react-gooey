@@ -1,19 +1,16 @@
 import * as path from 'path';
-
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import SystemBellPlugin from 'system-bell-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import merge from 'webpack-merge';
-
 const pkg = require('./package.json');
 
 const TARGET = process.env.npm_lifecycle_event;
 const ROOT_PATH = __dirname;
 const config = {
   paths: {
-    readme: path.join(ROOT_PATH, 'README.md'),
     dist: path.join(ROOT_PATH, 'dist'),
     src: path.join(ROOT_PATH, 'src'),
     docs: path.join(ROOT_PATH, 'docs'),
@@ -26,40 +23,48 @@ process.env.BABEL_ENV = TARGET;
 
 const common = {
   resolve: {
-    extensions: ['', '.js', '.jsx', '.css', '.png', '.jpg']
+    extensions: ['', '.js', '.jsx', '.css', '.scss', '.sass', '.png', '.jpg']
   },
   module: {
-    preLoaders: [
-      {
-        test: /\.jsx?$/,
-        loaders: ['eslint'],
-        include: [
-          config.paths.docs,
-          config.paths.src
-        ]
-      }
-    ],
-    loaders: [
-      {
-        test: /\.md$/,
-        loaders: ['catalog/lib/loader', 'raw']
-      },
-      {
-        test: /\.png$/,
-        loader: 'url?limit=100000&mimetype=image/png',
-        include: config.paths.docs
-      },
-      {
-        test: /\.jpg$/,
-        loader: 'file',
-        include: config.paths.docs
-      },
-      {
-        test: /\.json$/,
-        loader: 'json',
-        include: path.join(ROOT_PATH, 'package.json')
-      }
-    ]
+    preLoaders: [{
+      test: /\.jsx?$/,
+      loaders: ['eslint'],
+      include: [
+        config.paths.docs,
+        config.paths.src
+      ]
+    }],
+    loaders: [{
+      test: /\.md$/,
+      loaders: ['catalog/lib/loader', 'raw']
+    }, {
+      test: /\.png$/,
+      loader: 'url?limit=100000&mimetype=image/png',
+      include: config.paths.docs
+    }, {
+      test: /\.jpg$/,
+      loader: 'file',
+      include: config.paths.docs
+    }, {
+      test: /\.json$/,
+      loader: 'json',
+      include: path.join(ROOT_PATH, 'package.json')
+    }, {
+      test: /\.css$/,
+      loaders: ['style', 'css']
+    }, {
+      test: /\.scss$/i,
+      loaders: ['style/useable', 'css', 'sass']
+    }, {
+      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader: 'url?name=[name].[hash:6].[ext]&limit=10000&minetype=application/font-woff'
+    }, {
+      test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader: 'file?name=[name].[hash:6].[ext]'
+    }]
+  },
+  sassLoader: {
+    includePaths: [path.resolve(__dirname, 'node_modules')]
   },
   plugins: [
     new SystemBellPlugin()
@@ -82,7 +87,7 @@ const siteCommon = {
   ]
 };
 
-if (TARGET === 'start') {
+if(TARGET === 'start' || TARGET === 'dev') {
   module.exports = merge(common, siteCommon, {
     devtool: 'eval-source-map',
     entry: {
@@ -95,20 +100,14 @@ if (TARGET === 'start') {
       new webpack.HotModuleReplacementPlugin()
     ],
     module: {
-      loaders: [
-        {
-          test: /\.css$/,
-          loaders: ['style', 'css']
-        },
-        {
-          test: /\.jsx?$/,
-          loaders: ['babel?cacheDirectory'],
-          include: [
-            config.paths.docs,
-            config.paths.src
-          ]
-        }
-      ]
+      loaders: [{
+        test: /\.jsx?$/,
+        loaders: ['babel?cacheDirectory'],
+        include: [
+          config.paths.docs,
+          config.paths.src
+        ]
+      }]
     },
     devServer: {
       historyApiFallback: true,
@@ -117,7 +116,16 @@ if (TARGET === 'start') {
       progress: true,
       host: process.env.HOST,
       port: process.env.PORT,
-      stats: 'errors-only'
+      stats: {
+        colors: true,
+        hash: false,
+        timings: false,
+        assets: true,
+        chunks: false,
+        chunkModules: false,
+        modules: false,
+        children: true
+      }
     }
   });
 }
@@ -125,19 +133,18 @@ if (TARGET === 'start') {
 function NamedModulesPlugin(options) {
   this.options = options || {};
 }
-NamedModulesPlugin.prototype.apply = function (compiler) {
-  compiler.plugin('compilation', function (compilation) {
-    compilation.plugin('before-module-ids', function (modules) {
-      modules.forEach(function (module) {
+NamedModulesPlugin.prototype.apply = function(compiler) {
+  compiler.plugin('compilation', function(compilation) {
+    compilation.plugin('before-module-ids', function(modules) {
+      modules.forEach(function(module) {
         let id;
-
-        if (module.id === null && module.libIdent) {
+        if(module.id === null && module.libIdent) {
           id = module.libIdent({
             context: this.options.context || compiler.options.context
           });
 
           // Skip CSS files since those go through ExtractTextPlugin
-          if (!id.endsWith('.css')) {
+          if(!id.endsWith('.css')) {
             module.id = id; // eslint-disable-line no-param-reassign
           }
         }
@@ -146,7 +153,7 @@ NamedModulesPlugin.prototype.apply = function (compiler) {
   }.bind(this));
 };
 
-if (TARGET === 'gh-pages' || TARGET === 'gh-pages:stats') {
+if(TARGET === 'gh-pages' || TARGET === 'gh-pages:stats') {
   module.exports = merge(common, siteCommon, {
     entry: {
       app: config.paths.docs,
@@ -166,7 +173,7 @@ if (TARGET === 'gh-pages' || TARGET === 'gh-pages:stats') {
       }),
       new ExtractTextPlugin('[name].[chunkhash].css'),
       new webpack.DefinePlugin({
-          // This affects the react lib size
+        // This affects the react lib size
         'process.env.NODE_ENV': '"production"'
       }),
       new NamedModulesPlugin(),
@@ -181,47 +188,40 @@ if (TARGET === 'gh-pages' || TARGET === 'gh-pages:stats') {
       })
     ],
     module: {
-      loaders: [
-        {
-          test: /\.css$/,
-          loader: ExtractTextPlugin.extract('style', 'css')
-        },
-        {
-          test: /\.jsx?$/,
-          loaders: ['babel'],
-          include: [
-            config.paths.docs,
-            config.paths.src
-          ]
-        }
-      ]
+      loaders: [{
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style', 'css')
+      }, {
+        test: /\.jsx?$/,
+        loaders: ['babel'],
+        include: [
+          config.paths.docs,
+          config.paths.src
+        ]
+      }]
     }
   });
 }
 
 // !TARGET === prepush hook for test
-if (TARGET === 'test' || TARGET === 'test:tdd' || !TARGET) {
+if(TARGET === 'test' || TARGET === 'test:tdd' || !TARGET) {
   module.exports = merge(common, {
     module: {
-      preLoaders: [
-        {
-          test: /\.jsx?$/,
-          loaders: ['isparta', 'eslint'],
-          include: [
-            config.paths.tests
-          ]
-        }
-      ],
-      loaders: [
-        {
-          test: /\.jsx?$/,
-          loaders: ['babel?cacheDirectory'],
-          include: [
-            config.paths.src,
-            config.paths.tests
-          ]
-        }
-      ]
+      preLoaders: [{
+        test: /\.jsx?$/,
+        loaders: ['isparta', 'eslint'],
+        include: [
+          config.paths.tests
+        ]
+      }],
+      loaders: [{
+        test: /\.jsx?$/,
+        loaders: ['babel?cacheDirectory'],
+        include: [
+          config.paths.src,
+          config.paths.tests
+        ]
+      }]
     }
   });
 }
@@ -234,6 +234,9 @@ const distCommon = {
     library: config.library
   },
   entry: config.paths.src,
+  resolve: {
+    extensions: ['', '.js', '.jsx', '.css', '.scss', '.sass', '.png', '.jpg']
+  },
   externals: {
     react: {
       commonjs: 'react',
@@ -243,29 +246,27 @@ const distCommon = {
     }
   },
   module: {
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        loaders: ['babel'],
-        include: config.paths.src
-      }
-    ]
+    loaders: [{
+      test: /\.jsx?$/,
+      loaders: ['babel'],
+      include: config.paths.src
+    }]
   },
   plugins: [
     new SystemBellPlugin()
   ]
 };
 
-if (TARGET === 'dist') {
-  module.exports = merge(distCommon, {
+if(TARGET === 'dist') {
+  module.exports = merge(common, distCommon, {
     output: {
       filename: `${config.filename}.js`
     }
   });
 }
 
-if (TARGET === 'dist:min') {
-  module.exports = merge(distCommon, {
+if(TARGET === 'dist:min') {
+  module.exports = merge(common, distCommon, {
     output: {
       filename: `${config.filename}.min.js`
     },
