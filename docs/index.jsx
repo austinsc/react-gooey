@@ -5,7 +5,6 @@ import GithubCorner from 'react-github-corner';
 import {Catalog, CodeSpecimen, ReactSpecimen} from 'catalog';
 import * as Gooey from '../src/index';
 import {colors} from '../src/utils';
-import './main';
 import '../src/css/main';
 
 const documentationImports = {
