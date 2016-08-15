@@ -1,3 +1,1 @@
-# Form Component
-
-Here is some info about the component. 
+> All generic **form controls**, designed for consistency
