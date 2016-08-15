@@ -2,24 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="daea4770-041a-4466-8ed5-cba1f64b5bc1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/components/card.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/components/media-object.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/components/menu.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/components/message.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/components/modal.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/components/pagination.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/components/panel.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/components/tabs.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/grid/columns.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/grid/tiles.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/layout/footer.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/docs/layout/level.md" afterPath="$PROJECT_DIR$/docs/components/level.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/controls/Form.jsx" afterPath="$PROJECT_DIR$/src/elements/Form.jsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/layout/Content.jsx" afterPath="$PROJECT_DIR$/src/elements/Content.jsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/layout/Level.jsx" afterPath="$PROJECT_DIR$/src/components/Level.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/elements/form.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/index.jsx" afterPath="$PROJECT_DIR$/docs/index.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/main.css" afterPath="$PROJECT_DIR$/docs/main.css" />
     </list>
     <ignored path="react-gooey.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,10 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="997">
+            <state relative-caret-position="1879">
               <caret line="120" column="6" selection-start-line="120" selection-start-column="6" selection-end-line="120" selection-end-column="6" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -55,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="462">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -148,6 +133,8 @@
         <option value="$PROJECT_DIR$/docs/components/pagination.md" />
         <option value="$PROJECT_DIR$/docs/components/panel.md" />
         <option value="$PROJECT_DIR$/docs/components/tabs.md" />
+        <option value="$PROJECT_DIR$/docs/elements/form.md" />
+        <option value="$PROJECT_DIR$/docs/main.css" />
       </list>
     </option>
   </component>
@@ -420,10 +407,10 @@
       <recent name="C:\Users\saustin\Code\react-gooey\src\layout" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\saustin\Code\react-gooey\docs\elements" />
       <recent name="C:\Users\saustin\Code\react-gooey\docs\components" />
       <recent name="C:\Users\saustin\Code\react-gooey\docs\layout" />
       <recent name="C:\Users\saustin\Code\react-gooey\docs\grid" />
-      <recent name="C:\Users\saustin\Code\react-gooey\docs\elements" />
       <recent name="C:\Users\saustin\Code\react-gooey\src\css" />
     </key>
   </component>
@@ -511,7 +498,7 @@
       <workItem from="1471112449085" duration="333000" />
       <workItem from="1471112981737" duration="187000" />
       <workItem from="1471113181531" duration="1173000" />
-      <workItem from="1471115507699" duration="18931000" />
+      <workItem from="1471115507699" duration="19135000" />
     </task>
     <task id="LOCAL-00001" summary="updates">
       <created>1471115418171</created>
@@ -583,11 +570,18 @@
       <option name="project" value="LOCAL" />
       <updated>1471248114760</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="stubbed remaining components">
+      <created>1471249003760</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1471249003760</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18950000" />
+    <option name="totallyTimeSpent" value="19154000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="6" />
@@ -645,6 +639,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="removed .idea/" />
     <MESSAGE value="commented out documentation" />
     <MESSAGE value="fixed build issue on windows" />
@@ -654,23 +650,14 @@
     <MESSAGE value="removed extra files" />
     <MESSAGE value="reorg" />
     <MESSAGE value="layout and elements docs stubbed" />
-    <option name="LAST_COMMIT_MESSAGE" value="layout and elements docs stubbed" />
+    <MESSAGE value="stubbed remaining components" />
+    <option name="LAST_COMMIT_MESSAGE" value="stubbed remaining components" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/elements/Icon.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/elements/content.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
@@ -853,14 +840,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1219,17 +1198,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="997">
-          <caret line="120" column="6" selection-start-line="120" selection-start-column="6" selection-end-line="120" selection-end-column="6" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#79#105#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/layout/footer.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
@@ -1246,9 +1214,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="462">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/elements/form.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownFxPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1879">
+          <caret line="120" column="6" selection-start-line="120" selection-start-column="6" selection-end-line="120" selection-end-column="6" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#79#105#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
