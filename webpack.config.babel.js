@@ -54,7 +54,7 @@ const common = {
       loaders: ['style', 'css']
     }, {
       test: /\.scss$/i,
-      loaders: ['style/useable', 'css', 'sass']
+      loaders: ['style', 'css', 'sass']
     }, {
       test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
       loader: 'url?name=[name].[hash:6].[ext]&limit=10000&minetype=application/font-woff'
@@ -74,7 +74,8 @@ const common = {
 const siteCommon = {
   plugins: [
     new HtmlWebpackPlugin({
-      template: require('html-webpack-template'), // eslint-disable-line global-require
+      template: path.join(ROOT_PATH, 'docs/index_template.ejs'),
+      // template: require('html-webpack-template'), // eslint-disable-line global-require
       inject: false,
       title: pkg.name,
       appMountId: 'app'
