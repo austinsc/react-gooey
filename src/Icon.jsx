@@ -1,10 +1,10 @@
 import _ from 'lodash';
 import React, {Component, PropTypes} from 'react';
 import classNames from 'classnames';
-import {Style} from 'decorators';
+import Style from 'react-style-decorator';
 
 
-@Style(require('style/useable!css!sass!font-awesome/scss/font-awesome'), require('style/useable!css!font-awesome-animation/dist/font-awesome-animation.css'))
+@Style(require('font-awesome/scss/font-awesome'), require('font-awesome-animation/dist/font-awesome-animation.css'))
 export default class Icon extends Component {
   static displayName = 'Icon';
   static propTypes = {

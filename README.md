@@ -43,6 +43,11 @@ var b = 10;
 console.log(a + b);
 ```
 
+
+```jsx
+<Gooey.Button text="test" icon="pin" />
+```
+
 ## License
 
 *react-gooey* is available under MIT. See LICENSE for more details.
