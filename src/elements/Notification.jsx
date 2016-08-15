@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import classNames from 'classnames';
-import {PropTypes as GooeyPropTypes} from '../utils';
+import {GooeyPropTypes} from '../utils';
 
 export default class Notification extends Component {
   static displayName = 'Notification';
