@@ -19,6 +19,10 @@ const pages = [{
   title: 'Introduction',
   src: '../README.md'
 }, {
+  path: '/color-palette',
+  title: 'Color Palette',
+  src: 'docs/color-palette.md'
+}, {
   title: 'Components',
   pages: [{
     path: '/components/icons',
