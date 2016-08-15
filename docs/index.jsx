@@ -5,6 +5,7 @@ import GithubCorner from 'react-github-corner';
 import {Catalog, CodeSpecimen, ReactSpecimen} from 'catalog';
 import * as Gooey from '../src/index';
 import {colors} from '../src/utils';
+import './main';
 import '../src/css/main';
 
 const documentationImports = {
@@ -15,130 +16,130 @@ const documentationImports = {
 const pages = [{
   path: '/',
   title: 'Introduction',
-  src: '../README.md'
+  component: require('../README.md')
 }, {
   path: '/color-palette',
   title: 'Color Palette',
-  src: 'docs/color-palette.md'
+  component: require('../docs/color-palette.md')
 }, {
   title: 'Grid',
   pages: [{
     path: '/grid/columns',
     title: 'Columns',
-    src: 'docs/grid/columns.md'
+    component: require('../docs/grid/columns.md')
   }, {
     path: '/grid/tiles',
     title: 'Tiles',
-    src: 'docs/grid/tiles.md'
+    component: require('../docs/grid/tiles.md')
   }]
 }, {
   title: 'Elements',
   pages: [{
     path: '/elements/box',
     title: 'Box',
-    src: 'docs/elements/box.md'
+    component: require('../docs/elements/box.md')
   }, {
     path: '/elements/buttons',
     title: 'Button',
-    src: 'docs/elements/button.md'
+    component: require('../docs/elements/button.md')
   }, {
     path: '/elements/content',
     title: 'Content',
-    src: 'docs/elements/content.md'
+    component: require('../docs/elements/content.md')
   }, {
     path: '/elements/form',
     title: 'Form',
-    src: 'docs/elements/form.md'
+    component: require('../docs/elements/form.md')
   }, {
     path: '/elements/icon',
     title: 'Icon',
-    src: 'docs/elements/icon.md'
+    component: require('../docs/elements/icon.md')
   }, {
     path: '/elements/image',
     title: 'Image',
-    src: 'docs/elements/image.md'
+    component: require('../docs/elements/image.md')
   }, {
     path: '/elements/notification',
     title: 'Notification',
-    src: 'docs/elements/notification.md'
+    component: require('../docs/elements/notification.md')
   }, {
     path: '/elements/progress',
     title: 'Progress',
-    src: 'docs/elements/progress.md'
+    component: require('../docs/elements/progress.md')
   }, {
     path: '/elements/table',
     title: 'Table',
-    src: 'docs/elements/table.md'
+    component: require('../docs/elements/table.md')
   }, {
     path: '/elements/tag',
     title: 'Tag',
-    src: 'docs/elements/tag.md'
+    component: require('../docs/elements/tag.md')
   }, {
     path: '/elements/title',
     title: 'Title',
-    src: 'docs/elements/title.md'
+    component: require('../docs/elements/title.md')
   }]
 }, {
   title: 'Components',
   pages: [{
     path: '/components/card',
     title: 'Card',
-    src: 'docs/components/card.md'
+    component: require('../docs/components/card.md')
   }, {
     path: '/components/level',
     title: 'Level',
-    src: 'docs/components/level.md'
+    component: require('../docs/components/level.md')
   }, {
     path: '/components/media-object',
     title: 'Media Object',
-    src: 'docs/components/media-object.md'
+    component: require('../docs/components/media-object.md')
   }, {
     path: '/components/menu',
     title: 'Menu',
-    src: 'docs/components/menu.md'
+    component: require('../docs/components/menu.md')
   }, {
     path: '/components/message',
     title: 'Message',
-    src: 'docs/components/message.md'
+    component: require('../docs/components/message.md')
   }, {
     path: '/components/modal',
     title: 'Modal',
-    src: 'docs/components/modal.md'
+    component: require('../docs/components/modal.md')
   }, {
     path: '/components/nav',
     title: 'Nav',
-    src: 'docs/components/nav.md'
+    component: require('../docs/components/nav.md')
   }, {
     path: '/components/pagination',
     title: 'Pagination',
-    src: 'docs/components/pagination.md'
+    component: require('../docs/components/pagination.md')
   }, {
     path: '/components/panel',
     title: 'Panel',
-    src: 'docs/components/panel.md'
+    component: require('../docs/components/panel.md')
   }, {
     path: '/components/tabs',
     title: 'Tabs',
-    src: 'docs/components/tabs.md'
+    component: require('../docs/components/tabs.md')
   }]
 }, {
   title: 'Layout',
   pages: [{
     path: '/layout/container',
     title: 'Container',
-    src: 'docs/layout/container.md'
+    component: require('../docs/layout/container.md')
   }, {
     path: '/layout/hero',
     title: 'Hero',
-    src: 'docs/layout/hero.md'
+    component: require('../docs/layout/hero.md')
   }, {
     path: '/layout/footer',
     title: 'Footer',
-    src: 'docs/layout/footer.md'
+    component: require('../docs/layout/footer.md')
   }, {
     path: '/layout/section',
     title: 'Section',
-    src: 'docs/layout/section.md'
+    component: require('../docs/layout/section.md')
   }]
 }];
 const specimen = {

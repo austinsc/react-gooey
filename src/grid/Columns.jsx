@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React, {Component, PropTypes} from 'react';
 import classNames from 'classnames';
-import {PropTypes as GooeyPropTypes} from '../utils';
+import {GooeyPropTypes} from '../utils';
 
 export class Columns extends Component {
   static displayName = 'Columns';
@@ -36,7 +36,7 @@ export class Column extends Component {
   static propTypes = {
     children: PropTypes.any,
     className: PropTypes.any,
-    size: PropTypes.oneOf([GooeyPropTypes.column, PropTypes.object]),
+    size: PropTypes.oneOfType([GooeyPropTypes.column, PropTypes.object]),
     offset: GooeyPropTypes.column,
     device: GooeyPropTypes.devices,
     narrow: PropTypes.bool
