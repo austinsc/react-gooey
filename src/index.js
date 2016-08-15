@@ -1,8 +1,10 @@
 // Components
-export {default as Icon} from './components/Icon';
-export {default as Button} from './components/Button';
-export {default as ButtonGroup} from './components/ButtonGroup';
 export {Nav, NavItem, NavItemLink, NavSection, NavToggle} from './components/Nav';
+
+// Elements
+export {default as Button} from './elements/Button';
+export {default as ButtonGroup} from './elements/ButtonGroup';
+export {default as Icon} from './elements/Icon';
 
 // // Controls
 // export {default as Form} from './controls/Form';
@@ -16,6 +18,5 @@ export {Nav, NavItem, NavItemLink, NavSection, NavToggle} from './components/Nav
 export {default as Hero} from './layout/Hero';
 export {default as Content} from './layout/Content';
 export {default as Container} from './layout/Container';
-export {default as Section} from './layout/Section';
 export {Level, LevelItem, LevelSection} from './layout/Level';
 export {default as Section} from './layout/Section';
