@@ -78,6 +78,7 @@
     "react-github-corner": "^0.3.0",
     "rimraf": "^2.5.4",
     "sass-loader": "^4.0.0",
+    "sass-variable-loader": "0.0.4",
     "style-loader": "^0.13.1",
     "sync-exec": "^0.6.2",
     "system-bell-webpack-plugin": "^1.0.0",
