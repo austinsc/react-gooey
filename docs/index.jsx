@@ -23,11 +23,15 @@ const pages = [{
   title: 'Color Palette',
   src: 'docs/color-palette.md'
 }, {
-  title: 'Components',
+  title: 'Grid',
   pages: [{
-    path: '/components/nav',
-    title: 'Navigation',
-    src: 'docs/components/nav.md'
+    path: '/grid/columns',
+    title: 'Columns',
+    src: 'docs/grid/columns.md'
+  }, {
+    path: '/grid/tiles',
+    title: 'Tiles',
+    src: 'docs/grid/tiles.md'
   }]
 }, {
   title: 'Elements',
@@ -77,6 +81,49 @@ const pages = [{
     src: 'docs/elements/title.md'
   }]
 }, {
+  title: 'Components',
+  pages: [{
+    path: '/components/card',
+    title: 'Card',
+    src: 'docs/components/card.md'
+  }, {
+    path: '/components/level',
+    title: 'Level',
+    src: 'docs/components/level.md'
+  }, {
+    path: '/components/media-object',
+    title: 'Media Object',
+    src: 'docs/components/media-object.md'
+  }, {
+    path: '/components/menu',
+    title: 'Menu',
+    src: 'docs/components/menu.md'
+  }, {
+    path: '/components/message',
+    title: 'Message',
+    src: 'docs/components/message.md'
+  }, {
+    path: '/components/modal',
+    title: 'Modal',
+    src: 'docs/components/modal.md'
+  }, {
+    path: '/components/nav',
+    title: 'Nav',
+    src: 'docs/components/nav.md'
+  }, {
+    path: '/components/pagination',
+    title: 'Pagination',
+    src: 'docs/components/pagination.md'
+  }, {
+    path: '/components/panel',
+    title: 'Panel',
+    src: 'docs/components/panel.md'
+  }, {
+    path: '/components/tabs',
+    title: 'Tabs',
+    src: 'docs/components/tabs.md'
+  }]
+}, {
   title: 'Layout',
   pages: [{
     path: '/layout/container',
@@ -87,9 +134,9 @@ const pages = [{
     title: 'Hero',
     src: 'docs/layout/hero.md'
   }, {
-    path: '/layout/level',
-    title: 'Level',
-    src: 'docs/layout/level.md'
+    path: '/layout/footer',
+    title: 'Footer',
+    src: 'docs/layout/footer.md'
   }, {
     path: '/layout/section',
     title: 'Section',
