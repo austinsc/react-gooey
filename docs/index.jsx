@@ -16,36 +16,35 @@ const documentationImports = {
 };
 const title = `${NAME} v${VERSION}`; // eslint-disable-line no-undef
 const project = `${USER}/${NAME}`; // eslint-disable-line no-undef
-// const pages = [
-//   {
-//     path: '/',
-//     title: 'Introduction',
-//     component: readme
-//   }
-// ];
+const pages = [
+  {
+    path: '/',
+    title: 'Introduction',
+    src: '../README.md'
+  }
+];
 
 // Catalog - logoSrc="../images/logo.png"
 ReactDOM.render(
-  <div />,
-  // <div>
-  //   <GithubCorner
-  //     href={`https://github.com/${project}`}
-  //     bannerColor="#fff"
-  //     octoColor="#000"
-  //     width={80}
-  //     height={80}
-  //     direction="right"
-  //   />
-  //   <Catalog
-  //     imports={documentationImports}
-  //     pages={pages}
-  //     specimens={{
-  //       javascript: props => <CodeSpecimen {...props} lang="javascript" />,
-  //       js: props => <CodeSpecimen {...props} lang="javascript" />,
-  //       jsx: props => <ReactSpecimen {...props} />
-  //     }}
-  //     title={title}
-  //   />
-  // </div>,
+  <div>
+    <GithubCorner
+      href={`https://github.com/${project}`}
+      bannerColor="#fff"
+      octoColor="#000"
+      width={80}
+      height={80}
+      direction="right"
+    />
+    <Catalog
+      imports={documentationImports}
+      pages={pages}
+      specimens={{
+        javascript: props => <CodeSpecimen {...props} lang="javascript" />,
+        js: props => <CodeSpecimen {...props} lang="javascript" />,
+        jsx: props => <ReactSpecimen {...props} />
+      }}
+      title={title}
+    />
+  </div>,
   document.getElementById('app')
 );
