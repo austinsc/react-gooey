@@ -25,32 +25,75 @@ const pages = [{
 }, {
   title: 'Components',
   pages: [{
-    path: '/components/icons',
-    title: 'Icons',
-    src: 'docs/components/icon.md'
+    path: '/components/nav',
+    title: 'Navigation',
+    src: 'docs/components/nav.md'
+  }]
+}, {
+  title: 'Elements',
+  pages: [{
+    path: '/elements/box',
+    title: 'Box',
+    src: 'docs/elements/box.md'
   }, {
-    path: '/components/buttons',
-    title: 'Buttons',
-    src: 'docs/components/button.md'
+    path: '/elements/buttons',
+    title: 'Button',
+    src: 'docs/elements/button.md'
+  }, {
+    path: '/elements/content',
+    title: 'Content',
+    src: 'docs/elements/content.md'
+  }, {
+    path: '/elements/form',
+    title: 'Form',
+    src: 'docs/elements/form.md'
+  }, {
+    path: '/elements/icon',
+    title: 'Icon',
+    src: 'docs/elements/icon.md'
+  }, {
+    path: '/elements/image',
+    title: 'Image',
+    src: 'docs/elements/image.md'
+  }, {
+    path: '/elements/notification',
+    title: 'Notification',
+    src: 'docs/elements/notification.md'
+  }, {
+    path: '/elements/progress',
+    title: 'Progress',
+    src: 'docs/elements/progress.md'
+  }, {
+    path: '/elements/table',
+    title: 'Table',
+    src: 'docs/elements/table.md'
+  }, {
+    path: '/elements/tag',
+    title: 'Tag',
+    src: 'docs/elements/tag.md'
+  }, {
+    path: '/elements/title',
+    title: 'Title',
+    src: 'docs/elements/title.md'
   }]
 }, {
   title: 'Layout',
   pages: [{
-    path: '/layout/containers',
-    title: 'Containers',
+    path: '/layout/container',
+    title: 'Container',
     src: 'docs/layout/container.md'
   }, {
-    path: '/layout/content',
-    title: 'Content',
-    src: 'docs/layout/content.md'
-  }, {
-    path: '/layout/heroes',
-    title: 'Heroes',
+    path: '/layout/hero',
+    title: 'Hero',
     src: 'docs/layout/hero.md'
   }, {
     path: '/layout/level',
     title: 'Level',
     src: 'docs/layout/level.md'
+  }, {
+    path: '/layout/section',
+    title: 'Section',
+    src: 'docs/layout/section.md'
   }]
 }];
 const specimen = {
