@@ -4,6 +4,7 @@ export {Level, LevelItem, LevelSection} from './components/Level';
 
 // Grid
 export {Columns, Column} from './grid/Columns';
+export {default as Tile}from './grid/Tile';
 
 // Elements
 export {default as Button} from './elements/Button';
