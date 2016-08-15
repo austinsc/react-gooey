@@ -4,15 +4,13 @@ import ReactDOM from 'react-dom';
 import GithubCorner from 'react-github-corner';
 import {Catalog, CodeSpecimen, ReactSpecimen} from 'catalog';
 import * as Gooey from '../src/index';
-
-// import 'purecss/build/pure.css';
-// import './main.css';
-// import '../style.css';
+import {colors} from '../src/utils';
 import '../src/css/main';
 
 const documentationImports = {
   ReactDOM,
-  ...Gooey
+  ...Gooey,
+  colors
 };
 const pages = [{
   path: '/',
