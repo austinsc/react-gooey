@@ -45,7 +45,7 @@ console.log(a + b);
 
 
 ```jsx
-<Gooey.Button text="test" icon="pin" />
+<Button text="test" icon="rebel" />
 ```
 
 ## License

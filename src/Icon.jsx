@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import Style from 'react-style-decorator';
 
 
-@Style(require('font-awesome/scss/font-awesome'), require('font-awesome-animation/dist/font-awesome-animation.css'))
+//@Style(require('font-awesome/scss/font-awesome'), require('font-awesome-animation/dist/font-awesome-animation.css'))
 export default class Icon extends Component {
   static displayName = 'Icon';
   static propTypes = {
