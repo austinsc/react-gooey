@@ -27,6 +27,8 @@ export default class Button extends Component {
     loading: PropTypes.bool,
     disabled: PropTypes.bool,
     outlined: PropTypes.bool,
+    inverted: PropTypes.bool,
+    active: PropTypes.bool,
     children: PropTypes.any,
     icon: PropTypes.any,
     className: PropTypes.any,
@@ -39,13 +41,15 @@ export default class Button extends Component {
   };
 
   render() {
-    const {color, disabled, outlined, loading, size, text, icon, children, className, iconPosition} = this.props;
+    const {color, disabled, outlined, inverted, loading, active, size, text, icon, children, className, iconPosition} = this.props;
     const classes = classNames('button', {
       [`is-${color}`]: color !== 'default',
       [`is-${size}`]: size !== 'normal',
       'is-loading': loading,
       'is-disabled': disabled,
       'is-outlined': outlined,
+      'is-inverted': inverted,
+      'is-active': active,
       [className]: !!className
     });
     const content = text || children ? <span>{text || children}</span> : null;
