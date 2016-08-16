@@ -12,13 +12,13 @@ export default class Content extends Component {
   };
 
   render() {
-    const {children, size}=this.props;
+    const {children, size, ...rest}=this.props;
     const classes = classNames('content', {
       'is-medium': size === 'medium',
       'is-large': size === 'large'
     });
     return (
-      <div className={classes}>
+      <div className={classes} {...rest}>
         {children}
       </div>
     );
