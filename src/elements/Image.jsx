@@ -6,14 +6,14 @@ export default class Image extends Component {
   static displayName = 'Image';
   static propTypes = {
     children: PropTypes.any,
-    source: PropTypes.string,
+    src: PropTypes.string,
     size: PropTypes.oneOfType([GooeyPropTypes.image, PropTypes.object]),
     ratio: PropTypes.oneOfType([GooeyPropTypes.ratio, PropTypes.object]),
     className: PropTypes.any
   };
 
   render() {
-    const {children, source, size, ratio, className, ...rest}=this.props;
+    const {children, src, size, ratio, className, ...rest}=this.props;
     const classes = classNames('image', {
       [`is-${size}`]: !!size,
       [`is-${ratio}`]: !!ratio,
@@ -21,7 +21,7 @@ export default class Image extends Component {
     });
     return (
       <figure className={classes} {...rest}>
-        <img src={source} />
+        <img src={src} />
         {children}
       </figure>
     );

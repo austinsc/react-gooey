@@ -54,7 +54,7 @@ This `<Content/>` class can be used in any, whenever you just want to write some
 You can use the `size` modifier (**medium**, **large**, **normal**) to change the font size.
 
 ```jsx
-<Content size='medium'>
+<Content size="medium">
   <h1>Hello World</h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.</p>
   <h2>Second level</h2>
@@ -69,7 +69,7 @@ You can use the `size` modifier (**medium**, **large**, **normal**) to change th
 ```
 
 ```jsx
-<Content size='large'>
+<Content size="large">
   <h1>Hello World</h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.</p>
   <h2>Second level</h2>

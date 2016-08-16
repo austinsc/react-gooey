@@ -1,9 +1,9 @@
 > React-gooey is compatible with **Font Awesome** icons
 
-Because the icons can take a few seconds to load, and because you want control over the space the icons will take, you can use `<Icon/>':
+Because the icons can take a few seconds to load, and because you want control over the space the icons will take, you can use `<Icon/>`:
 
 ```jsx
-<Icon name='home'/>
+<Icon name="home"/>
 ```
 
 The `<Icon/>` container will take up exactly **24 x 24 pixels**. The icon itself is sized at **21px**.
