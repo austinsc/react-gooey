@@ -11,7 +11,7 @@ export default class ButtonGroup extends Component {
   };
 
   render() {
-    const {children, addons, className} = this.props;
+    const {children, addons, className, ...rest} = this.props;
     const classes = classNames('control', {
       'is-grouped': !addons,
       'has-addons': addons,
@@ -19,7 +19,7 @@ export default class ButtonGroup extends Component {
     });
     const childProps = _.omit(this.props, ['children', 'addons', 'className']);
     return (
-      <p {...childProps} className={classes}>
+      <p {...childProps} className={classes} {...rest}>
         {children}
       </p>
     );

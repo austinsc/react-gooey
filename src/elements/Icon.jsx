@@ -44,7 +44,7 @@ export default class Icon extends Component {
   }
 
   render() {
-    const {wrap, name, size, rotate, flip, spin, fixedWidth, stack, inverse, className, wrench, ring, horizontal, vertical, flash, bounce, float, pulse, skip, shake, tada, passing, burst, fast, slow, hover}=this.props;
+    const {wrap, name, size, rotate, flip, spin, fixedWidth, stack, inverse, className, wrench, ring, horizontal, vertical, flash, bounce, float, pulse, skip, shake, tada, passing, burst, fast, slow, hover, ...rest}=this.props;
     const faa = (wrench || ring || horizontal || vertical || flash || bounce || float || pulse || shake || tada || passing || burst);
     const css = classNames(className, `fa fa-${name}`, {
       [`fa-${size}`]: size,
@@ -74,9 +74,9 @@ export default class Icon extends Component {
     });
 
     return wrap ? (
-      <span className="icon">
+      <span className="icon" {...rest}>
         <i className={css}/>
       </span>
-    ) : <i className={css}/>;
+    ) : <i className={css} {...rest}/>;
   }
 }

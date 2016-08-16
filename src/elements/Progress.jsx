@@ -1,0 +1,43 @@
+import React, {Component, PropTypes} from 'react';
+import classNames from 'classnames';
+
+export default class Progress extends Component {
+  static displayName = 'Progress';
+  static propTypes = {
+    children: PropTypes.any,
+    color: PropTypes.oneOf([
+      'default',
+      'primary',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark'
+    ]),
+    size: PropTypes.oneOf([
+      'small',
+      'normal',
+      'medium',
+      'large'
+    ]),
+    value: PropTypes.string,
+    max: PropTypes.string,
+    className: PropTypes.any
+  };
+  static defaultProps = {
+    size: 'normal',
+    color: 'default'
+  };
+
+  render() {
+    const {children, color, size, value, max, className, ...rest}=this.props;
+    const classes = classNames('progress', {
+      [`is-${color}`]: color !== 'default',
+      [`is-${size}`]: size !== 'normal',
+      [className]: !!className
+    });
+    return (
+      <progress className={classes} value={value} max={max} {...rest}/>
+    );
+  }
+}
