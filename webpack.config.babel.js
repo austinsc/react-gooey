@@ -4,6 +4,8 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import SystemBellPlugin from 'system-bell-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
+import Dashboard from 'webpack-dashboard';
+import DashboardPlugin from 'webpack-dashboard/plugin';
 import merge from 'webpack-merge';
 const pkg = require('./package.json');
 
@@ -20,6 +22,8 @@ const config = {
   library: 'Gooey'
 };
 process.env.BABEL_ENV = TARGET;
+
+const dashboard = new Dashboard();
 
 const common = {
   resolve: {
@@ -67,6 +71,7 @@ const common = {
     includePaths: [path.resolve(__dirname, 'node_modules')]
   },
   plugins: [
+    new DashboardPlugin(dashboard.setData),
     new SystemBellPlugin()
   ]
 };
@@ -112,6 +117,7 @@ if(TARGET === 'start' || TARGET === 'dev') {
     },
     devServer: {
       historyApiFallback: true,
+      quiet: true,
       hot: true,
       inline: true,
       progress: true,
