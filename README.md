@@ -25,21 +25,6 @@ The test setup is based on Karma/Mocha/Chai/Phantom. Code coverage report is gen
 * Deploying - **npm run deploy-gh-pages** - Deploys the contents of `./gh-pages` to the `gh-pages` branch. GitHub will pick this up automatically. Your site will be available through *austinsc.github.io/<project name>`.
 * Generating stats - **npm run stats** - Generates stats that can be passed to [webpack analyse tool](https://webpack.github.io/analyse/). This is useful for investigating what the build consists of.
 
-## Highlighting Demo for the Site
-
-```js
-var a = 5;
-var b = 10;
-
-// just trying out code highlighting feature here
-console.log(a + b);
-```
-
-
-```jsx
-<Button text="test" icon="rebel" />
-```
-
 ## License
 
 *react-gooey* is available under MIT. See LICENSE for more details.
