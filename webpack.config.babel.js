@@ -71,7 +71,6 @@ const common = {
     includePaths: [path.resolve(__dirname, 'node_modules')]
   },
   plugins: [
-    new DashboardPlugin(dashboard.setData),
     new SystemBellPlugin()
   ]
 };
@@ -100,6 +99,7 @@ if(TARGET === 'start' || TARGET === 'dev') {
       docs: [config.paths.docs]
     },
     plugins: [
+      new DashboardPlugin(dashboard.setData),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': '"development"'
       }),
