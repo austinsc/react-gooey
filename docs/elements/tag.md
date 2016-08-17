@@ -5,7 +5,7 @@ By default, a `<Tag/>` is a 24px high label.
 
 
 ```jsx
-<Tag text='Tag label'/>
+<Tag text="Tag label"/>
 ```
 
 
@@ -14,27 +14,27 @@ There are **6 different colors** available.
 ```
 
 ```jsx|span-3
-<Tag text='Dark' color='dark'/>
+<Tag text="Dark" color="dark"/>
 ```
 
 ```jsx|span-3
-<Tag text='Primary' color='primary'/>
+<Tag text="Primary" color="primary"/>
 ```
 
 ```jsx|span-3
-<Tag text='Info' color='info'/>
+<Tag text="Info" color="info"/>
 ```
 
 ```jsx|span-3
-<Tag text='Success' color='success'/>
+<Tag text="Success" color="success"/>
 ```
 
 ```jsx|span-3
-<Tag text='Warning' color='warning'/>
+<Tag text="Warning" color="warning"/>
 ```
 
 ```jsx|span-3
-<Tag text='Danger' color='danger'/>
+<Tag text="Danger" color="danger"/>
 ```
 
 
@@ -44,13 +44,13 @@ And **3 additional** sizes.
 
 
 ```jsx|span-3
-<Tag text='Small' color='dark' size='small'/>
+<Tag text="Small" color="dark" size="small"/>
 ```
 
 ```jsx|span-3
-<Tag text='Medium' color='primary' size='medium'/>
+<Tag text="Medium" color="primary" size="medium"/>
 ```
 
 ```jsx|span-3
-<Tag text='Large' color='info' size='large'/>
+<Tag text="Large" color="info" size="large"/>
 ```
