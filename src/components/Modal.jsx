@@ -6,7 +6,7 @@ import classNames from 'classnames';
 class ModalBase extends Component {
   static displayName = 'ModalBase';
   static propTypes = {
-    show: PropTypes.bool,
+    active: PropTypes.bool,
     backgroundClose: PropTypes.bool,
     onClose: PropTypes.func,
     children: PropTypes.any,
@@ -18,13 +18,10 @@ class ModalBase extends Component {
   };
 
   render() {
-    const {onClose, backgroundClose, children, className, show, ...rest} = this.props;
-    if(!show) {
-      return null;
-    }
-
+    const {onClose, backgroundClose, children, className, active, ...rest} = this.props;
     const classes = classNames('modal', {
-      [className]: !!className
+      [className]: !!className,
+      'is-active': active
     });
 
     return (
@@ -39,7 +36,7 @@ class ModalBase extends Component {
 export class ModalCard extends Component {
   static displayName = 'ModalCard';
   static propTypes = {
-    show: PropTypes.bool,
+    active: PropTypes.bool,
     title: PropTypes.node,
     footer: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
     onClose: PropTypes.func,
@@ -52,12 +49,12 @@ export class ModalCard extends Component {
   };
 
   render() {
-    const {onClose, title, children, className, hideCloseButton, footer, show, ...rest} = this.props;
+    const {onClose, title, children, className, hideCloseButton, footer, active, ...rest} = this.props;
     const classes = classNames('modal-card', {
       [className]: !!className
     });
 
-    const closeButton = hideCloseButton ? null : <button className="delete"/>;
+    const closeButton = hideCloseButton ? null : <button className="delete" onClick={onClose}/>;
     const foot = !footer ? null : (
       <footer className="modal-card-foot">
         {footer}
@@ -65,9 +62,9 @@ export class ModalCard extends Component {
     );
 
     return (
-      <ModalBase onClose={onClose} show={show}>
+      <ModalBase onClose={onClose} active={active}>
         <div className={classes} {...rest}>
-          <header>
+          <header className="modal-card-head">
             <p className="modal-card-title">{title}</p>
             {closeButton}
           </header>
