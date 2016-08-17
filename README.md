@@ -1,6 +1,6 @@
 [![build status](https://secure.travis-ci.org/austinsc/react-gooey.svg)](http://travis-ci.org/austinsc/react-gooey) [![bitHound Score](https://www.bithound.io/github/austinsc/react-gooey/badges/score.svg)](https://www.bithound.io/github/austinsc/react-gooey) [![Dependency Status](https://david-dm.org/austinsc/react-gooey.svg)](https://david-dm.org/austinsc/react-gooey)
 
-# react-gooey - Boilerplate for React.js components
+# react-gooey - A React UI library for the masses
 
 This is a simple boilerplate that has been developed to make it easier to develop React components and small projects.
 
