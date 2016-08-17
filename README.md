@@ -2,14 +2,6 @@
 
 # react-gooey - A React UI library for the masses
 
-This is a simple boilerplate that has been developed to make it easier to develop React components and small projects.
-
-> Check out [SurviveJS - Webpack and React](http://survivejs.com/) to dig deeper into the topic.
-
-## Basic Usage
-
-If you want to replace project meta information (author etc.), consider using a tool like [replace-project-meta](https://www.npmjs.com/package/replace-project-meta).
-
 ### Common Tasks
 
 * Developing - **npm start** - Runs the development server at *localhost:8080* and use Hot Module Replacement. You can override the default host and port through env (`HOST`, `PORT`).
@@ -27,7 +19,7 @@ The test setup is based on Karma/Mocha/Chai/Phantom. Code coverage report is gen
 
 ### Documentation Site
 
-The boilerplate includes a [GitHub Pages](https://pages.github.com/) specific portion for setting up a documentation site for the component. The main commands handle with the details for you. Sometimes you might want to generate and deploy it by hand, or just investigate the generated bundle.
+[http://gooey.pwnt.co](http://gooey.pwnt.co)
 
 * Building - **npm run gh-pages** - Builds the documentation into `./gh-pages` directory.
 * Deploying - **npm run deploy-gh-pages** - Deploys the contents of `./gh-pages` to the `gh-pages` branch. GitHub will pick this up automatically. Your site will be available through *austinsc.github.io/<project name>`.
