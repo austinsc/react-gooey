@@ -23,7 +23,6 @@ const config = {
 };
 process.env.BABEL_ENV = TARGET;
 
-const dashboard = new Dashboard();
 
 const common = {
   resolve: {
@@ -79,7 +78,6 @@ const siteCommon = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(ROOT_PATH, 'docs/index_template.ejs'),
-      // template: require('html-webpack-template'), // eslint-disable-line global-require
       inject: false,
       title: pkg.name,
       appMountId: 'app'
@@ -93,6 +91,8 @@ const siteCommon = {
 };
 
 if(TARGET === 'start' || TARGET === 'dev') {
+  const dashboard = new Dashboard();
+
   module.exports = merge(common, siteCommon, {
     devtool: 'eval-source-map',
     entry: {
