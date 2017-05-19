@@ -1,4 +1,5 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export class Card extends Component {
@@ -10,12 +11,12 @@ export class Card extends Component {
   };
 
   render() {
-    const {children, className} = this.props;
+    const {children, className, ...rest} = this.props;
     const classes = classNames('card', {
       [className]: !!className
     });
     return (
-      <nav className={classes}>{children}</nav>
+      <nav className={classes} {...rest}>{children}</nav>
     );
   }
 }

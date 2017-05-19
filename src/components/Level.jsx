@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react'; import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export class Level extends Component {
@@ -9,12 +9,12 @@ export class Level extends Component {
   };
 
   render() {
-    const {children, className} = this.props;
+    const {children, className, ...rest} = this.props;
     const classes = classNames('level', {
       [className]: !!className
     });
     return (
-      <nav className={classes}>{children}</nav>
+      <nav className={classes} {...rest}>{children}</nav>
     );
   }
 }
@@ -27,12 +27,12 @@ export class LevelItem extends Component {
   };
 
   render() {
-    const {children, className} = this.props;
+    const {children, className, ...rest} = this.props;
     const classes = classNames('level-item', {
       [className]: !!className
     });
     return (
-      <div className={classes}>{children}</div>
+      <div className={classes} {...rest}>{children}</div>
     );
   }
 }
@@ -47,13 +47,13 @@ export class LevelSection extends Component {
   };
 
   render() {
-    const {children, className, left, right} = this.props;
+    const {children, className, left, right, ...rest} = this.props;
     const classes = classNames(className || '', {
       'level-left': left,
       'level-right': right
     });
     return (
-      <div className={classes}>{children}</div>
+      <div className={classes} {...rest}>{children}</div>
     );
   }
 }

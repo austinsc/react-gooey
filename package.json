@@ -118,6 +118,7 @@
     "classnames": "^2.2.5",
     "font-awesome": "^4.6.3",
     "font-awesome-animation": "0.0.8",
+    "prop-types": "^15.5.10",
     "react-style-decorator": "0.0.8"
   }
 }

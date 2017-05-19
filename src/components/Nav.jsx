@@ -1,14 +1,17 @@
-import React,{Component, PropTypes} from 'react';
+import React, {Component} from 'react'; import PropTypes from 'prop-types';
 import {Link} from 'react-router';
 import classNames from 'classnames';
 
-export class Nav extends Component{
+export class Nav extends Component {
   static displayName = 'Nav';
-  static propTypes = {children:PropTypes.any, shadow:PropTypes.bool};
+  static propTypes = {
+    children: PropTypes.any,
+    shadow: PropTypes.bool
+  };
 
-  render(){
-    const {children, shadow}=this.props;
-    const classes=classNames('nav', {
+  render() {
+    const {children, shadow} = this.props;
+    const classes = classNames('nav', {
       'has-shadow': shadow
     });
     return (
@@ -46,12 +49,12 @@ export class NavSection extends Component {
   }
 }
 
-export class NavItem extends Component{
+export class NavItem extends Component {
   static displayName = 'NavItem';
-  static propTypes = {children:PropTypes.any};
+  static propTypes = {children: PropTypes.any};
 
-  render(){
-    const {children}=this.props;
+  render() {
+    const {children} = this.props;
     return (
       <span className="nav-item">
         {children}
@@ -93,7 +96,7 @@ export class NavItemLink extends Component {
   };
 
   render() {
-    const {children}=this.props;
+    const {children} = this.props;
     return (
       <Link {...this.props} className={`nav-item ${this.props.className}`} activeClassName="is-active">
         {children}

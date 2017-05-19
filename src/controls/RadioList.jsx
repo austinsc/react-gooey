@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import React, {Component, PropTypes} from 'react';
+import React, {Component} from 'react'; import PropTypes from 'prop-types';
 import {Field} from 'react-redux-form';
 import classNames from 'classnames';
 import {trimRoot} from 'utils';
