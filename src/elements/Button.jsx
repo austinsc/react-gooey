@@ -3,6 +3,17 @@ import React, {Component} from 'react'; import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Icon from './Icon';
 
+const SIZES = [
+  'normal',
+  'small',
+  'medium',
+  'large'
+];
+
+function bulmaSizeToFontAwesomeSize(bulmaSize) {
+  return SIZES[SIZES.indexOf(bulmaSize) - 1] || 'normal';
+}
+
 export default class Button extends Component {
   static displayName = 'Button';
   static propTypes = {
@@ -16,18 +27,15 @@ export default class Button extends Component {
       'danger',
       'dark',
       'link',
-      'light'
+      'light',
+      'white'
     ]),
-    size: PropTypes.oneOf([
-      'small',
-      'normal',
-      'medium',
-      'large'
-    ]),
+    size: PropTypes.oneOf(SIZES),
     loading: PropTypes.bool,
-    disabled: PropTypes.bool,
     outlined: PropTypes.bool,
     inverted: PropTypes.bool,
+    focused: PropTypes.bool,
+    hovered: PropTypes.bool,
     active: PropTypes.bool,
     children: PropTypes.any,
     icon: PropTypes.any,
@@ -37,18 +45,20 @@ export default class Button extends Component {
   static defaultProps = {
     color: 'default',
     size: 'normal',
-    iconPosition: 'left'
+    iconPosition: 'left',
+    inverted: false
   };
 
   render() {
-    const {color, disabled, outlined, inverted, loading, active, size, text, icon, children, className, iconPosition, ...rest} = this.props;
+    const {color, outlined, inverted, focused, hovered, loading, active, size, text, icon, children, className, iconPosition, ...rest} = this.props;
     const classes = classNames('button', {
       [`is-${color}`]: color !== 'default',
       [`is-${size}`]: size !== 'normal',
       'is-loading': loading,
-      'is-disabled': disabled,
       'is-outlined': outlined,
       'is-inverted': inverted,
+      'is-focused': focused,
+      'is-hovered': hovered,
       'is-active': active,
       [className]: !!className
     });
@@ -56,13 +66,14 @@ export default class Button extends Component {
     let iconComponent = null;
     if(icon) {
       if(_.isString(icon)) {
-        iconComponent = <Icon name={icon} wrap {...rest}/>;
+        iconComponent = <Icon name={icon} wrap wrapSize={bulmaSizeToFontAwesomeSize(size)} />;
       } else if(_.isObject(icon)) {
-        iconComponent = <Icon {...icon} {...rest}/>;
+        iconComponent = <Icon {...icon} />;
       }
     }
+
     return (
-      <a {..._.omit(this.props, _.keys(Button.propTypes))} className={classes}>
+      <a {..._.omit(this.props, _.keys(Button.propTypes))} className={classes} {...rest}>
         {iconPosition === 'left' && iconComponent}
         {content}
         {iconPosition === 'right' && iconComponent}

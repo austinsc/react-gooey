@@ -9,7 +9,7 @@ export default class Icon extends Component {
   static displayName = 'Icon';
   static propTypes = {
     name: PropTypes.string.isRequired,
-    size: PropTypes.oneOf(['lg', '2x', '3x', '4x', '5x']),
+    size: PropTypes.oneOf(['small', 'medium', 'large', 'normal']),
     rotate: PropTypes.oneOf(['90', '180', '270']),
     flip: PropTypes.oneOf(['horizontal', 'vertical']),
     fixedWidth: PropTypes.bool,
@@ -36,7 +36,8 @@ export default class Icon extends Component {
     skip: PropTypes.bool
   };
   static defaultProps = {
-    wrap: true
+    wrap: true,
+    size: 'normal'
   };
 
   shouldComponentUpdate(nextProps) {
@@ -47,7 +48,7 @@ export default class Icon extends Component {
     const {wrap, name, size, rotate, flip, spin, fixedWidth, stack, inverse, className, wrench, ring, horizontal, vertical, flash, bounce, float, pulse, skip, shake, tada, passing, burst, fast, slow, hover, ...rest}=this.props;
     const faa = (wrench || ring || horizontal || vertical || flash || bounce || float || pulse || shake || tada || passing || burst);
     const css = classNames(className, `fa fa-${name}`, {
-      [`fa-${size}`]: size,
+      [`is-${size}`]: size !== 'normal',
       [`fa-rotate-${rotate}`]: rotate,
       [`fa-flip-${flip}`]: flip,
       [`fa-stack-${stack}`]: stack,

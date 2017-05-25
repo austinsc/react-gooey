@@ -42,6 +42,10 @@ const pages = [{
     title: 'Button',
     component: require('../docs/elements/button.md')
   }, {
+    path: '/elements/delete',
+    title: 'Delete',
+    component: require('../docs/elements/delete.md')
+  }, {
     path: '/elements/content',
     title: 'Content',
     component: require('../docs/elements/content.md')
