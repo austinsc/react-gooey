@@ -1,4 +1,4 @@
-import {PropTypes} from 'react';
+import PropTypes from 'prop-types';
 
 export const color = PropTypes.oneOf(['danger', 'info', 'primary', 'warning', 'success', 'light', 'dark', 'purple', 'orange']);
 
