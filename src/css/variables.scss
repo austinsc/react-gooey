@@ -1,69 +1,42 @@
-$family-sans-serif: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-$fa-font-path: "~font-awesome/fonts";
+@import "~bulma/sass/utilities/initial-variables";
 
-$grey-darker: #222324;
-$grey-dark: #69707a;
-$grey: #aeb1b5;
-$grey-light: #d3d6db;
-$grey-lighter: #f5f7fa;
-$blue: #42afe3;
-$green: #80d050;
-$orange: #ff5223;
-$purple: #8e36b9;
-$red: #fd2c00;
-$turquoise: #1fc8db;
-$yellow: #fce844;
-$light: $grey-lighter;
-$dark: $grey-darker;
+//$grey-darker: #222324;
+//$grey-dark: #69707a;
+//$grey: #aeb1b5;
+//$grey-light: #d3d6db;
+//$grey-lighter: #f5f7fa;
+//$blue: #42afe3;
+//$green: #80d050;
+//$orange: #ff5223;
+//$purple: #8e36b9;
+//$red: #fd2c00;
+//$turquoise: #1fc8db;
+//$yellow: #fce844;
+//$light: $grey-lighter;
+//$dark: $grey-darker;
+//
+//$blue-invert: $light;
+//$green-invert: $light;
+//$orange-invert: $light;
+//$purple-invert: $light;
+//$red-invert: $light;
+//$turquoise-invert: $light;
+//$yellow-invert: $dark;
+//
+//$primary: $turquoise;
+//$primary-invert: $turquoise-invert;
+//$info: $blue;
+//$info-invert: $blue-invert;
+//$success: $green;
+//$success-invert: $green-invert;
+//$warning: $yellow;
+//$warning-invert: $yellow-invert;
+//$danger: $red;
+//$danger-invert: $red-invert;
+//$light-invert: $dark;
+//$dark-invert: $light;
+//$midgray: $grey;
+//$midgray-invert: $light;
 
 
-$blue-invert: $light;
-$green-invert: $light;
-$orange-invert: $light;
-$purple-invert: $light;
-$red-invert: $light;
-$turquoise-invert: $light;
-$yellow-invert: $dark;
-
-$primary: $turquoise;
-$primary-invert: $turquoise-invert;
-$info: $blue;
-$info-invert: $blue-invert;
-$success: $green;
-$success-invert: $green-invert;
-$warning: $yellow;
-$warning-invert: $yellow-invert;
-$danger: $red;
-$danger-invert: $red-invert;
-$light-invert: $dark;
-$dark-invert: $light;
-$midgray: $grey;
-$midgray-invert: $light;
-
-$colors: (
-  dark: ($dark, $dark-invert),
-  light: ($light, $light-invert),
-  primary: ($primary, $primary-invert),
-  info: ($info, $info-invert),
-  success: ($success, $success-invert),
-  warning: ($warning, $warning-invert),
-  danger: ($danger, $danger-invert)
-);
-
-$all-colors: (
-  dark: ($dark, $dark-invert),
-  light: ($light, $light-invert),
-  primary: ($primary, $primary-invert),
-  info: ($info, $info-invert),
-  success: ($success, $success-invert),
-  warning: ($warning, $warning-invert),
-  danger: ($danger, $danger-invert),
-  blue: ($blue, $blue-invert),
-  green: ($green, $green-invert),
-  orange: ($orange, $orange-invert),
-  purple: ($purple, $purple-invert),
-  red: ($red, $red-invert),
-  turquoise: ($turquoise, $turquoise-invert),
-  yellow: ($yellow, $yellow-invert),
-  midgray: ($midgray, $midgray-invert)
-);
+@import "~bulma";

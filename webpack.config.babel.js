@@ -26,48 +26,70 @@ process.env.BABEL_ENV = TARGET;
 
 const common = {
   resolve: {
-    extensions: ['', '.js', '.jsx', '.css', '.scss', '.sass', '.png', '.jpg']
+    extensions: ['.js', '.jsx', '.css', '.scss', '.sass', '.png', '.jpg']
   },
   module: {
-    preLoaders: [{
-      test: /\.jsx?$/,
-      loaders: ['eslint'],
-      include: [
-        config.paths.docs,
-        config.paths.src
-      ]
-    }],
-    loaders: [{
+    // preLoaders: [{
+    //   test: /\.jsx?$/,
+    //   loaders: ['eslint'],
+    //   include: [
+    //     config.paths.docs,
+    //     config.paths.src
+    //   ]
+    // }],
+    rules: [{
       test: /\.md$/,
-      loaders: ['catalog/lib/loader', 'raw']
+      use: [{loader: 'catalog/dist/loader'}, {loader: 'raw-loader'}]
     }, {
       test: /\.png$/,
-      loader: 'url?limit=100000&mimetype=image/png',
+      use: [{loader: 'url-loader?limit=100000&mimetype=image/png'}],
       include: config.paths.docs
     }, {
-      test: /\.jpg$/,
-      loader: 'file',
-      include: config.paths.docs
+      test: /\.jpe?g$|\.gif$|\.png$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: '[name].[hash:6].[ext]'
+        }
+      }]
     }, {
       test: /\.json$/,
-      loader: 'json',
+      use: [{loader: 'json-loader'}],
       include: path.join(ROOT_PATH, 'package.json')
     }, {
       test: /\.css$/,
-      loaders: ['style', 'css']
+      use: [{loader: 'style-loader'}, {loader: 'css-loader'}]
     }, {
       test: /\.scss$/i,
-      loaders: ['style', 'css', 'sass']
+      use: [
+        {loader: 'style-loader'},
+        {loader: 'css-loader'},
+        {
+          loader: 'sass-loader',
+          options: {
+            includePaths: [path.resolve(__dirname, 'node_modules')]
+          }
+        }
+      ]
     }, {
       test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      loader: 'url?name=[name].[hash:6].[ext]&limit=10000&minetype=application/font-woff'
+      use: [{
+        loader: 'url-loader',
+        options: {
+          name: '[name].[hash:6].[ext]',
+          limit: 10000,
+          mimetype: 'application/font-woff'
+        }
+      }]
     }, {
       test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      loader: 'file?name=[name].[hash:6].[ext]'
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: '[name].[hash:6].[ext]'
+        }
+      }]
     }]
-  },
-  sassLoader: {
-    includePaths: [path.resolve(__dirname, 'node_modules')]
   },
   plugins: [
     new SystemBellPlugin()
@@ -106,9 +128,9 @@ if(TARGET === 'start' || TARGET === 'dev') {
       new webpack.HotModuleReplacementPlugin()
     ],
     module: {
-      loaders: [{
+      rules: [{
         test: /\.jsx?$/,
-        loaders: ['babel?cacheDirectory'],
+        use: [{loader: 'babel-loader?cacheDirectory'}],
         include: [
           config.paths.docs,
           config.paths.src
@@ -120,7 +142,6 @@ if(TARGET === 'start' || TARGET === 'dev') {
       quiet: true,
       hot: true,
       inline: true,
-      progress: true,
       host: process.env.HOST,
       port: process.env.PORT,
       stats: {
@@ -195,12 +216,12 @@ if(TARGET === 'gh-pages' || TARGET === 'gh-pages:stats') {
       })
     ],
     module: {
-      loaders: [{
+      rules: [{
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css')
+        use: [{loader: ExtractTextPlugin.extract('style', 'css')}]
       }, {
         test: /\.jsx?$/,
-        loaders: ['babel'],
+        use: [{loader: 'babel-loader'}],
         include: [
           config.paths.docs,
           config.paths.src
@@ -214,16 +235,16 @@ if(TARGET === 'gh-pages' || TARGET === 'gh-pages:stats') {
 if(TARGET === 'test' || TARGET === 'test:tdd' || !TARGET) {
   module.exports = merge(common, {
     module: {
-      preLoaders: [{
+      rules: [{
         test: /\.jsx?$/,
-        loaders: ['isparta', 'eslint'],
+        use: [{loader: 'isparta-loader'}, {loader: 'eslint-loader'}],
+        enforce: 'pre',
         include: [
           config.paths.tests
         ]
-      }],
-      loaders: [{
+      }, {
         test: /\.jsx?$/,
-        loaders: ['babel?cacheDirectory'],
+        use: [{loader: 'babel-loader?cacheDirectory'}],
         include: [
           config.paths.src,
           config.paths.tests
@@ -242,7 +263,7 @@ const distCommon = {
   },
   entry: config.paths.src,
   resolve: {
-    extensions: ['', '.js', '.jsx', '.css', '.scss', '.sass', '.png', '.jpg']
+    extensions: ['.js', '.jsx', '.css', '.scss', '.sass', '.png', '.jpg']
   },
   externals: {
     react: {
@@ -253,9 +274,9 @@ const distCommon = {
     }
   },
   module: {
-    loaders: [{
+    rules: [{
       test: /\.jsx?$/,
-      loaders: ['babel'],
+      use: [{loader: 'babel-loader'}],
       include: config.paths.src
     }]
   },
