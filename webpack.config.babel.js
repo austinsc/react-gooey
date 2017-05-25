@@ -263,7 +263,7 @@ const distCommon = {
   },
   entry: config.paths.src,
   resolve: {
-    extensions: ['', '.js', '.jsx', '.css', '.scss', '.sass', '.png', '.jpg']
+    extensions: ['.js', '.jsx', '.css', '.scss', '.sass', '.png', '.jpg']
   },
   externals: {
     react: {
@@ -274,9 +274,9 @@ const distCommon = {
     }
   },
   module: {
-    loaders: [{
+    rules: [{
       test: /\.jsx?$/,
-      loaders: ['babel'],
+      use: [{loader: 'babel-loader'}],
       include: config.paths.src
     }]
   },
