@@ -235,16 +235,16 @@ if(TARGET === 'gh-pages' || TARGET === 'gh-pages:stats') {
 if(TARGET === 'test' || TARGET === 'test:tdd' || !TARGET) {
   module.exports = merge(common, {
     module: {
-      preLoaders: [{
+      rules: [{
         test: /\.jsx?$/,
-        loaders: ['isparta', 'eslint'],
+        use: [{loader: 'isparta-loader'}, {loader: 'eslint-loader'}],
+        enforce: 'pre',
         include: [
           config.paths.tests
         ]
-      }],
-      loaders: [{
+      }, {
         test: /\.jsx?$/,
-        loaders: ['babel?cacheDirectory'],
+        use: [{loader: 'babel-loader?cacheDirectory'}],
         include: [
           config.paths.src,
           config.paths.tests
