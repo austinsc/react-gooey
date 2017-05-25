@@ -1,21 +1,19 @@
-import _ from 'lodash';
-import React, {Component} from 'react'; import PropTypes from 'prop-types';
+import React, {PureComponent} from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Style from 'react-style-decorator';
 
-
-//@Style(require('font-awesome/scss/font-awesome'), require('font-awesome-animation/dist/font-awesome-animation.css'))
-export default class Icon extends Component {
+export default class Icon extends PureComponent {
   static displayName = 'Icon';
   static propTypes = {
     name: PropTypes.string.isRequired,
-    size: PropTypes.oneOf(['small', 'medium', 'large', 'normal']),
+    size: PropTypes.oneOf(['lg', '2x', '3x', '4x', '5x']),
     rotate: PropTypes.oneOf(['90', '180', '270']),
     flip: PropTypes.oneOf(['horizontal', 'vertical']),
     fixedWidth: PropTypes.bool,
     spin: PropTypes.bool,
     stack: PropTypes.oneOf(['1x', '2x', '3x']),
     wrap: PropTypes.bool,
+    wrapSize: PropTypes.oneOf(['small', 'medium', 'large', 'normal']),
     inverse: PropTypes.bool,
     className: PropTypes.any,
     wrench: PropTypes.bool,
@@ -37,18 +35,14 @@ export default class Icon extends Component {
   };
   static defaultProps = {
     wrap: true,
-    size: 'normal'
+    wrapSize: 'normal'
   };
 
-  shouldComponentUpdate(nextProps) {
-    return !_.isEqual(this.props, nextProps);
-  }
-
   render() {
-    const {wrap, name, size, rotate, flip, spin, fixedWidth, stack, inverse, className, wrench, ring, horizontal, vertical, flash, bounce, float, pulse, skip, shake, tada, passing, burst, fast, slow, hover, ...rest}=this.props;
+    const {wrap, wrapSize, name, size, rotate, flip, spin, fixedWidth, stack, inverse, className, wrench, ring, horizontal, vertical, flash, bounce, float, pulse, skip, shake, tada, passing, burst, fast, slow, hover, ...rest}=this.props;
     const faa = (wrench || ring || horizontal || vertical || flash || bounce || float || pulse || shake || tada || passing || burst);
     const css = classNames(className, `fa fa-${name}`, {
-      [`is-${size}`]: size !== 'normal',
+      [`fa-${size}`]: size,
       [`fa-rotate-${rotate}`]: rotate,
       [`fa-flip-${flip}`]: flip,
       [`fa-stack-${stack}`]: stack,
@@ -73,10 +67,11 @@ export default class Icon extends Component {
       'animated': !hover && faa,
       'animated-hover': hover && faa
     });
+    const wrapClass = classNames('icon', {[`is-${wrapSize}`]: wrapSize});
 
     return wrap ? (
-      <span className="icon" {...rest}>
-        <i className={css}/>
+      <span className={wrapClass}>
+        <i className={css} {...rest}/>
       </span>
     ) : <i className={css} {...rest}/>;
   }
