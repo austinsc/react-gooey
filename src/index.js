@@ -12,6 +12,7 @@ export {default as Tile}from './grid/Tile';
 // Elements
 export {default as Box} from './elements/Box';
 export {default as Button} from './elements/Button';
+export {default as Delete} from './elements/Delete';
 export {default as ButtonGroup} from './elements/ButtonGroup';
 export {default as Content} from './elements/Content';
 // export {default as Form} from './elements/Form';

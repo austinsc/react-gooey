@@ -13,3 +13,10 @@ The `<Icon/>` container will take up exactly **24 x 24 pixels**. The icon itself
 Font Awesome icons use a font-size of **28px** by default, and are best rendered when using **multiples of 7**.
 
 The `<Icon/>` container is always slightly bigger than the font-size used:
+```jsx
+<div>
+  <Icon name="home" size="small"/>
+  <Icon name="home" size="medium"/>
+  <Icon name="home"/>
+</div>
+```
