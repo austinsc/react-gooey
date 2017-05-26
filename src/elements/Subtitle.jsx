@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import * as GooeyPropTypes from '../utils/PropTypes';
 
-export default class Title extends Component {
-  static displayName = 'Title';
+export default class Subtitle extends Component {
+  static displayName = 'Subtitle';
   static propTypes = {
     children: PropTypes.any,
     size: PropTypes.oneOfType([GooeyPropTypes.title, PropTypes.object]),
+    subtitle: PropTypes.bool,
     className: PropTypes.any
   };
 

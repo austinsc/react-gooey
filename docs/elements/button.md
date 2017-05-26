@@ -144,13 +144,28 @@
 </ButtonGroup>
 ```
 
-> If the button only contains an icon, the button remains **square**, no matter the size of the button or of the icon.
+> If the button only contains an icon, the button remains **square**, no matter the size of the button _or_ of the icon.
 ```jsx
-<ButtonGroup>
-  <Button size="small" icon="header"/>
-  <Button size="medium" icon="header"/>
-  <Button size="large" icon="header"/>
-</ButtonGroup>
+<div>
+  <ButtonGroup>
+    <Button size="small" icon="header" iconSize="small"/>
+  </ButtonGroup>
+  <ButtonGroup>
+    <Button icon="header" iconSize="small"/>
+    <Button icon="header"/>
+  </ButtonGroup>
+  <ButtonGroup>
+    <Button size="medium" icon="header" iconSize="small"/>
+    <Button size="medium" icon="header" iconSize="normal"/>
+    <Button size="medium" icon="header" iconSize="medium"/>
+  </ButtonGroup>
+  <ButtonGroup>
+    <Button size="large" icon="header" iconSize="small"/>
+    <Button size="large" icon="header" iconSize="normal"/>
+    <Button size="large" icon="header" iconSize="medium"/>
+    <Button size="large" icon="header" iconSize="large"/>
+  </ButtonGroup>
+</div>
 ```
 
 ## Button Group

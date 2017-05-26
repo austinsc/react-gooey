@@ -21,6 +21,7 @@ export default class Button extends Component {
     text: PropTypes.string,
     color: GooeyPropTypes.buttonColor,
     size: PropTypes.oneOf(SIZES),
+    iconSize: PropTypes.oneOf(SIZES),
     loading: PropTypes.bool,
     outlined: PropTypes.bool,
     inverted: PropTypes.bool,
@@ -40,7 +41,7 @@ export default class Button extends Component {
   };
 
   render() {
-    const {color, outlined, inverted, focused, hovered, loading, active, size, text, icon, children, className, iconPosition, ...rest} = this.props;
+    const {color, outlined, inverted, focused, hovered, loading, active, size, text, icon, children, className, iconSize, iconPosition, ...rest} = this.props;
     const classes = classNames('button', {
       [`is-${color}`]: color !== 'default',
       [`is-${size}`]: size !== 'normal',
@@ -56,7 +57,7 @@ export default class Button extends Component {
     let iconComponent = null;
     if(icon) {
       if(typeof icon === 'string') {
-        iconComponent = <Icon name={icon} wrap wrapSize={bulmaSizeToFontAwesomeSize(size)} />;
+        iconComponent = <Icon name={icon} wrap wrapSize={iconSize || bulmaSizeToFontAwesomeSize(size)} />;
       } else {
         iconComponent = <Icon {...icon} />;
       }
