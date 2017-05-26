@@ -3,20 +3,18 @@
 There are **2 types** of headings:
 
 ```jsx
-<div>
-  <Title>
-    Title
-  </Title>
-  <Title subtitle>
+<Title>
+  Title
+  <Subtitle>
     Subtitle
-  </Title>
-</div>
+  </Subtitle>
+</Title>
 ```
 
 
 There are **6 sizes** available:
 
-```jsx
+```jsx|span-3
 <div>
   <Title size="1">
     Title 1
@@ -24,7 +22,7 @@ There are **6 sizes** available:
   <Title size="2">
     Title 2
   </Title>
-   <Title size="3">
+  <Title size="3">
     Title 3 (default size)
   </Title>
   <Title size="4">
@@ -36,38 +34,51 @@ There are **6 sizes** available:
   <Title size="6">
     Title 6
   </Title>
-  <Title size="1" subtitle>
+</div>
+```
+
+```jsx|span-3
+<div>
+  <Subtitle size="1">
     Subtitle 1
-  </Title>
-  <Title size="2" subtitle>
+  </Subtitle>
+  <Subtitle size="2">
     Subtitle 2
-  </Title>
-   <Title size="3" subtitle>
+  </Subtitle>
+  <Subtitle size="3">
     Subtitle 3 
-  </Title>
-  <Title size="4" subtitle>
+  </Subtitle>
+  <Subtitle size="4">
     Subtitle 4
-  </Title>
-  <Title size="5" subtitle>
+  </Subtitle>
+  <Subtitle size="5">
     Subtitle 5 (default size)
-  </Title>
-  <Title size="6" subtitle>
+  </Subtitle>
+  <Subtitle size="6">
     Subtitle 6
-  </Title>
+  </Subtitle>
 </div>
 ```
 
 When you **combine** a `<Title/>` and a `<Subtitle/>`, they move closer together.
 
+```hint
 As a rule of thumb, it is recommended to use a size difference of **two**. So if you use a `<Title size="1"/>`, combine it with a `<Title size="3" subtitle/>`.
+```
 
 ```jsx
 <div>
-  <Title size="1">Title 1</Title>
-  <Title size="3" subtitle>Subtitle 3</Title>
-  <Title size="2">Title 2</Title>
-  <Title size="4" subtitle>Subtitle 4</Title>
-  <Title size="3">Title 3</Title>
-  <Title size="5" subtitle>Subtitle 5</Title>
+  <Title size="1">
+    Title 1
+    <Subtitle size="3">Subtitle 3</Subtitle>
+  </Title>
+  <Title size="2">
+    Title 2
+    <Subtitle size="4">Subtitle 4</Subtitle>
+  </Title>
+  <Title size="3">
+    Title 3
+    <Subtitle size="5">Subtitle 5</Subtitle>
+  </Title>    
 </div>
 ```

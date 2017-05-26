@@ -11,18 +11,17 @@ export default class Subtitle extends Component {
     subtitle: PropTypes.bool,
     className: PropTypes.any
   };
+  static defaultProps = {
+    size: 5
+  };
 
   render() {
     const {children, size, className, ...rest} = this.props;
-    const classes = classNames('title', {
+    const classes = classNames('subtitle', {
       [`is-${size}`]: !!size,
       [className]: !!className
     });
-    return (
-      <p className={classes} {...rest}>
-        {children}
-      </p>
-    );
+    return React.createElement(`h${size}`, {className: classes, ...rest}, children);
   }
 }
 

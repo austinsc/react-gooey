@@ -23,6 +23,7 @@ export {default as Tag} from './elements/Tag';
 export {default as Table} from './elements/Table';
 export {default as Progress} from './elements/Progress';
 export {default as Title} from './elements/Title';
+export {default as Subtitle} from './elements/Subtitle';
 
 // // Controls
 // export {default as Input} from './controls/Input';

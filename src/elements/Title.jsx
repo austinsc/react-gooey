@@ -10,6 +10,9 @@ export default class Title extends Component {
     size: PropTypes.oneOfType([GooeyPropTypes.title, PropTypes.object]),
     className: PropTypes.any
   };
+  static defaultProps = {
+    size: 3
+  };
 
   render() {
     const {children, size, className, ...rest} = this.props;
@@ -17,11 +20,7 @@ export default class Title extends Component {
       [`is-${size}`]: !!size,
       [className]: !!className
     });
-    return (
-      <p className={classes} {...rest}>
-        {children}
-      </p>
-    );
+    return React.createElement(`h${size}`, {className: classes, ...rest}, children);
   }
 }
 
