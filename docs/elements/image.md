@@ -13,11 +13,17 @@ There are **7** dimensions to choose from, useful for **avatars**.
 ```jsx
 <div>
   <Image size="16x16" src="http://placehold.it/16x16"/>
+  <br />
   <Image size="24x24" src="http://placehold.it/24x24"/>
+  <br />
   <Image size="32x32" src="http://placehold.it/32x32"/>
+  <br />
   <Image size="48x48" src="http://placehold.it/48x48"/>
+  <br />
   <Image size="64x64" src="http://placehold.it/64x64"/>
+  <br />
   <Image size="96x96" src="http://placehold.it/96x96"/>
+  <br />
   <Image size="128x128" src="http://placehold.it/128x128"/>
 </div>
 ```
@@ -39,10 +45,15 @@ If you don"t know the exact dimensions but know the **ratio** instead, you can u
 ```jsx|span-4
 <div>
   <Image ratio="square" src="http://placehold.it/256x256"/>
+  <br />
   <Image size="1by1" src="http://placehold.it/480x480"/>
+  <br />
   <Image size="4by3" src="http://placehold.it/640x480"/>
+  <br />
   <Image size="3by2" src="http://placehold.it/480x320"/>
+  <br />
   <Image size="16by9" src="http://placehold.it/640x360"/>
+  <br />
   <Image size="2by1" src="http://placehold.it/640x320"/>
 </div>
 ```

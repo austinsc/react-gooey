@@ -1,5 +1,6 @@
-import _ from 'lodash';
-import React, {Component} from 'react'; import PropTypes from 'prop-types';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import * as GooeyPropTypes from '../utils/PropTypes'
 import classNames from 'classnames';
 import Icon from './Icon';
 
@@ -18,18 +19,7 @@ export default class Button extends Component {
   static displayName = 'Button';
   static propTypes = {
     text: PropTypes.string,
-    color: PropTypes.oneOf([
-      'default',
-      'primary',
-      'info',
-      'success',
-      'warning',
-      'danger',
-      'dark',
-      'link',
-      'light',
-      'white'
-    ]),
+    color: GooeyPropTypes.buttonColor,
     size: PropTypes.oneOf(SIZES),
     loading: PropTypes.bool,
     outlined: PropTypes.bool,
@@ -38,7 +28,7 @@ export default class Button extends Component {
     hovered: PropTypes.bool,
     active: PropTypes.bool,
     children: PropTypes.any,
-    icon: PropTypes.any,
+    icon: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     className: PropTypes.any,
     iconPosition: PropTypes.oneOf(['left', 'right'])
   };
@@ -65,15 +55,15 @@ export default class Button extends Component {
     const content = text || children ? <span>{text || children}</span> : null;
     let iconComponent = null;
     if(icon) {
-      if(_.isString(icon)) {
+      if(typeof icon === 'string') {
         iconComponent = <Icon name={icon} wrap wrapSize={bulmaSizeToFontAwesomeSize(size)} />;
-      } else if(_.isObject(icon)) {
+      } else {
         iconComponent = <Icon {...icon} />;
       }
     }
 
     return (
-      <a {..._.omit(this.props, _.keys(Button.propTypes))} className={classes} {...rest}>
+      <a className={classes} {...rest}>
         {iconPosition === 'left' && iconComponent}
         {content}
         {iconPosition === 'right' && iconComponent}

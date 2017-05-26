@@ -35,3 +35,6 @@ export {default as Title} from './elements/Title';
 export {default as Hero} from './layout/Hero';
 export {default as Container} from './layout/Container';
 export {default as Section} from './layout/Section';
+
+// Forms
+export {default as Form} from './forms/Form';

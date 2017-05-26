@@ -67,7 +67,7 @@ const common = {
         {
           loader: 'sass-loader',
           options: {
-            includePaths: [path.resolve(__dirname, 'node_modules')]
+            includePaths: [path.resolve(ROOT_PATH, 'node_modules')]
           }
         }
       ]
@@ -191,7 +191,7 @@ if(TARGET === 'gh-pages' || TARGET === 'gh-pages:stats') {
       ]
     },
     output: {
-      path: './gh-pages',
+      path: path.resolve(ROOT_PATH, 'gh-pages'),
       filename: '[name].[chunkhash].js',
       chunkFilename: '[chunkhash].js'
     },
@@ -205,7 +205,6 @@ if(TARGET === 'gh-pages' || TARGET === 'gh-pages:stats') {
         'process.env.NODE_ENV': '"production"'
       }),
       new NamedModulesPlugin(),
-      new webpack.optimize.DedupePlugin(),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
           warnings: false
@@ -216,10 +215,10 @@ if(TARGET === 'gh-pages' || TARGET === 'gh-pages:stats') {
       })
     ],
     module: {
-      rules: [{
+      rules: [/*{
         test: /\.css$/,
-        use: [{loader: ExtractTextPlugin.extract('style', 'css')}]
-      }, {
+        use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
+      }, */{
         test: /\.jsx?$/,
         use: [{loader: 'babel-loader'}],
         include: [
