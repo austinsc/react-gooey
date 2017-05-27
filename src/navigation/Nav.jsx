@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-export default class Nav extends Component {
+export default class Nav extends PureComponent {
   static displayName = 'Nav';
   static propTypes = {
     children: PropTypes.any,

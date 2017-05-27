@@ -1,9 +1,15 @@
 // Components
-export {Nav, NavItem, NavItemLink, NavSection, NavToggle} from './components/Nav';
 export {Level, LevelItem, LevelSection} from './components/Level';
 export {ModalCard} from './components/Modal';
 export {Card} from './components/Card';
 export {MediaObject} from './components/MediaObject';
+
+// Navigation
+export {default as Nav} from './navigation/Nav';
+export {default as NavItem} from './navigation/NavItem';
+export {default as NavItemLink} from './navigation/NavItemLink';
+export {default as NavSection} from './navigation/NavSection';
+export {default as NavToggle} from './navigation/NavToggle';
 
 // Grid
 export {Columns, Column} from './grid/Columns';

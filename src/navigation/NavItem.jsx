@@ -1,6 +1,7 @@
-import React,{Component, PropTypes} from 'react';
+import React, {PureComponent} from 'react';
+import PropTypes from 'prop-types';
 
-export default class NavItem extends Component{
+export default class NavItem extends PureComponent{
   static displayName = 'NavItem';
   static propTypes = {children:PropTypes.any};
 
