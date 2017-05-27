@@ -151,11 +151,10 @@ const specimen = {
 };
 
 
-// Catalog - logoSrc="../images/logo.png"
 ReactDOM.render(
   <div>
     <GithubCorner href={`https://github.com/${USER}/${NAME}`} bannerColor="#fff" octoColor="#000" width={80} height={80} direction="right"/>
-    <Catalog imports={documentationImports} pages={pages} specimens={specimen} title={`${NAME} v${VERSION}`}/>
+    <Catalog imports={documentationImports} pages={pages} specimens={specimen} title={`${NAME} v${VERSION}`} logoSrc="../react-gooey.svg"/>
   </div>,
   document.getElementById('app')
 );
