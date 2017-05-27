@@ -22,8 +22,8 @@ export default class ObjectField extends Component {
       ).isRequired,
       fields: PropTypes.objectOf(PropTypes.func).isRequired,
       definitions: PropTypes.object.isRequired,
-      formContext: PropTypes.object.isRequired,
-    }),
+      formContext: PropTypes.object.isRequired
+    })
   };
   static defaultProps = {
     uiSchema: {},
@@ -32,7 +32,7 @@ export default class ObjectField extends Component {
     idSchema: {},
     required: false,
     disabled: false,
-    readonly: false,
+    readonly: false
   };
 
   isRequired(name) {

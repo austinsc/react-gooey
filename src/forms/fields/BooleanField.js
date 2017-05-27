@@ -21,14 +21,14 @@ export default class BooleanField extends Component {
       ).isRequired,
       fields: PropTypes.objectOf(PropTypes.func).isRequired,
       definitions: PropTypes.object.isRequired,
-      formContext: PropTypes.object.isRequired,
-    }),
+      formContext: PropTypes.object.isRequired
+    })
   };
   static defaultProps = {
     uiSchema: {},
     disabled: false,
     readonly: false,
-    autofocus: false,
+    autofocus: false
   };
 
   render() {
@@ -39,7 +39,7 @@ export default class BooleanField extends Component {
     const Widget = getWidget(schema, widget, widgets);
     const enumOptions = optionsList({
       enum: [true, false],
-      enumNames: schema.enumNames || ['yes', 'no'],
+      enumNames: schema.enumNames || ['yes', 'no']
     });
     return (
       <Widget

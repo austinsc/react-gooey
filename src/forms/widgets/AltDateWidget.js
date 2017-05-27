@@ -46,14 +46,14 @@ export default class AltDateWidget extends Component {
     autofocus: PropTypes.bool,
     onChange: PropTypes.func,
     onBlur: PropTypes.func,
-    time: PropTypes.bool,
+    time: PropTypes.bool
   };
 
   static defaultProps = {
     time: false,
     disabled: false,
     readonly: false,
-    autofocus: false,
+    autofocus: false
   };
 
   constructor(props) {
@@ -106,7 +106,7 @@ export default class AltDateWidget extends Component {
     const data = [
       {type: 'year', range: [1900, 2020], value: year},
       {type: 'month', range: [1, 12], value: month},
-      {type: 'day', range: [1, 31], value: day},
+      {type: 'day', range: [1, 31], value: day}
     ];
     if(time) {
       data.push(

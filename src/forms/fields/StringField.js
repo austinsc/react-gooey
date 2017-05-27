@@ -18,19 +18,19 @@ export default class StringField extends Component {
       ).isRequired,
       fields: PropTypes.objectOf(PropTypes.func).isRequired,
       definitions: PropTypes.object.isRequired,
-      formContext: PropTypes.object.isRequired,
+      formContext: PropTypes.object.isRequired
     }),
     formContext: PropTypes.object.isRequired,
     required: PropTypes.bool,
     disabled: PropTypes.bool,
     readonly: PropTypes.bool,
-    autofocus: PropTypes.bool,
+    autofocus: PropTypes.bool
   };
   static defaultProps = {
     uiSchema: {},
     disabled: false,
     readonly: false,
-    autofocus: false,
+    autofocus: false
   };
 
   render() {

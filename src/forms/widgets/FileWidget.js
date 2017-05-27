@@ -16,7 +16,7 @@ function processFile(file) {
         dataURL: addNameToDataURL(event.target.result, name),
         name,
         size,
-        type,
+        type
       });
     };
     reader.readAsDataURL(file);
@@ -54,14 +54,14 @@ function extractFileInfo(dataURLs) {
       return {
         name: name,
         size: blob.size,
-        type: blob.type,
+        type: blob.type
       };
     });
 }
 
 class FileWidget extends Component {
   defaultProps = {
-    multiple: false,
+    multiple: false
   };
 
   constructor(props) {
@@ -80,7 +80,7 @@ class FileWidget extends Component {
     processFiles(event.target.files).then(filesInfo => {
       const state = {
         values: filesInfo.map(fileInfo => fileInfo.dataURL),
-        filesInfo,
+        filesInfo
       };
       setState(this, state, () => {
         if (multiple) {
@@ -116,7 +116,7 @@ class FileWidget extends Component {
 }
 
 FileWidget.defaultProps = {
-  autofocus: false,
+  autofocus: false
 };
 
 if (process.env.NODE_ENV !== 'production') {
@@ -124,9 +124,9 @@ if (process.env.NODE_ENV !== 'production') {
     multiple: PropTypes.bool,
     value: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.arrayOf(PropTypes.string),
+      PropTypes.arrayOf(PropTypes.string)
     ]),
-    autofocus: PropTypes.bool,
+    autofocus: PropTypes.bool
   };
 }
 

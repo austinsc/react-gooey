@@ -41,7 +41,7 @@ export default class SelectWidget extends Component {
     id: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     options: PropTypes.shape({
-      enumOptions: PropTypes.array,
+      enumOptions: PropTypes.array
     }).isRequired,
     value: PropTypes.any,
     required: PropTypes.bool,
@@ -50,10 +50,10 @@ export default class SelectWidget extends Component {
     multiple: PropTypes.bool,
     autofocus: PropTypes.bool,
     onChange: PropTypes.func,
-    onBlur: PropTypes.func,
+    onBlur: PropTypes.func
   };
   static defaultProps = {
-    autofocus: false,
+    autofocus: false
   };
 
   render() {
