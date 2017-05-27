@@ -36,7 +36,7 @@ export default {
 
   // Used in Menu and PageHeader to make sure the top parts have
   // the same height.
-  pageHeadingHeight: 100,
+  pageHeadingHeight: 200,
 
   // NavigationBar (links), ResponsiveTabs (tab text), Download specimen (title text).
   // Typography: headings.

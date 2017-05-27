@@ -1,29 +1,35 @@
-import React, {Component} from 'react'; import PropTypes from 'prop-types';
+import React, {PureComponent} from 'react'; import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-export class MediaObject extends Component {
+const Nested = (cn) => function ({className, children}) {
+  const classes = classNames(`media-${cn}`, {
+    [className]: !!className
+  });
+  return (
+    <div className={classes}>
+      {children}
+    </div>
+  );
+};
+
+export class MediaObject extends PureComponent {
   static displayName = 'MediaObject';
   static propTypes = {
     children: PropTypes.any,
-    className: PropTypes.string,
-    left: PropTypes.bool,
-    right: PropTypes.bool,
-    content: PropTypes.bool
+    className: PropTypes.string
   };
+  static Left = Nested('left');
+  static Right = Nested('right');
+  static Content = Nested('content');
+
 
   render() {
-    const {children, className, left, right, content, ...rest} = this.props;
-    const classes = classNames({
-      'media': !left && !right && !content,
-      'media-left': !!left,
-      'media-right': !!right,
-      'media-content': !!content,
+    const {children, className, ...rest} = this.props;
+    const classes = classNames('media', {
       [className]: !!className
     });
-    const contents = content || children ? <div>{children}</div> : null;
-    return left || right || content ? (
-      <div className={classes} {...rest}>{contents}</div>)
-      : (<article className={classes} {...rest}>{contents}</article>
+    return (
+      <div className={classes} {...rest}>{children}</div>
     );
   }
 }

@@ -3,36 +3,39 @@
 The media object is a UI element perfect for repeatable and nestable content.
 
 ```jsx
-<MediaObject>
-  <MediaObject left>
-    <Image size='64x64' source='http://placehold.it/128x128'/>
+<div>
+  <MediaObject>
+    <MediaObject.Left>
+      <Image size='64x64' src='http://placehold.it/128x128'/>
+    </MediaObject.Left>
+    <MediaObject.Content>
+      <Content>
+        <p>
+          <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+          <br/>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+        </p>
+      </Content>
+    </MediaObject.Content>
+    <MediaObject.Right>
+      <Delete />
+    </MediaObject.Right>
   </MediaObject>
-  <MediaObject content>
-    <Content>
-      <p>
-        <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
-        <br/>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
-      </p>
-    </Content>
-  </MediaObject>
-  <MediaObject right>
-    <Button className='delete'/>
-  </MediaObject>
-</MediaObject>
+</div>
 ```
 
 You can include any other ReactGooey element, like inputs, icons, buttons... or even a nav bar.
 
 ```jsx
 <MediaObject>
-  <MediaObject left>
-    <Image size='64x64' source='http://placehold.it/128x128'/>
-  </MediaObject>
-  <MediaObject content>
+  <MediaObject.Left>
+    <Image size='64x64' src='http://placehold.it/128x128'/>
+  </MediaObject.Left>
+  <MediaObject.Content>
     <p className="control">
       <textarea className="textarea" placeholder="Add a comment..."></textarea>
     </p>
+    <br />
     <Level>
       <LevelSection left>
         <LevelItem>
@@ -45,7 +48,7 @@ You can include any other ReactGooey element, like inputs, icons, buttons... or 
         </LevelItem>
       </LevelSection>
     </Level>
-  </MediaObject>
+  </MediaObject.Content>
 </MediaObject>
 ```
 
@@ -55,40 +58,39 @@ You can nest media objects up to **3 levels** deep.
 
 ```jsx
 <MediaObject>
-  <MediaObject left>
-    <Image size='64x64' source='http://placehold.it/128x128'/>
-  </MediaObject>
-  <MediaObject content>
+  <MediaObject.Left>
+    <Image size='64x64' src='http://placehold.it/128x128'/>
+  </MediaObject.Left>
+  <MediaObject.Content>
     <Content>
       <p>
         <strong>Barbara Middleton</strong>
         <br/>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
-      </p>
-      <ButtonGroup>
-        <Button color='link' text='Like'/>
-        <Button color='link' text='Reply'/>
-      </ButtonGroup>
-      
+        <br />
+        <small>
+          <a>Like</a> · <a>Reply</a> · 2 hrs
+        </small>
+      </p>    
       <MediaObject>
-        <MediaObject left>
-          <Image size='64x64' source='http://placehold.it/128x128'/>
-        </MediaObject>
-        <MediaObject content>
+        <MediaObject.Left>
+          <Image size='64x64' src='http://placehold.it/128x128'/>
+        </MediaObject.Left>
+        <MediaObject.Content>
           <Content>
             <p>
               <strong>Barbara Middleton</strong>
               <br/>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+              <br />
+              <small>
+                <a>Like</a> · <a>Reply</a> · 2 hrs
+              </small>
             </p>
-            <ButtonGroup>
-              <Button color='link' text='Like'/>
-              <Button color='link' text='Reply'/>
-            </ButtonGroup>
           </Content>
-        </MediaObject>
+        </MediaObject.Content>
       </MediaObject>
     </Content>
-  </MediaObject>
+  </MediaObject.Content>
 </MediaObject>
 ```
