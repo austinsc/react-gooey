@@ -150,12 +150,6 @@
   <Button size="small" icon="header"/>
   <Button size="medium" icon="header"/>
   <Button size="large" icon="header"/>  
-  <Button size="small" icon="header"/>
-  <Button size="small" icon="header"/>
-  <Button size="small" icon="header"/>  
-  <Button size="small" icon="header"/>
-  <Button size="small" icon="header"/>
-  <Button size="small" icon="header"/>
 </div>
 ```
 

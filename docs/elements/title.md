@@ -60,7 +60,6 @@ There are **6 sizes** available:
 When you **combine** a `<Title/>` and a `<Subtitle/>`, they move closer together.
 
 As a rule of thumb, it is recommended to use a size difference of **two**. So if you use a `<Title size="1"/>`, combine it with a `<Title size="3" subtitle/>`.
-
 ```jsx
 <div>
   <Title size="1">Title 1</Title>
@@ -69,5 +68,19 @@ As a rule of thumb, it is recommended to use a size difference of **two**. So if
   <Title size="4" subtitle>Subtitle 4</Title>
   <Title size="3">Title 3</Title>
   <Title size="5" subtitle>Subtitle 5</Title>
+</div>
+```
+
+You can maintain the normal spacing between titles and subtitles if you use the `spaced` modifier on the first element.
+```jsx|span-3
+<div>
+  <Title size="1" spaced>Title 1</Title>
+  <Title size="3" subtitle>Subtitle 3</Title>
+</div>
+```
+```jsx|span-3
+<div>
+  <Title size="2" spaced>Title 2</Title>
+  <Title size="4" subtitle>Subtitle 4</Title>
 </div>
 ```

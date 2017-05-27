@@ -8,13 +8,15 @@ export default class Title extends Component {
     children: PropTypes.any,
     size: PropTypes.oneOfType([GooeyPropTypes.title, PropTypes.object]),
     subtitle: PropTypes.bool,
+    spaced: PropTypes.bool,
     className: PropTypes.any
   };
 
   render() {
-    const {children, subtitle, size, className, ...rest}=this.props;
+    const {children, subtitle, size, spaced, className, ...rest}=this.props;
     const classes = classNames('title', {
       [`is-${size}`]: !!size,
+      'is-spaced': spaced,
       'subtitle': !!subtitle,
       [className]: !!className
     });

@@ -2,7 +2,7 @@
 
 ```jsx
 <Notification>
-  <Button className="delete"/>
+  <Delete/>
   Lorem ipsum dolor sit amet, consectetur
   adipiscing elit lorem ipsum dolor sit amet,
   consectetur adipiscing elit
@@ -11,7 +11,7 @@
 
 ```jsx
 <Notification color="primary">
-  <Button className="delete"/>
+  <Delete/>
   Primary lorem ipsum dolor sit amet, consectetur
   adipiscing elit lorem ipsum dolor sit amet,
   consectetur adipiscing elit
@@ -20,7 +20,7 @@
 
 ```jsx
 <Notification color="info">
-  <Button className="delete"/>
+  <Delete/>
   Info lorem ipsum dolor sit amet, consectetur
   adipiscing elit lorem ipsum dolor sit amet,
   consectetur adipiscing elit
@@ -29,7 +29,7 @@
 
 ```jsx
 <Notification color="success">
-  <Button className="delete"/>
+  <Delete/>
   Success lorem ipsum dolor sit amet, consectetur
   adipiscing elit lorem ipsum dolor sit amet,
   consectetur adipiscing elit
@@ -38,7 +38,7 @@
 
 ```jsx
 <Notification color="warning">  
-  <Button className="delete"/>
+  <Delete/>
   Warning lorem ipsum dolor sit amet, consectetur
   adipiscing elit lorem ipsum dolor sit amet,
   consectetur adipiscing elit
@@ -47,7 +47,7 @@
 
 ```jsx
 <Notification color="danger">
-  <Button className="delete"/>
+  <Delete/>
   Danger lorem ipsum dolor sit amet, consectetur
   adipiscing elit lorem ipsum dolor sit amet,
   consectetur adipiscing elit

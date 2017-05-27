@@ -13,7 +13,10 @@ export default class Tag extends Component {
       'success',
       'warning',
       'danger',
-      'dark'
+      'dark',
+      'black',
+      'white',
+      'light'
     ]),
     size: PropTypes.oneOf([
       'small',
