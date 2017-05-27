@@ -45,7 +45,7 @@ export default class Wizzbanger extends Component {
   static propTypes = {
     object: PropTypes.object,
     title: PropTypes.string,
-    visitors: PropTypes.object,
+    visitors: PropTypes.object
   };
   static defaultProps = {
     visitors: {}
