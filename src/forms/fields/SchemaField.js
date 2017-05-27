@@ -11,7 +11,7 @@ const COMPONENT_TYPES = {
   integer: 'NumberField',
   number: 'NumberField',
   object: 'ObjectField',
-  string: 'StringField',
+  string: 'StringField'
 };
 
 function getFieldComponent(schema, uiSchema, fields) {
@@ -81,13 +81,13 @@ export class DefaultTemplate extends Component {
     readonly: PropTypes.bool,
     displayLabel: PropTypes.bool,
     fields: PropTypes.object,
-    formContext: PropTypes.object,
+    formContext: PropTypes.object
   };
   static defaultProps = {
     hidden: false,
     readonly: false,
     required: false,
-    displayLabel: true,
+    displayLabel: true
   };
 
   render() {
@@ -99,8 +99,8 @@ export class DefaultTemplate extends Component {
     return (
       <div className={classNames}>
         {displayLabel && <Label label={label} required={required} id={id}/>}
-        {children}
         {displayLabel && description ? description : null}
+        {children}
         {errors}
         {help}
       </div>
@@ -129,8 +129,8 @@ export default class SchemaField extends Component {
       definitions: PropTypes.object.isRequired,
       ArrayFieldTemplate: PropTypes.func,
       FieldTemplate: PropTypes.func,
-      formContext: PropTypes.object.isRequired,
-    }),
+      formContext: PropTypes.object.isRequired
+    })
   };
   static defaultProps = {
     uiSchema: {},
@@ -138,7 +138,7 @@ export default class SchemaField extends Component {
     idSchema: {},
     disabled: false,
     readonly: false,
-    autofocus: false,
+    autofocus: false
   };
 
   shouldComponentUpdate(nextProps) {
@@ -200,7 +200,7 @@ export default class SchemaField extends Component {
     const help = uiSchema['ui:help'];
     const hidden = uiSchema['ui:widget'] === 'hidden';
 
-    const classNames = cn(`field field-${type}`, {
+    const classNames = cn(`field-${type}`, {
       'field-error has-error is-danger': errors && errors.length,
       [uiSchema.classNames]: uiSchema.classNames
     });
@@ -222,7 +222,7 @@ export default class SchemaField extends Component {
       formContext,
       fields,
       schema,
-      uiSchema,
+      uiSchema
     };
 
     return (

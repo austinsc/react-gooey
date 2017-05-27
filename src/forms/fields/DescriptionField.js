@@ -5,7 +5,7 @@ export default class DescriptionField extends Component {
   static displayName = 'DescriptionField';
   static propTypes = {
     id: PropTypes.string,
-    description: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+    description: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
   };
 
   render() {

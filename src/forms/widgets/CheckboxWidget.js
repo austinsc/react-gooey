@@ -12,7 +12,7 @@ function CheckboxWidget(props) {
     readonly,
     label,
     autofocus,
-    onChange,
+    onChange
   } = props;
   return (
     <div className={`checkbox ${disabled || readonly ? 'disabled' : ''}`}>
@@ -35,7 +35,7 @@ function CheckboxWidget(props) {
 }
 
 CheckboxWidget.defaultProps = {
-  autofocus: false,
+  autofocus: false
 };
 
 if (process.env.NODE_ENV !== 'production') {
@@ -47,7 +47,7 @@ if (process.env.NODE_ENV !== 'production') {
     disabled: PropTypes.bool,
     readonly: PropTypes.bool,
     autofocus: PropTypes.bool,
-    onChange: PropTypes.func,
+    onChange: PropTypes.func
   };
 }
 

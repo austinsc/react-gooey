@@ -22,7 +22,7 @@ function DateTimeWidget(props) {
 
 if (process.env.NODE_ENV !== 'production') {
   DateTimeWidget.propTypes = {
-    value: PropTypes.string,
+    value: PropTypes.string
   };
 }
 

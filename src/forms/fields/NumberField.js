@@ -13,10 +13,10 @@ export default class NumberField extends Component{
     onChange: PropTypes.func.isRequired,
     formData: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     required: PropTypes.bool,
-    formContext: PropTypes.object.isRequired,
+    formContext: PropTypes.object.isRequired
   };
   static defaultProps = {
-    uiSchema: {},
+    uiSchema: {}
   };
 
   render() {

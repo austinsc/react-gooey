@@ -8,7 +8,7 @@ export default class TitleField extends Component {
   static propTypes = {
     id: PropTypes.string,
     title: PropTypes.string,
-    required: PropTypes.bool,
+    required: PropTypes.bool
   };
 
   render() {

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Button} from '../../elements/Button';
+import Button from '../../elements/Button';
 import {getWidget, getDefaultFormState, getUiOptions, isMultiSelect, isFilesArray, isFixedItems, allowAdditionalItems, optionsList, retrieveSchema, toIdSchema, getDefaultRegistry} from '../utils';
 
 function ArrayFieldTitle({TitleField, idSchema, title, required}) {
@@ -91,8 +91,8 @@ export default class ArrayField extends Component {
       'ui:options': PropTypes.shape({
         addable: PropTypes.bool,
         orderable: PropTypes.bool,
-        removable: PropTypes.bool,
-      }),
+        removable: PropTypes.bool
+      })
     }),
     idSchema: PropTypes.object,
     errorSchema: PropTypes.object,
@@ -109,8 +109,8 @@ export default class ArrayField extends Component {
       ).isRequired,
       fields: PropTypes.objectOf(PropTypes.func).isRequired,
       definitions: PropTypes.object.isRequired,
-      formContext: PropTypes.object.isRequired,
-    }),
+      formContext: PropTypes.object.isRequired
+    })
   };
 
   static defaultProps = {
@@ -120,7 +120,7 @@ export default class ArrayField extends Component {
     required: false,
     disabled: false,
     readonly: false,
-    autofocus: false,
+    autofocus: false
   };
 
   get itemTitle() {
@@ -216,7 +216,7 @@ export default class ArrayField extends Component {
       autofocus,
       registry = getDefaultRegistry(),
       formContext,
-      onBlur,
+      onBlur
     } = this.props;
     const title = schema.title === undefined ? name : schema.title;
     const {ArrayFieldTemplate, definitions, fields} = registry;
@@ -240,7 +240,7 @@ export default class ArrayField extends Component {
           itemData: formData[index],
           itemUiSchema: uiSchema.items,
           autofocus: autofocus && index === 0,
-          onBlur,
+          onBlur
         });
       }),
       className: `field field-array field-array-of-${itemsSchema.type}`,
@@ -254,7 +254,7 @@ export default class ArrayField extends Component {
       schema,
       title,
       TitleField,
-      formContext,
+      formContext
     };
 
     // Check if a custom render function was passed in
@@ -271,7 +271,7 @@ export default class ArrayField extends Component {
       readonly,
       autofocus,
       onBlur,
-      registry = getDefaultRegistry(),
+      registry = getDefaultRegistry()
     } = this.props;
     const items = this.props.formData;
     const {widgets, definitions, formContext} = registry;
@@ -279,7 +279,7 @@ export default class ArrayField extends Component {
     const enumOptions = optionsList(itemsSchema);
     const {widget = 'select', ...options} = {
       ...getUiOptions(uiSchema),
-      enumOptions,
+      enumOptions
     };
     const Widget = getWidget(schema, widget, widgets);
     return (
@@ -372,7 +372,7 @@ export default class ArrayField extends Component {
           itemIdSchema,
           itemErrorSchema,
           autofocus: autofocus && index === 0,
-          onBlur,
+          onBlur
         });
       }),
       onAddClick: this.onAddClick,
@@ -381,7 +381,7 @@ export default class ArrayField extends Component {
       schema,
       uiSchema,
       title,
-      TitleField,
+      TitleField
     };
 
     // Check if a custom template template was passed in
@@ -401,24 +401,24 @@ export default class ArrayField extends Component {
       itemIdSchema,
       itemErrorSchema,
       autofocus,
-      onBlur,
+      onBlur
     } = props;
     const {
       disabled,
       readonly,
       uiSchema,
-      registry = getDefaultRegistry(),
+      registry = getDefaultRegistry()
     } = this.props;
     const {fields: {SchemaField}} = registry;
     const {orderable, removable} = {
       orderable: true,
       removable: true,
-      ...uiSchema['ui:options'],
+      ...uiSchema['ui:options']
     };
     const has = {
       moveUp: orderable && canMoveUp,
       moveDown: orderable && canMoveDown,
-      remove: removable && canRemove,
+      remove: removable && canRemove
     };
     has.toolbar = Object.keys(has).some(key => has[key]);
 
@@ -448,7 +448,7 @@ export default class ArrayField extends Component {
       index,
       onDropIndexClick: this.onDropIndexClick,
       onReorderClick: this.onReorderClick,
-      readonly,
+      readonly
     };
   }
 

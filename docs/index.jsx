@@ -5,9 +5,12 @@ import GithubCorner from 'react-github-corner';
 import {Catalog, CodeSpecimen, ReactSpecimen} from 'catalog';
 import * as Gooey from '../src/index';
 import {colors} from '../src/utils';
+import logo from '../react-gooey.svg';
+import theme from './theme';
 import '../src/css/main';
 
 const documentationImports = {
+  // React,
   ReactDOM,
   ...Gooey,
   colors
@@ -144,6 +147,13 @@ const pages = [{
     title: 'Section',
     component: require('../docs/layout/section.md')
   }]
+}, {
+  title: 'Forms',
+  pages: [{
+    path: '/forms/form',
+    title: 'Forms',
+    component: require('../docs/forms/form.md')
+  }]
 }];
 const specimen = {
   js: props => <CodeSpecimen {...props} lang="javascript"/>,
@@ -154,7 +164,7 @@ const specimen = {
 ReactDOM.render(
   <div>
     <GithubCorner href={`https://github.com/${USER}/${NAME}`} bannerColor="#fff" octoColor="#000" width={80} height={80} direction="right"/>
-    <Catalog imports={documentationImports} pages={pages} specimens={specimen} title={`${NAME} v${VERSION}`} logoSrc="../react-gooey.svg"/>
+    <Catalog imports={documentationImports} pages={pages} specimens={specimen} title={`${NAME} v${VERSION}`} logoSrc={logo} theme={theme}/>
   </div>,
   document.getElementById('app')
 );

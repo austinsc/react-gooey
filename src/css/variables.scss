@@ -1,42 +1,26 @@
 @import "~bulma/sass/utilities/initial-variables";
 
-//$grey-darker: #222324;
-//$grey-dark: #69707a;
-//$grey: #aeb1b5;
-//$grey-light: #d3d6db;
-//$grey-lighter: #f5f7fa;
-//$blue: #42afe3;
-//$green: #80d050;
-//$orange: #ff5223;
-//$purple: #8e36b9;
-//$red: #fd2c00;
-//$turquoise: #1fc8db;
-//$yellow: #fce844;
-//$light: $grey-lighter;
-//$dark: $grey-darker;
-//
-//$blue-invert: $light;
-//$green-invert: $light;
-//$orange-invert: $light;
-//$purple-invert: $light;
-//$red-invert: $light;
-//$turquoise-invert: $light;
-//$yellow-invert: $dark;
-//
-//$primary: $turquoise;
-//$primary-invert: $turquoise-invert;
-//$info: $blue;
-//$info-invert: $blue-invert;
-//$success: $green;
-//$success-invert: $green-invert;
-//$warning: $yellow;
-//$warning-invert: $yellow-invert;
-//$danger: $red;
-//$danger-invert: $red-invert;
-//$light-invert: $dark;
-//$dark-invert: $light;
-//$midgray: $grey;
-//$midgray-invert: $light;
+$black:        hsl(0, 0%, 4%) !default
+$black-bis:    hsl(0, 0%, 7%) !default
+$black-ter:    hsl(0, 0%, 14%) !default
+
+$grey-darker:  hsl(0, 0%, 21%) !default
+$grey-dark:    hsl(0, 0%, 29%) !default
+$grey:         hsl(0, 0%, 48%) !default
+$grey-light:   hsl(0, 0%, 71%) !default
+$grey-lighter: hsl(0, 0%, 86%) !default
+
+$white-ter:    hsl(0, 0%, 96%) !default
+$white-bis:    hsl(0, 0%, 98%) !default
+$white:        hsl(0, 0%, 100%) !default
+
+$orange:       hsl(14,  100%, 53%) !default
+$yellow:       hsl(48,  100%, 67%) !default
+$green:        hsl(141, 71%,  48%) !default
+$turquoise:    hsl(171, 100%, 41%) !default
+$blue:         hsl(217, 71%,  53%) !default
+$purple:       hsl(271, 100%, 71%) !default
+$red:          hsl(348, 100%, 61%) !default
 
 
 @import "~bulma";
