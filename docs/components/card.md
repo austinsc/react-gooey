@@ -1,3 +1,2 @@
 # Card Components
-
-Here is some info about the components. 
+An all-around flexible and composable component

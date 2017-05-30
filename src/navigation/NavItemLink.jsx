@@ -8,12 +8,21 @@ import {withRouter} from 'react-router';
 export default class NavItemLink extends Component {
   static displayName = 'NavItemLink';
   static propTypes = {
+    /**
+     * Child elements to be rendered within the component.
+     */
     children: PropTypes.any,
+    /**
+     * Destination for nav link component.
+     */
     to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
     query: PropTypes.object,
     hash: PropTypes.string,
     state: PropTypes.object,
     onlyActiveOnIndex: PropTypes.bool,
+    /**
+     * Function specifiying behavior when component is clicked.
+     */
     onClick: PropTypes.func,
     /**
      * CSS classes to be rendered on the root element of this component.
