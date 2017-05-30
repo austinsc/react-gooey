@@ -81,14 +81,17 @@ export class ModalCard extends Component {
         {footer}
       </footer>
     );
+    const head = !title ? null : (
+      <header className="modal-card-head">
+        <p className="modal-card-title">{title}</p>
+        {closeButton}
+      </header>
+    );
 
     return (
       <ModalBase onClose={onClose} active={active}>
         <div className={classes} {...rest}>
-          <header className="modal-card-head">
-            <p className="modal-card-title">{title}</p>
-            {closeButton}
-          </header>
+         {head}
           <section className="modal-card-body">
             {children}
           </section>
