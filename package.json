@@ -3,10 +3,10 @@
   "description": "Gooey",
   "authors": [
     "Stephen C. Austin <stephen.austin@pwnt.co>",
-    "Emily Moore"
+    "Emily Moore <emily.moore@rovisys.com>"
   ],
   "user": "austinsc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "start": "webpack-dev-server",
     "docgen": "react-doc-generator ./src -o ./docs/props.md",
