@@ -16,6 +16,9 @@ export class MediaObject extends PureComponent {
   static displayName = 'MediaObject';
   static propTypes = {
     children: PropTypes.any,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
     className: PropTypes.string
   };
   static Left = Nested('left');

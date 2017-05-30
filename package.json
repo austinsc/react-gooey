@@ -9,6 +9,7 @@
   "version": "0.0.1",
   "scripts": {
     "start": "webpack-dev-server",
+    "docgen": "react-doc-generator ./src -o ./docs/props.md",
     "test": "karma start --",
     "test:tdd": "karma start --auto-watch --no-single-run --",
     "test:lint": "eslint . --ext .js --ext .jsx --ignore-path .gitignore --ignore-pattern dist --cache",
@@ -74,6 +75,7 @@
     "raw-loader": "^0.5.1",
     "react": "^15.3.0",
     "react-addons-test-utils": "^15.3.0",
+    "react-doc-generator": "^1.2.5",
     "react-dom": "^15.3.0",
     "react-github-corner": "^0.3.0",
     "rimraf": "^2.5.4",

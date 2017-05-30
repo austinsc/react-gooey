@@ -8,6 +8,9 @@ export default class Table extends Component {
     bordered: PropTypes.bool,
     striped: PropTypes.bool,
     narrow: PropTypes.bool,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
     className: PropTypes.any
   };
 

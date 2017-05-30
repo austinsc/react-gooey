@@ -5,13 +5,18 @@ export default class Container extends Component {
   static displayName = 'Container';
   static propTypes = {
     children: PropTypes.any,
-    fluid: PropTypes.bool
+    fluid: PropTypes.bool,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
+    className: PropTypes.any
   };
 
   render() {
-    const {children, fluid} = this.props;
+    const {className, children, fluid} = this.props;
     const classes = classNames('container', {
-      'is-fluid': fluid
+      'is-fluid': fluid,
+      [className]: !!className
     });
     return (
       <div className={classes}>

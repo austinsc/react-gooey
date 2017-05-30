@@ -6,6 +6,9 @@ export class Card extends Component {
   static displayName = 'Card';
   static propTypes = {
     children: PropTypes.any,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
     className: PropTypes.string,
     size: PropTypes.oneOf(['is-full-width'])
   };

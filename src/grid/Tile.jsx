@@ -10,6 +10,9 @@ export default class Tile extends Component {
     child: PropTypes.bool,
     vertical: PropTypes.bool,
     children: PropTypes.any,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
     className: PropTypes.any,
     size: GooeyPropTypes.column
   };

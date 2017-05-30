@@ -7,6 +7,9 @@ export class Columns extends Component {
   static displayName = 'Columns';
   static propTypes = {
     children: PropTypes.any,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
     className: PropTypes.any,
     mobile: PropTypes.bool,
     desktop: PropTypes.bool,
@@ -35,6 +38,9 @@ export class Column extends Component {
   static displayName = 'Column';
   static propTypes = {
     children: PropTypes.any,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
     className: PropTypes.any,
     size: PropTypes.oneOfType([GooeyPropTypes.column, PropTypes.object]),
     offset: GooeyPropTypes.column,

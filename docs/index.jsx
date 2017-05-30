@@ -154,6 +154,10 @@ const pages = [{
     title: 'Forms',
     component: require('../docs/forms/form.md')
   }]
+}, {
+  path: '/proptypes',
+  title: 'PropTypes',
+  component: require('../docs/props.md')
 }];
 const specimen = {
   js: props => <CodeSpecimen {...props} lang="javascript"/>,

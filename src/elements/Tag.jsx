@@ -24,6 +24,9 @@ export default class Tag extends Component {
       'medium',
       'large'
     ]),
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
     className: PropTypes.any
   };
   static defaultProps = {

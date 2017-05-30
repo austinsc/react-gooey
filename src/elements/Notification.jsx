@@ -6,13 +6,18 @@ export default class Notification extends Component {
   static displayName = 'Notification';
   static propTypes = {
     children: PropTypes.any,
-    color: GooeyPropTypes.color
+    color: GooeyPropTypes.color,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
+    className: PropTypes.any
   };
 
   render() {
-    const {children, color, ...rest}=this.props;
+    const {children, color, className, ...rest}=this.props;
     const classes = classNames('notification', {
-      [`is-${color}`]: !!color
+      [`is-${color}`]: !!color,
+      [className]: !!className
     });
     return (
       <div className={classes} {...rest}>

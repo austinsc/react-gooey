@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-export default class Section extends Component {
-  static displayName = 'Section';
+export default class Footer extends Component {
+  static displayName = 'Footer';
   static propTypes = {};
   static defaultProps = {
     children: PropTypes.any,
@@ -15,13 +15,13 @@ export default class Section extends Component {
 
   render() {
     const {className, children} = this.props;
-    const classes = classNames('section', {
+    const classes = classNames('footer', {
       [className]: !!className
     });
     return (
-      <section className={classes}>
+      <footer className={classes}>
         {children}
-      </section>
+      </footer>
     );
   }
 }

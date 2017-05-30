@@ -5,6 +5,10 @@ export default class Content extends Component {
   static displayName = 'Content';
   static propTypes = {
     children: PropTypes.any,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
+    className: PropTypes.any,
     size: PropTypes.oneOf(['normal', 'medium', 'large'])
   };
   static defaultProps = {
@@ -12,10 +16,11 @@ export default class Content extends Component {
   };
 
   render() {
-    const {children, size, ...rest}=this.props;
+    const {children, className, size, ...rest}=this.props;
     const classes = classNames('content', {
       'is-medium': size === 'medium',
-      'is-large': size === 'large'
+      'is-large': size === 'large',
+      [className]: !!className
     });
     return (
       <div className={classes} {...rest}>

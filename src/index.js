@@ -42,6 +42,7 @@ export {default as Subtitle} from './elements/Subtitle';
 export {default as Hero} from './layout/Hero';
 export {default as Container} from './layout/Container';
 export {default as Section} from './layout/Section';
+export {default as Footer} from './layout/Footer';
 
 // Forms
 export {default as Form} from './forms/Form';

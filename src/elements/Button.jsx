@@ -30,6 +30,9 @@ export default class Button extends Component {
     active: PropTypes.bool,
     children: PropTypes.any,
     icon: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
     className: PropTypes.any,
     iconPosition: PropTypes.oneOf(['left', 'right'])
   };

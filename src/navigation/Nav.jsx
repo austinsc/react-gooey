@@ -6,6 +6,9 @@ export default class Nav extends PureComponent {
   static displayName = 'Nav';
   static propTypes = {
     children: PropTypes.any,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
     className: PropTypes.string,
     shadow: PropTypes.bool,
     hidden: PropTypes.bool

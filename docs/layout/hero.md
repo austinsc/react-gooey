@@ -3,7 +3,7 @@
 Heros are a great way to feature information and titles in a colorful way within your application. 
 
 ```jsx
-<Hero color="danger">
+<Hero color="success" bold>
   <Hero.Body>
   <Container>
     <Title>

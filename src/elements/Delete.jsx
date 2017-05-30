@@ -11,15 +11,17 @@ const SIZES = [
 export default class Delete extends Component {
   static displayName = 'Delete';
   static propTypes = {
-    children: PropTypes.any,
     size: PropTypes.oneOf(SIZES),
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
     className: PropTypes.any
   };
   static defaultProps = {
     size: 'normal'
   };
   render() {
-    const {size, children, className, ...rest}=this.props;
+    const {size, className, ...rest}=this.props;
     const classes = classNames('delete', {
       [`is-${size}`]: size !== 'normal',
       [className]: !!className

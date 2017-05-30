@@ -9,6 +9,9 @@ export default class Image extends Component {
     src: PropTypes.string,
     size: PropTypes.oneOfType([GooeyPropTypes.image, PropTypes.object]),
     ratio: PropTypes.oneOfType([GooeyPropTypes.ratio, PropTypes.object]),
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
     className: PropTypes.any
   };
 

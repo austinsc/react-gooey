@@ -40,6 +40,9 @@ export default class Hero extends Component {
     ]),
     bold: PropTypes.bool,
     children: PropTypes.any,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
     className: PropTypes.string,
     contain: PropTypes.bool
   };

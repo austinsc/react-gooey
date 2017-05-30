@@ -22,6 +22,9 @@ export default class Progress extends Component {
     ]),
     value: PropTypes.string,
     max: PropTypes.string,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
     className: PropTypes.any
   };
   static defaultProps = {

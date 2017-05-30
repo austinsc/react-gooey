@@ -17,6 +17,9 @@ export default class Icon extends PureComponent {
     wrap: PropTypes.bool,
     wrapSize: PropTypes.oneOf(['small', 'medium', 'large', 'normal']),
     inverse: PropTypes.bool,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
     className: PropTypes.any,
     wrench: PropTypes.bool,
     ring: PropTypes.bool,

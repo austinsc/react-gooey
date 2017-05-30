@@ -5,6 +5,9 @@ export class Level extends Component {
   static displayName = 'Level';
   static propTypes = {
     children: PropTypes.any,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
     className: PropTypes.string
   };
 
@@ -23,6 +26,9 @@ export class LevelItem extends Component {
   static displayName = 'LevelItem';
   static propTypes = {
     children: PropTypes.any,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
     className: PropTypes.string
   };
 
@@ -41,6 +47,9 @@ export class LevelSection extends Component {
   static displayName = 'LevelSection';
   static propTypes = {
     children: PropTypes.any,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
     className: PropTypes.string,
     left: PropTypes.bool,
     right: PropTypes.bool

@@ -8,6 +8,9 @@ export default class NavSection extends PureComponent {
     children: PropTypes.any,
     alignment: PropTypes.oneOf(['left', 'right', 'center']),
     menu: PropTypes.bool,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
     className: PropTypes.any
   };
   static defaultProps = {

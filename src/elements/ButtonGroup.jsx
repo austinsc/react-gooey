@@ -5,6 +5,9 @@ export default class ButtonGroup extends Component {
   static displayName = 'ButtonGroup';
   static propTypes = {
     children: PropTypes.any,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
     className: PropTypes.any,
     addons: PropTypes.bool
   };

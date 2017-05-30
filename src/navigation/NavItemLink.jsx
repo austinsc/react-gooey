@@ -15,6 +15,9 @@ export default class NavItemLink extends Component {
     state: PropTypes.object,
     onlyActiveOnIndex: PropTypes.bool,
     onClick: PropTypes.func,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
     className: PropTypes.any,
     target: PropTypes.string,
     tab: PropTypes.bool,

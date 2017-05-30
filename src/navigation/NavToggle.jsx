@@ -1,17 +1,17 @@
-import React,{Component, PropTypes} from 'react';
+import React, {Component, PropTypes} from 'react';
 
-export default class NavToggle extends Component{
+export default class NavToggle extends Component {
   static displayName = 'NavToggle';
   static propTypes = {};
   static defaultProps = {};
 
-  render(){
+  render() {
     return (
       <span className="nav-toggle">
         <span/>
         <span/>
         <span/>
-        </span>
+      </span>
     );
   }
 }
