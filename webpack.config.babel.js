@@ -277,6 +277,21 @@ const distCommon = {
       test: /\.jsx?$/,
       use: [{loader: 'babel-loader'}],
       include: config.paths.src
+    }, {
+      test: /\.css$/,
+      use: [{loader: 'style-loader'}, {loader: 'css-loader'}]
+    }, {
+      test: /\.scss$/i,
+      use: [
+        {loader: 'style-loader'},
+        {loader: 'css-loader'},
+        {
+          loader: 'sass-loader',
+          options: {
+            includePaths: [path.resolve(ROOT_PATH, 'node_modules')]
+          }
+        }
+      ]
     }]
   },
   plugins: [
