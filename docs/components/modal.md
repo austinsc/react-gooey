@@ -6,7 +6,10 @@ Here is some info about the components.
 state: {show: false}
 ---
 <div>
-  <ModalCard active={state && state.show} onClose={() => setState({show: false})} title="Sample Title" footer={[
+  <ModalCard title="Sample Title"
+             active={state && state.show} 
+             onClose={() => setState({show: false})}              
+             footer={[
                (<Button key="ok" onClick={() => alert('Ok Clicked!')} text="Ok" />), 
                (<Button key="cancel" onClick={() => setState({show: false})} text="Cancel" />)
              ]}>
