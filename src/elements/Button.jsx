@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import * as GooeyPropTypes from '../utils/PropTypes'
+import * as GooeyPropTypes from '../utils/PropTypes';
 import classNames from 'classnames';
 import Icon from './Icon';
 
@@ -18,29 +18,73 @@ function bulmaSizeToFontAwesomeSize(bulmaSize) {
 export default class Button extends Component {
   static displayName = 'Button';
   static propTypes = {
+    /**
+     * Text to be rendered within the button.
+     */
     text: PropTypes.string,
+    /**
+     * Color of the button.
+     */
     color: GooeyPropTypes.buttonColor,
+    /**
+     * Size of the button.
+     */
     size: PropTypes.oneOf(SIZES),
+    /**
+     * Size of icon rendered within the button.
+     */
     iconSize: PropTypes.oneOf(SIZES),
+    /**
+     * Replaces the content of the button with a Loading indicator and sets button to a fixed width.
+     */
     loading: PropTypes.bool,
+    /**
+     * Changes the style of the button to outlined.
+     */
     outlined: PropTypes.bool,
+    /**
+     * Changes the style of the button so the text color becomes the background color, and vice-versa.
+     */
     inverted: PropTypes.bool,
+    /**
+     * Adds a highlighted focus border around the button.
+     */
     focused: PropTypes.bool,
+    /**
+     * Replaces the style of the button with the hovered style effect.
+     */
     hovered: PropTypes.bool,
+    /**
+     * Replaces the style of the button with the active style effect.
+     */
     active: PropTypes.bool,
+    /**
+     * Creates the button so it is non-interactive, useful to align a text label with an input.
+     */
+    'static': PropTypes.bool,
+    /**
+     * Child elements to be rendered within the button.
+     */
     children: PropTypes.any,
+    /**
+     * Icon to be rendered within the button.
+     */
     icon: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    /**
+     * Position of icon to be rendered within the button.
+     */
+    iconPosition: PropTypes.oneOf(['left', 'right']),
     /**
      * CSS classes to be rendered on the root element of this component.
      */
-    className: PropTypes.any,
-    iconPosition: PropTypes.oneOf(['left', 'right'])
+    className: PropTypes.any
   };
   static defaultProps = {
     color: 'default',
     size: 'normal',
     iconPosition: 'left',
-    inverted: false
+    inverted: false,
+    'static': false
   };
 
   render() {
@@ -54,8 +98,10 @@ export default class Button extends Component {
       'is-focused': focused,
       'is-hovered': hovered,
       'is-active': active,
+      'is-static': this.props.static,
       [className]: !!className
     });
+    delete rest.static;
     const content = text || children ? <span>{text || children}</span> : null;
     let iconComponent = null;
     if(icon) {

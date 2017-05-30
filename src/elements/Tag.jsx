@@ -4,8 +4,17 @@ import classNames from 'classnames';
 export default class Tag extends Component {
   static displayName = 'Tag';
   static propTypes = {
+    /**
+     * Child elements to be rendered within the component.
+     */
     children: PropTypes.any,
+    /**
+     * Text to be rendered within the tag component.
+     */
     text: PropTypes.string,
+    /**
+     * Color of the tag component.
+     */
     color: PropTypes.oneOf([
       'default',
       'primary',
@@ -18,6 +27,9 @@ export default class Tag extends Component {
       'white',
       'light'
     ]),
+    /**
+     * Size of the tag component.
+     */
     size: PropTypes.oneOf([
       'small',
       'normal',

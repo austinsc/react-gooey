@@ -15,6 +15,9 @@ const Nested = (cn) => function ({className, children}) {
 export class MediaObject extends PureComponent {
   static displayName = 'MediaObject';
   static propTypes = {
+    /**
+     * Child elements to be rendered within the component.
+     */
     children: PropTypes.any,
     /**
      * CSS classes to be rendered on the root element of this component.

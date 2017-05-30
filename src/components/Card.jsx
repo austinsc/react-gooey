@@ -5,11 +5,17 @@ import classNames from 'classnames';
 export class Card extends Component {
   static displayName = 'Card';
   static propTypes = {
+    /**
+     * Child elements to be rendered within the component.
+     */
     children: PropTypes.any,
     /**
      * CSS classes to be rendered on the root element of this component.
      */
     className: PropTypes.string,
+    /**
+     * Size of the card component.
+     */
     size: PropTypes.oneOf(['is-full-width'])
   };
 

@@ -4,6 +4,9 @@ import classNames from 'classnames';
 export class Level extends Component {
   static displayName = 'Level';
   static propTypes = {
+    /**
+     * Child elements to be rendered within the component.
+     */
     children: PropTypes.any,
     /**
      * CSS classes to be rendered on the root element of this component.
