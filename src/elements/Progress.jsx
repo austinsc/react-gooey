@@ -4,7 +4,13 @@ import classNames from 'classnames';
 export default class Progress extends Component {
   static displayName = 'Progress';
   static propTypes = {
+    /**
+     * Child elements to be rendered within the component.
+     */
     children: PropTypes.any,
+    /**
+     * Color of the progress component.
+     */
     color: PropTypes.oneOf([
       'default',
       'primary',
@@ -14,13 +20,22 @@ export default class Progress extends Component {
       'danger',
       'dark'
     ]),
+    /**
+     * Size of the progress component.
+     */
     size: PropTypes.oneOf([
       'small',
       'normal',
       'medium',
       'large'
     ]),
+    /**
+     * Specified value of the progress component.
+     */
     value: PropTypes.string,
+    /**
+     * Maximum value of the progress component.
+     */
     max: PropTypes.string,
     /**
      * CSS classes to be rendered on the root element of this component.

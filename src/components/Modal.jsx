@@ -39,11 +39,26 @@ class ModalBase extends Component {
 export class ModalCard extends Component {
   static displayName = 'ModalCard';
   static propTypes = {
+    /**
+     * Sets the modal state of visibility.
+     */
     active: PropTypes.bool,
     title: PropTypes.node,
+    /**
+     * Footer element for the component to be rendered.
+     */
     footer: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
+    /**
+     * Function specifying the behavior when the modal component is closed.
+     */
     onClose: PropTypes.func,
+    /**
+     * Specifies whether to hide the close button on the modal component.
+     */
     hideCloseButton: PropTypes.bool,
+    /**
+     * Child elements to be rendered within the component.
+     */
     children: PropTypes.any,
     /**
      * CSS classes to be rendered on the root element of this component.

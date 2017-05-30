@@ -5,7 +5,13 @@ import {GooeyPropTypes} from '../utils';
 export default class Notification extends Component {
   static displayName = 'Notification';
   static propTypes = {
+    /**
+     * Child elements to be rendered within the notification.
+     */
     children: PropTypes.any,
+    /**
+     * Color of the notification.
+     */
     color: GooeyPropTypes.color,
     /**
      * CSS classes to be rendered on the root element of this component.

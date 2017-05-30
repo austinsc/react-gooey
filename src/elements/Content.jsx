@@ -4,11 +4,17 @@ import classNames from 'classnames';
 export default class Content extends Component {
   static displayName = 'Content';
   static propTypes = {
+    /**
+     * Child elements to be rendered within the content.
+     */
     children: PropTypes.any,
     /**
      * CSS classes to be rendered on the root element of this component.
      */
     className: PropTypes.any,
+    /**
+     * Changes the size of the content rendered.
+     */
     size: PropTypes.oneOf(['normal', 'medium', 'large'])
   };
   static defaultProps = {

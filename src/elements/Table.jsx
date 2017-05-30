@@ -4,9 +4,21 @@ import classNames from 'classnames';
 export default class Table extends Component {
   static displayName = 'Table';
   static propTypes = {
+    /**
+     * Child elements to be rendered within the component.
+     */
     children: PropTypes.any,
+    /**
+     * Applies the bordered style to the table component.
+     */
     bordered: PropTypes.bool,
+    /**
+     * Applies the striped style to the table component.
+     */
     striped: PropTypes.bool,
+    /**
+     * Makes the cells of the table component narrower.
+     */
     narrow: PropTypes.bool,
     /**
      * CSS classes to be rendered on the root element of this component.

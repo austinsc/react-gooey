@@ -6,9 +6,14 @@ import * as GooeyPropTypes from '../utils/PropTypes';
 export default class Subtitle extends Component {
   static displayName = 'Subtitle';
   static propTypes = {
+    /**
+     * Child elements to be rendered within the component.
+     */
     children: PropTypes.any,
+    /**
+     * Size of the component to be rendered.
+     */
     size: PropTypes.oneOfType([GooeyPropTypes.title, PropTypes.object]),
-    subtitle: PropTypes.bool,
     /**
      * CSS classes to be rendered on the root element of this component.
      */
