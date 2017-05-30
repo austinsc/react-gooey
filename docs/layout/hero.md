@@ -1,3 +1,18 @@
 # Hero Components
 
-Here is some info about the hero components. 
+Heros are a great way to feature information and titles in a colorful way within your application. 
+
+```jsx
+<Hero color="danger">
+  <Hero.Body>
+  <Container>
+    <Title>
+      Hero Title
+      <Subtitle>
+        Hero Subtitle
+      </Subtitle>
+    </Title>
+  </Container>
+  </Hero.Body>
+</Hero>
+```

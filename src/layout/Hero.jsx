@@ -1,5 +1,17 @@
-import React, {Component} from 'react'; import PropTypes from 'prop-types';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
+
+const Nested = (cn) => function({className, children}) {
+  const classes = classNames(`hero-${cn}`, {
+    [className]: !!className
+  });
+  return (
+    <div className={classes}>
+      {children}
+    </div>
+  );
+};
 
 export default class Hero extends Component {
   static displayName = 'Hero';
@@ -36,6 +48,10 @@ export default class Hero extends Component {
     size: 'small',
     align: 'center'
   };
+
+  static Head = Nested('head');
+  static Body = Nested('body');
+  static Foot = Nested('foot');
 
   render() {
     const {color, className, bold, align, size, children} = this.props;
