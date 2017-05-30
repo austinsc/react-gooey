@@ -44,9 +44,9 @@ export default {
 
   sidebarColor: white,
   sidebarColorActive: red,
-  sidebarColorText: turquoise,
-  sidebarColorTextActive: red,
-  sidebarColorLine: whitebis,
+  sidebarColorText: blackter,
+  sidebarColorTextActive: turquoise,
+  sidebarColorLine: greylighter,
   sidebarColorHeading: turquoise,
 
   // Used in the html, react, and image specimens.
