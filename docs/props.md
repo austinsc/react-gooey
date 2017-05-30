@@ -1,15 +1,19 @@
 Components
 ----------
 
-**src/Blank.jsx**
+**src\Blank.jsx**
 
 ### 1. Blank
 
 
 
 
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+children|any|no||Child elements to be rendered within the box.
+className|any|no||CSS classes to be rendered on the root element of this component.
 -----
-**src/Wizzbanger.jsx**
+**src\Wizzbanger.jsx**
 
 ### 1. Wizzbanger
 
@@ -22,7 +26,7 @@ object|object|no||
 title|string|no||
 visitors|object|no|&lt;See the source code&gt;|
 -----
-**src/components/Card.jsx**
+**src\components\Card.jsx**
 
 ### 1. Card
 
@@ -35,7 +39,7 @@ children|any|no||
 className|string|no||CSS classes to be rendered on the root element of this component.
 size|enum|no||
 -----
-**src/components/Level.jsx**
+**src\components\Level.jsx**
 
 ### 1. Level
 
@@ -67,7 +71,7 @@ className|string|no||CSS classes to be rendered on the root element of this comp
 left|bool|no||
 right|bool|no||
 -----
-**src/components/MediaObject.jsx**
+**src\components\MediaObject.jsx**
 
 ### 1. MediaObject
 
@@ -79,7 +83,38 @@ Property | Type | Required | Default value | Description
 children|any|no||
 className|string|no||CSS classes to be rendered on the root element of this component.
 -----
-**src/components/Modal.jsx**
+**src\components\Menu.jsx**
+
+### 1. Label
+
+
+
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+text|string|yes||The display text to be rendered in the menu label
+className|any|no||CSS classes to be rendered on the root element of this component.
+### 2. List
+
+
+
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+className|any|no||CSS classes to be rendered on the root element of this component.
+### 3. Menu
+
+A simple menu for any type of vertical navigation. Mark <a> tags with the is-active className to render them as the active menu item.   
+
+
+
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+children|any|no||Child elements to be rendered within the box.
+className|any|no||CSS classes to be rendered on the root element of this component.
+-----
+**src\components\Modal.jsx**
 
 ### 1. ModalCard
 
@@ -96,7 +131,7 @@ hideCloseButton|bool|no||
 children|any|no||
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
-**src/controls/CheckboxList.jsx**
+**src\controls\CheckboxList.jsx**
 
 ### 1. CheckboxList
 
@@ -115,7 +150,7 @@ label|string|no||
 help|string|no||
 placeholder|string|no||
 -----
-**src/controls/Input.jsx**
+**src\controls\Input.jsx**
 
 ### 1. Input
 
@@ -133,7 +168,7 @@ label|string|no||
 help|string|no||
 placeholder|string|no||
 -----
-**src/controls/RadioList.jsx**
+**src\controls\RadioList.jsx**
 
 ### 1. RadioList
 
@@ -152,7 +187,7 @@ label|string|no||
 help|string|no||
 placeholder|string|no||
 -----
-**src/controls/Select.jsx**
+**src\controls\Select.jsx**
 
 ### 1. Select
 
@@ -169,7 +204,7 @@ form|object|no||
 label|string|no||
 help|string|no||
 -----
-**src/controls/Switch.jsx**
+**src\controls\Switch.jsx**
 
 ### 1. Switch
 
@@ -184,7 +219,7 @@ placeholder|string|no||
 label|string|no||
 errorMessages|object|yes|&lt;See the source code&gt;|
 -----
-**src/elements/Box.jsx**
+**src\elements\Box.jsx**
 
 ### 1. Box
 
@@ -196,7 +231,7 @@ Property | Type | Required | Default value | Description
 children|any|no||Child elements to be rendered within the box.
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
-**src/elements/Button.jsx**
+**src\elements\Button.jsx**
 
 ### 1. Button
 
@@ -220,7 +255,7 @@ icon|union|no||
 className|any|no||CSS classes to be rendered on the root element of this component.
 iconPosition|enum|no|&lt;See the source code&gt;|
 -----
-**src/elements/ButtonGroup.jsx**
+**src\elements\ButtonGroup.jsx**
 
 ### 1. ButtonGroup
 
@@ -233,7 +268,7 @@ children|any|no||
 className|any|no||CSS classes to be rendered on the root element of this component.
 addons|bool|no||
 -----
-**src/elements/Content.jsx**
+**src\elements\Content.jsx**
 
 ### 1. Content
 
@@ -246,7 +281,7 @@ children|any|no||
 className|any|no||CSS classes to be rendered on the root element of this component.
 size|enum|no|&lt;See the source code&gt;|
 -----
-**src/elements/Delete.jsx**
+**src\elements\Delete.jsx**
 
 ### 1. Delete
 
@@ -258,7 +293,7 @@ Property | Type | Required | Default value | Description
 size|enum|no|&lt;See the source code&gt;|
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
-**src/elements/Form.jsx**
+**src\elements\Form.jsx**
 
 ### 1. Form
 
@@ -275,7 +310,7 @@ children|any|no||
 title|node|no||
 buttons|node|no||
 -----
-**src/elements/Icon.jsx**
+**src\elements\Icon.jsx**
 
 ### 1. Icon
 
@@ -312,7 +347,7 @@ slow|bool|no||
 hover|bool|no||
 skip|bool|no||
 -----
-**src/elements/Image.jsx**
+**src\elements\Image.jsx**
 
 ### 1. Image
 
@@ -327,7 +362,7 @@ size|union|no||
 ratio|union|no||
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
-**src/elements/Notification.jsx**
+**src\elements\Notification.jsx**
 
 ### 1. Notification
 
@@ -340,7 +375,7 @@ children|any|no||
 color|custom|no||
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
-**src/elements/Progress.jsx**
+**src\elements\Progress.jsx**
 
 ### 1. Progress
 
@@ -356,7 +391,7 @@ value|string|no||
 max|string|no||
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
-**src/elements/Subtitle.jsx**
+**src\elements\Subtitle.jsx**
 
 ### 1. Subtitle
 
@@ -370,7 +405,7 @@ size|union|no|5|
 subtitle|bool|no||
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
-**src/elements/Table.jsx**
+**src\elements\Table.jsx**
 
 ### 1. Table
 
@@ -385,7 +420,7 @@ striped|bool|no||
 narrow|bool|no||
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
-**src/elements/Tag.jsx**
+**src\elements\Tag.jsx**
 
 ### 1. Tag
 
@@ -400,7 +435,7 @@ color|enum|no|&lt;See the source code&gt;|
 size|enum|no|&lt;See the source code&gt;|
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
-**src/elements/Title.jsx**
+**src\elements\Title.jsx**
 
 ### 1. Title
 
@@ -413,7 +448,7 @@ children|any|no||
 size|union|no|3|
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
-**src/forms/Form.jsx**
+**src\forms\Form.jsx**
 
 ### 1. Form
 
@@ -451,7 +486,7 @@ transformErrors|func|no||
 safeRenderCompletion|bool|no||
 formContext|object|no||
 -----
-**src/forms/fields/ArrayField.js**
+**src\forms\fields\ArrayField.js**
 
 ### 1. ArrayField
 
@@ -473,7 +508,7 @@ readonly|bool|no|false|
 autofocus|bool|no|false|
 registry|shape|no||
 -----
-**src/forms/fields/BooleanField.js**
+**src\forms\fields\BooleanField.js**
 
 ### 1. BooleanField
 
@@ -494,7 +529,7 @@ readonly|bool|no|false|
 autofocus|bool|no|false|
 registry|shape|no||
 -----
-**src/forms/fields/DescriptionField.js**
+**src\forms\fields\DescriptionField.js**
 
 ### 1. DescriptionField
 
@@ -506,7 +541,7 @@ Property | Type | Required | Default value | Description
 id|string|no||
 description|union|no||
 -----
-**src/forms/fields/NumberField.js**
+**src\forms\fields\NumberField.js**
 
 ### 1. 
 
@@ -524,7 +559,7 @@ formData|union|no||
 required|bool|no||
 formContext|object|yes||
 -----
-**src/forms/fields/ObjectField.js**
+**src\forms\fields\ObjectField.js**
 
 ### 1. ObjectField
 
@@ -546,7 +581,7 @@ onBlur|func|no||
 readonly|bool|no|false|
 registry|shape|no||
 -----
-**src/forms/fields/SchemaField.js**
+**src\forms\fields\SchemaField.js**
 
 ### 1. 
 
@@ -590,7 +625,7 @@ formData|any|no||
 errorSchema|object|no|&lt;See the source code&gt;|
 registry|shape|no||
 -----
-**src/forms/fields/StringField.js**
+**src\forms\fields\StringField.js**
 
 ### 1. StringField
 
@@ -613,7 +648,7 @@ disabled|bool|no|false|
 readonly|bool|no|false|
 autofocus|bool|no|false|
 -----
-**src/forms/fields/TitleField.js**
+**src\forms\fields\TitleField.js**
 
 ### 1. TitleField
 
@@ -626,7 +661,7 @@ id|string|no||
 title|string|no||
 required|bool|no||
 -----
-**src/forms/fields/UnsupportedField.js**
+**src\forms\fields\UnsupportedField.js**
 
 ### 1. 
 
@@ -634,7 +669,7 @@ required|bool|no||
 
 
 -----
-**src/forms/widgets/AltDateTimeWidget.js**
+**src\forms\widgets\AltDateTimeWidget.js**
 
 ### 1. 
 
@@ -650,7 +685,7 @@ value|string|no||
 required|bool|no||
 onChange|func|no||
 -----
-**src/forms/widgets/AltDateWidget.js**
+**src\forms\widgets\AltDateWidget.js**
 
 ### 1. 
 
@@ -670,7 +705,7 @@ onChange|func|no||
 onBlur|func|no||
 time|bool|no|false|
 -----
-**src/forms/widgets/BaseInput.js**
+**src\forms\widgets\BaseInput.js**
 
 ### 1. 
 
@@ -690,7 +725,7 @@ onChange|func|no||
 onBlur|func|no||
 type||no|&lt;See the source code&gt;|
 -----
-**src/forms/widgets/CheckboxWidget.js**
+**src\forms\widgets\CheckboxWidget.js**
 
 ### 1. 
 
@@ -708,7 +743,7 @@ readonly|bool|no||
 autofocus|bool|no|false|
 onChange|func|no||
 -----
-**src/forms/widgets/CheckboxesWidget.js**
+**src\forms\widgets\CheckboxesWidget.js**
 
 ### 1. 
 
@@ -728,7 +763,7 @@ multiple|bool|no||
 autofocus|bool|no|false|
 onChange|func|no||
 -----
-**src/forms/widgets/ColorWidget.js**
+**src\forms\widgets\ColorWidget.js**
 
 ### 1. 
 
@@ -746,7 +781,7 @@ readonly|bool|no||
 autofocus|bool|no||
 onChange|func|no||
 -----
-**src/forms/widgets/DateTimeWidget.js**
+**src\forms\widgets\DateTimeWidget.js**
 
 ### 1. 
 
@@ -757,7 +792,7 @@ Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
 value|string|no||
 -----
-**src/forms/widgets/DateWidget.js**
+**src\forms\widgets\DateWidget.js**
 
 ### 1. 
 
@@ -769,7 +804,7 @@ Property | Type | Required | Default value | Description
 value|string|no||
 onChange|func|no||
 -----
-**src/forms/widgets/EmailWidget.js**
+**src\forms\widgets\EmailWidget.js**
 
 ### 1. 
 
@@ -780,7 +815,7 @@ Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
 value|string|no||
 -----
-**src/forms/widgets/FileWidget.js**
+**src\forms\widgets\FileWidget.js**
 
 ### 1. 
 
@@ -793,7 +828,7 @@ multiple|bool|no|false|
 value|union|no||
 autofocus|bool|no||
 -----
-**src/forms/widgets/HiddenWidget.js**
+**src\forms\widgets\HiddenWidget.js**
 
 ### 1. 
 
@@ -805,7 +840,7 @@ Property | Type | Required | Default value | Description
 id|string|yes||
 value|union|no||
 -----
-**src/forms/widgets/PasswordWidget.js**
+**src\forms\widgets\PasswordWidget.js**
 
 ### 1. 
 
@@ -816,7 +851,7 @@ Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
 value|string|no||
 -----
-**src/forms/widgets/RadioWidget.js**
+**src\forms\widgets\RadioWidget.js**
 
 ### 1. 
 
@@ -835,7 +870,7 @@ readonly|bool|no||
 autofocus|bool|no|false|
 onChange|func|no||
 -----
-**src/forms/widgets/RangeWidget.js**
+**src\forms\widgets\RangeWidget.js**
 
 ### 1. 
 
@@ -846,7 +881,7 @@ Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
 value|union|no||
 -----
-**src/forms/widgets/SelectWidget.js**
+**src\forms\widgets\SelectWidget.js**
 
 ### 1. SelectWidget
 
@@ -868,7 +903,7 @@ autofocus|bool|no|false|
 onChange|func|no||
 onBlur|func|no||
 -----
-**src/forms/widgets/TextWidget.js**
+**src\forms\widgets\TextWidget.js**
 
 ### 1. 
 
@@ -879,7 +914,7 @@ Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
 value|union|no||
 -----
-**src/forms/widgets/TextareaWidget.js**
+**src\forms\widgets\TextareaWidget.js**
 
 ### 1. 
 
@@ -900,7 +935,7 @@ autofocus|bool|no|false|
 onChange|func|no||
 onBlur|func|no||
 -----
-**src/forms/widgets/URLWidget.js**
+**src\forms\widgets\URLWidget.js**
 
 ### 1. 
 
@@ -911,7 +946,7 @@ Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
 value|string|no||
 -----
-**src/forms/widgets/UpDownWidget.js**
+**src\forms\widgets\UpDownWidget.js**
 
 ### 1. 
 
@@ -922,7 +957,7 @@ Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
 value|union|no||
 -----
-**src/grid/Columns.jsx**
+**src\grid\Columns.jsx**
 
 ### 1. Columns
 
@@ -951,7 +986,7 @@ offset|custom|no||
 device|custom|no||
 narrow|bool|no||
 -----
-**src/grid/Tile.jsx**
+**src\grid\Tile.jsx**
 
 ### 1. Tile
 
@@ -968,7 +1003,7 @@ children|any|no||
 className|any|no||CSS classes to be rendered on the root element of this component.
 size|custom|no||
 -----
-**src/layout/Container.jsx**
+**src\layout\Container.jsx**
 
 ### 1. Container
 
@@ -981,7 +1016,7 @@ children|any|no||
 fluid|bool|no||
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
-**src/layout/Footer.jsx**
+**src\layout\Footer.jsx**
 
 ### 1. Footer
 
@@ -993,7 +1028,7 @@ Property | Type | Required | Default value | Description
 children||no|PropTypes.any|
 className||no|PropTypes.any|
 -----
-**src/layout/Hero.jsx**
+**src\layout\Hero.jsx**
 
 ### 1. Hero
 
@@ -1011,7 +1046,7 @@ children|any|no||
 className|string|no||CSS classes to be rendered on the root element of this component.
 contain|bool|no||
 -----
-**src/layout/Section.jsx**
+**src\layout\Section.jsx**
 
 ### 1. Section
 
@@ -1023,7 +1058,7 @@ Property | Type | Required | Default value | Description
 children||no|PropTypes.any|
 className||no|PropTypes.any|
 -----
-**src/navigation/Nav.jsx**
+**src\navigation\Nav.jsx**
 
 ### 1. Nav
 
@@ -1037,7 +1072,7 @@ className|string|no||CSS classes to be rendered on the root element of this comp
 shadow|bool|no||
 hidden|bool|no||
 -----
-**src/navigation/NavItem.jsx**
+**src\navigation\NavItem.jsx**
 
 ### 1. NavItem
 
@@ -1048,7 +1083,7 @@ Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
 children|any|no||
 -----
-**src/navigation/NavItemLink.jsx**
+**src\navigation\NavItemLink.jsx**
 
 ### 1. NavItemLink
 
@@ -1069,7 +1104,7 @@ target|string|no||
 tab|bool|no||
 location|object|no||
 -----
-**src/navigation/NavSection.jsx**
+**src\navigation\NavSection.jsx**
 
 ### 1. NavSection
 
@@ -1083,7 +1118,7 @@ alignment|enum|no|&lt;See the source code&gt;|
 menu|bool|no|false|
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
-**src/navigation/NavToggle.jsx**
+**src\navigation\NavToggle.jsx**
 
 ### 1. NavToggle
 

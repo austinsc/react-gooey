@@ -3,6 +3,7 @@ export {Level, LevelItem, LevelSection} from './components/Level';
 export {ModalCard} from './components/Modal';
 export {Card} from './components/Card';
 export {MediaObject} from './components/MediaObject';
+export {default as Menu, Label as MenuLabel, List as MenuList} from './components/Menu';
 
 // Navigation
 export {default as Nav} from './navigation/Nav';
