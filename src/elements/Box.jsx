@@ -1,4 +1,5 @@
-import React, {Component} from 'react'; import PropTypes from 'prop-types';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 export default class Box extends Component {
@@ -15,7 +16,7 @@ export default class Box extends Component {
   };
 
   render() {
-    const {className, ...rest}=this.props;
+    const {className, ...rest} = this.props;
     const classes = classNames('box', {
       [className]: !!className
     });
