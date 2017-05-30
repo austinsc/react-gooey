@@ -17,7 +17,7 @@ export class Message extends PureComponent {
     /**
      * Color of the button.
      */
-    color: GooeyPropTypes.buttonColor,
+    color: GooeyPropTypes.buttonColor
   };
   static defaultProps = {
     color: 'default'
