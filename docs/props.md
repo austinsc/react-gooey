@@ -35,9 +35,9 @@ visitors|object|no|&lt;See the source code&gt;|
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|any|no||
+children|any|no||Child elements to be rendered within the component.
 className|string|no||CSS classes to be rendered on the root element of this component.
-size|enum|no||
+size|enum|no||Size of the card component.
 -----
 **src\components\Level.jsx**
 
@@ -48,7 +48,7 @@ size|enum|no||
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|any|no||
+children|any|no||Child elements to be rendered within the component.
 className|string|no||CSS classes to be rendered on the root element of this component.
 ### 2. LevelItem
 
@@ -80,7 +80,7 @@ right|bool|no||
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|any|no||
+children|any|no||Child elements to be rendered within the component.
 className|string|no||CSS classes to be rendered on the root element of this component.
 -----
 **src\components\Menu.jsx**
@@ -92,7 +92,7 @@ className|string|no||CSS classes to be rendered on the root element of this comp
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-text|string|yes||The display text to be rendered in the menu label
+text|string|no||The display text to be rendered in the menu label
 className|any|no||CSS classes to be rendered on the root element of this component.
 ### 2. List
 
@@ -123,12 +123,12 @@ className|any|no||CSS classes to be rendered on the root element of this compone
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-active|bool|no||
+active|bool|no||Sets the modal state of visibility.
 title|node|no||
-footer|union|no||
-onClose|func|no|_.noop|
-hideCloseButton|bool|no||
-children|any|no||
+footer|union|no||Footer element for the component to be rendered.
+onClose|func|no|_.noop|Function specifying the behavior when the modal component is closed.
+hideCloseButton|bool|no||Specifies whether to hide the close button on the modal component.
+children|any|no||Child elements to be rendered within the component.
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
 **src\controls\CheckboxList.jsx**
@@ -240,20 +240,21 @@ className|any|no||CSS classes to be rendered on the root element of this compone
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-text|string|no||
-color|custom|no|&lt;See the source code&gt;|
-size|enum|no|&lt;See the source code&gt;|
-iconSize|enum|no||
-loading|bool|no||
-outlined|bool|no||
-inverted|bool|no|false|
-focused|bool|no||
-hovered|bool|no||
-active|bool|no||
-children|any|no||
-icon|union|no||
+text|string|no||Text to be rendered within the button.
+color|custom|no|&lt;See the source code&gt;|Color of the button.
+size|enum|no|&lt;See the source code&gt;|Size of the button.
+iconSize|enum|no||Size of icon rendered within the button.
+loading|bool|no||Replaces the content of the button with a Loading indicator and sets button to a fixed width.
+outlined|bool|no||Changes the style of the button to outlined.
+inverted|bool|no|false|Changes the style of the button so the text color becomes the background color, and vice-versa.
+focused|bool|no||Adds a highlighted focus border around the button.
+hovered|bool|no||Replaces the style of the button with the hovered style effect.
+active|bool|no||Replaces the style of the button with the active style effect.
+static|bool|no|false|Creates the button so it is non-interactive, useful to align a text label with an input.
+children|any|no||Child elements to be rendered within the button.
+icon|union|no||Icon to be rendered within the button.
+iconPosition|enum|no|&lt;See the source code&gt;|Position of icon to be rendered within the button.
 className|any|no||CSS classes to be rendered on the root element of this component.
-iconPosition|enum|no|&lt;See the source code&gt;|
 -----
 **src\elements\ButtonGroup.jsx**
 
@@ -264,9 +265,9 @@ iconPosition|enum|no|&lt;See the source code&gt;|
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|any|no||
+children|any|no||Child elements to be rendered within the box.
 className|any|no||CSS classes to be rendered on the root element of this component.
-addons|bool|no||
+addons|bool|no||Renders the buttons as add-ons.
 -----
 **src\elements\Content.jsx**
 
@@ -277,9 +278,9 @@ addons|bool|no||
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|any|no||
+children|any|no||Child elements to be rendered within the content.
 className|any|no||CSS classes to be rendered on the root element of this component.
-size|enum|no|&lt;See the source code&gt;|
+size|enum|no|&lt;See the source code&gt;|Changes the size of the content rendered.
 -----
 **src\elements\Delete.jsx**
 
@@ -290,7 +291,7 @@ size|enum|no|&lt;See the source code&gt;|
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-size|enum|no|&lt;See the source code&gt;|
+size|enum|no|&lt;See the source code&gt;|Changes the size of the delete element rendered.
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
 **src\elements\Form.jsx**
@@ -319,33 +320,33 @@ buttons|node|no||
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-name|string|yes||
-size|enum|no||
-rotate|enum|no||
-flip|enum|no||
-fixedWidth|bool|no||
-spin|bool|no||
-stack|enum|no||
-wrap|bool|no|true|
-wrapSize|enum|no|&lt;See the source code&gt;|
-inverse|bool|no||
+name|string|yes||Font Awesome name of the icon to be rendered.
+size|enum|no||Size of the icon element to be rendered.
+rotate|enum|no||Orientation of the icon element to be rendered.
+flip|enum|no||Applies flip effect to icon element to be rendered.
+fixedWidth|bool|no||Renders the icon element with a fixed width.
+spin|bool|no||Applies spin effect to icon element to be rendered.
+stack|enum|no||Renders icon elements stacked.
+wrap|bool|no|true|Specifies that the flexible icon element will wrap if necessary (default: true).
+wrapSize|enum|no|&lt;See the source code&gt;|Specifies size of the wrapping of the flexible icon element.
+inverse|bool|no||Applies inverse color to the icon element to be rendered.
 className|any|no||CSS classes to be rendered on the root element of this component.
-wrench|bool|no||
-ring|bool|no||
-horizontal|bool|no||
-vertical|bool|no||
-flash|bool|no||
-bounce|bool|no||
-float|bool|no||
-pulse|bool|no||
-shake|bool|no||
-tada|bool|no||
-passing|bool|no||
-burst|bool|no||
-fast|bool|no||
-slow|bool|no||
-hover|bool|no||
-skip|bool|no||
+wrench|bool|no||Applies wrench animation effect to icon element.
+ring|bool|no||Applies ring animation effect to icon element.
+horizontal|bool|no||Applies horizontal animation effect to icon element.
+vertical|bool|no||Applies vertical animation effect to icon element.
+flash|bool|no||Applies flash animation effect to icon element.
+bounce|bool|no||Applies bounce animation effect to icon element.
+float|bool|no||Applies float animation effect to icon element.
+pulse|bool|no||Applies pulse animation effect to icon element.
+shake|bool|no||Applies shake animation effect to icon element.
+tada|bool|no||Applies tada animation effect to icon element.
+passing|bool|no||Applies passing animation effect to icon element.
+burst|bool|no||Applies burst animation effect to icon element.
+fast|bool|no||Applies fast animation effect to icon element.
+slow|bool|no||Applies slow animation effect to icon element.
+hover|bool|no||Applies hover animation effect to icon element.
+skip|bool|no||Applies skip animation effect to icon element.
 -----
 **src\elements\Image.jsx**
 
@@ -356,10 +357,10 @@ skip|bool|no||
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|any|no||
-src|string|no||
-size|union|no||
-ratio|union|no||
+children|any|no||Child elements to be rendered within the image.
+src|string|no||Source of image element to be rendered.
+size|union|no||Size of image element to be rendered.
+ratio|union|no||Ratio of image element to be rendered.
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
 **src\elements\Notification.jsx**
@@ -371,8 +372,8 @@ className|any|no||CSS classes to be rendered on the root element of this compone
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|any|no||
-color|custom|no||
+children|any|no||Child elements to be rendered within the notification.
+color|custom|no||Color of the notification.
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
 **src\elements\Progress.jsx**
@@ -384,11 +385,11 @@ className|any|no||CSS classes to be rendered on the root element of this compone
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|any|no||
-color|enum|no|&lt;See the source code&gt;|
-size|enum|no|&lt;See the source code&gt;|
-value|string|no||
-max|string|no||
+children|any|no||Child elements to be rendered within the component.
+color|enum|no|&lt;See the source code&gt;|Color of the progress component.
+size|enum|no|&lt;See the source code&gt;|Size of the progress component.
+value|string|no||Specified value of the progress component.
+max|string|no||Maximum value of the progress component.
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
 **src\elements\Subtitle.jsx**
@@ -400,9 +401,8 @@ className|any|no||CSS classes to be rendered on the root element of this compone
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|any|no||
-size|union|no|5|
-subtitle|bool|no||
+children|any|no||Child elements to be rendered within the component.
+size|union|no|5|Size of the component to be rendered.
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
 **src\elements\Table.jsx**
@@ -414,10 +414,10 @@ className|any|no||CSS classes to be rendered on the root element of this compone
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|any|no||
-bordered|bool|no||
-striped|bool|no||
-narrow|bool|no||
+children|any|no||Child elements to be rendered within the component.
+bordered|bool|no||Applies the bordered style to the table component.
+striped|bool|no||Applies the striped style to the table component.
+narrow|bool|no||Makes the cells of the table component narrower.
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
 **src\elements\Tag.jsx**
@@ -429,10 +429,10 @@ className|any|no||CSS classes to be rendered on the root element of this compone
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|any|no||
-text|string|no||
-color|enum|no|&lt;See the source code&gt;|
-size|enum|no|&lt;See the source code&gt;|
+children|any|no||Child elements to be rendered within the component.
+text|string|no||Text to be rendered within the tag component.
+color|enum|no|&lt;See the source code&gt;|Color of the tag component.
+size|enum|no|&lt;See the source code&gt;|Size of the tag component.
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
 **src\elements\Title.jsx**
@@ -444,8 +444,8 @@ className|any|no||CSS classes to be rendered on the root element of this compone
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|any|no||
-size|union|no|3|
+children|any|no||Child elements to be rendered within the component.
+size|union|no|3|Size of the title component.
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
 **src\forms\Form.jsx**
@@ -727,7 +727,7 @@ type||no|&lt;See the source code&gt;|
 -----
 **src\forms\widgets\CheckboxWidget.js**
 
-### 1. 
+### 1. CheckboxWidget
 
 
 

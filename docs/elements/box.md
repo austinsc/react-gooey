@@ -9,3 +9,7 @@ For example, you can include a media object:
 ```jsx
 <Box />
 ```
+
+```props
+{src}
+```
