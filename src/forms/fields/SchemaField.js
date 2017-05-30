@@ -200,7 +200,7 @@ export default class SchemaField extends Component {
     const help = uiSchema['ui:help'];
     const hidden = uiSchema['ui:widget'] === 'hidden';
 
-    const classNames = cn(`field-${type}`, {
+    const classNames = cn(`field field-${type}`, {
       'field-error has-error is-danger': errors && errors.length,
       [uiSchema.classNames]: uiSchema.classNames
     });

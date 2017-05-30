@@ -1,45 +1,11 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import DescriptionField from '../fields/DescriptionField.js';
+import classNames from 'classnames';
 
-function CheckboxWidget(props) {
-  const {
-    schema,
-    id,
-    value,
-    required,
-    disabled,
-    readonly,
-    label,
-    autofocus,
-    onChange
-  } = props;
-  return (
-    <div className={`checkbox ${disabled || readonly ? 'disabled' : ''}`}>
-      {schema.description &&
-        <DescriptionField description={schema.description} />}
-      <label>
-        <input
-          type="checkbox"
-          id={id}
-          checked={typeof value === 'undefined' ? false : value}
-          required={required}
-          disabled={disabled || readonly}
-          autoFocus={autofocus}
-          onChange={event => onChange(event.target.checked)}
-        />
-        <span>{label}</span>
-      </label>
-    </div>
-  );
-}
-
-CheckboxWidget.defaultProps = {
-  autofocus: false
-};
-
-if (process.env.NODE_ENV !== 'production') {
-  CheckboxWidget.propTypes = {
+export default class CheckboxWidget extends Component {
+  static displayName = 'CheckboxWidget';
+  static propTypes = {
     schema: PropTypes.object.isRequired,
     id: PropTypes.string.isRequired,
     value: PropTypes.bool,
@@ -49,6 +15,20 @@ if (process.env.NODE_ENV !== 'production') {
     autofocus: PropTypes.bool,
     onChange: PropTypes.func
   };
-}
+  static defaultProps = {
+    autofocus: false
+  };
 
-export default CheckboxWidget;
+  render() {
+    const {schema, id, value, required, disabled, readonly, label, autofocus, onChange} = this.props;
+    return (
+      <p className="control">
+        {schema.description && <DescriptionField description={schema.description}/>}
+        <label className="checkbox" htmlFor={id} disabled={disabled || readonly}>
+          <input type="checkbox" id={id} checked={typeof value === 'undefined' ? false : value} required={required} disabled={disabled || readonly} autoFocus={autofocus} onChange={event => onChange(event.target.checked)}/>
+          {label}
+        </label>
+      </p>
+    );
+  }
+}
