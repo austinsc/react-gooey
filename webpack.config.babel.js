@@ -23,6 +23,8 @@ const config = {
 };
 process.env.BABEL_ENV = TARGET;
 
+const extractCSS = new ExtractTextPlugin('styles-css.css');
+const extractSCSS = new ExtractTextPlugin('styles-sass.css');
 
 const common = {
   resolve: {
@@ -58,19 +60,21 @@ const common = {
       include: path.join(ROOT_PATH, 'package.json')
     }, {
       test: /\.css$/,
-      use: [{loader: 'style-loader'}, {loader: 'css-loader'}]
+      use: extractCSS.extract({fallback: 'style-loader', use: ['css-loader']})
     }, {
       test: /\.scss$/i,
-      use: [
-        {loader: 'style-loader'},
-        {loader: 'css-loader'},
-        {
-          loader: 'sass-loader',
-          options: {
-            includePaths: [path.resolve(ROOT_PATH, 'node_modules')]
+      use: extractSCSS.extract({
+        fallback: 'style-loader',
+        use: [
+          {loader: 'css-loader'},
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: [path.resolve(ROOT_PATH, 'node_modules')]
+            }
           }
-        }
-      ]
+        ]
+      })
     }, {
       test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
       use: [{
@@ -92,7 +96,9 @@ const common = {
     }]
   },
   plugins: [
-    new SystemBellPlugin()
+    new SystemBellPlugin(),
+    extractCSS,
+    extractSCSS
   ]
 };
 
@@ -199,7 +205,7 @@ if(TARGET === 'gh-pages' || TARGET === 'gh-pages:stats') {
       new CleanWebpackPlugin(['gh-pages'], {
         verbose: false
       }),
-      new ExtractTextPlugin('[name].[chunkhash].css'),
+      // new ExtractTextPlugin('[name].[chunkhash].css'),
       new webpack.DefinePlugin({
         // This affects the react lib size
         'process.env.NODE_ENV': '"production"'
@@ -215,10 +221,7 @@ if(TARGET === 'gh-pages' || TARGET === 'gh-pages:stats') {
       })
     ],
     module: {
-      rules: [/*{
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
-      }, */{
+      rules: [{
         test: /\.jsx?$/,
         use: [{loader: 'babel-loader'}],
         include: [
@@ -277,21 +280,6 @@ const distCommon = {
       test: /\.jsx?$/,
       use: [{loader: 'babel-loader'}],
       include: config.paths.src
-    }, {
-      test: /\.css$/,
-      use: [{loader: 'style-loader'}, {loader: 'css-loader'}]
-    }, {
-      test: /\.scss$/i,
-      use: [
-        {loader: 'style-loader'},
-        {loader: 'css-loader'},
-        {
-          loader: 'sass-loader',
-          options: {
-            includePaths: [path.resolve(ROOT_PATH, 'node_modules')]
-          }
-        }
-      ]
     }]
   },
   plugins: [
