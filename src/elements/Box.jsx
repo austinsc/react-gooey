@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+/**
+ * The `<Box/>` component is simply a container with a shadow, a border, a radius, and some padding.
+ */
 export default class Box extends Component {
   static displayName = 'Box';
   static propTypes = {

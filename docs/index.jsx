@@ -40,7 +40,8 @@ const pages = [{
   pages: [{
     path: '/elements/box',
     title: 'Box',
-    component: require('../docs/elements/box.md')(require('!!text-loader!../src/elements/Box.jsx'))
+    component: require('../docs/elements/box.md')(require('!!text-loader!../src/elements/Box.jsx')),
+    source: require('!!text-loader!../src/elements/Box.jsx')
   }, {
     path: '/elements/buttons',
     title: 'Button',
