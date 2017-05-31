@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import React, {Component} from 'react'; import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import {GooeyPropTypes} from '../utils';
 
 export class Columns extends Component {
   static displayName = 'Columns';
@@ -42,9 +41,29 @@ export class Column extends Component {
      * CSS classes to be rendered on the root element of this component.
      */
     className: PropTypes.any,
-    size: PropTypes.oneOfType([GooeyPropTypes.column, PropTypes.object]),
-    offset: GooeyPropTypes.column,
-    device: GooeyPropTypes.devices,
+    size: PropTypes.oneOfType([PropTypes.oneOf([
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
+      '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12',
+      'one-quarter',
+      'one-third',
+      'half',
+      'two-thirds',
+      'three-quarters'
+    ]), PropTypes.object]),
+    offset: PropTypes.oneOfType([PropTypes.oneOf([
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
+      '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12',
+      'one-quarter',
+      'one-third',
+      'half',
+      'two-thirds',
+      'three-quarters'
+    ]), PropTypes.object]),
+    device: PropTypes.oneOf([
+      'mobile',
+      'tablet',
+      'desktop'
+    ]),
     narrow: PropTypes.bool
   };
 

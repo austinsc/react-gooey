@@ -50,26 +50,6 @@ Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
 children|any|no||Child elements to be rendered within the component.
 className|string|no||CSS classes to be rendered on the root element of this component.
-### 2. LevelItem
-
-
-
-
-Property | Type | Required | Default value | Description
-:--- | :--- | :--- | :--- | :---
-children|any|no||
-className|string|no||CSS classes to be rendered on the root element of this component.
-### 3. LevelSection
-
-
-
-
-Property | Type | Required | Default value | Description
-:--- | :--- | :--- | :--- | :---
-children|any|no||
-className|string|no||CSS classes to be rendered on the root element of this component.
-left|bool|no||
-right|bool|no||
 -----
 **src\components\MediaObject.jsx**
 
@@ -113,6 +93,19 @@ Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
 children|any|no||Child elements to be rendered within the box.
 className|any|no||CSS classes to be rendered on the root element of this component.
+-----
+**src\components\Message.jsx**
+
+### 1. Message
+
+
+
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+children|any|no||Child elements to be rendered within the box.
+className|any|no||CSS classes to be rendered on the root element of this component.
+color|enum|no|&lt;See the source code&gt;|Color of the button.
 -----
 **src\components\Modal.jsx**
 
@@ -241,7 +234,7 @@ className|any|no||CSS classes to be rendered on the root element of this compone
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
 text|string|no||Text to be rendered within the button.
-color|custom|no|&lt;See the source code&gt;|Color of the button.
+color|enum|no|&lt;See the source code&gt;|Color of the button.
 size|enum|no|&lt;See the source code&gt;|Size of the button.
 iconSize|enum|no||Size of icon rendered within the button.
 loading|bool|no||Replaces the content of the button with a Loading indicator and sets button to a fixed width.
@@ -359,8 +352,8 @@ Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
 children|any|no||Child elements to be rendered within the image.
 src|string|no||Source of image element to be rendered.
-size|union|no||Size of image element to be rendered.
-ratio|union|no||Ratio of image element to be rendered.
+size|enum|no||Size of image element to be rendered.
+ratio|enum|no||Ratio of image element to be rendered.
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
 **src\elements\Notification.jsx**
@@ -373,7 +366,7 @@ className|any|no||CSS classes to be rendered on the root element of this compone
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
 children|any|no||Child elements to be rendered within the notification.
-color|custom|no||Color of the notification.
+color|enum|no||Color of the notification.
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
 **src\elements\Progress.jsx**
@@ -402,7 +395,7 @@ className|any|no||CSS classes to be rendered on the root element of this compone
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
 children|any|no||Child elements to be rendered within the component.
-size|union|no|5|Size of the component to be rendered.
+size|enum|no|5|Size of the component to be rendered.
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
 **src\elements\Table.jsx**
@@ -445,7 +438,7 @@ className|any|no||CSS classes to be rendered on the root element of this compone
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
 children|any|no||Child elements to be rendered within the component.
-size|union|no|3|Size of the title component.
+size|enum|no|3|Size of the title component.
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
 **src\forms\Form.jsx**
@@ -982,8 +975,8 @@ Property | Type | Required | Default value | Description
 children|any|no||
 className|any|no||CSS classes to be rendered on the root element of this component.
 size|union|no||
-offset|custom|no||
-device|custom|no||
+offset|union|no||
+device|enum|no||
 narrow|bool|no||
 -----
 **src\grid\Tile.jsx**
@@ -1001,7 +994,7 @@ child|bool|no||
 vertical|bool|no||
 children|any|no||
 className|any|no||CSS classes to be rendered on the root element of this component.
-size|custom|no||
+size|enum|no||
 -----
 **src\layout\Container.jsx**
 
@@ -1067,10 +1060,10 @@ className||no|PropTypes.any|
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|any|no||
+children|any|no||Child elements to be rendered within the component.
 className|string|no||CSS classes to be rendered on the root element of this component.
-shadow|bool|no||
-hidden|bool|no||
+shadow|bool|no||Modifier to add shadow to nav component.
+hidden|bool|no||Hides the nav component.
 -----
 **src\navigation\NavItem.jsx**
 
@@ -1081,7 +1074,7 @@ hidden|bool|no||
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|any|no||
+children|any|no||Child elements to be rendered within the component.
 -----
 **src\navigation\NavItemLink.jsx**
 
@@ -1092,13 +1085,13 @@ children|any|no||
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|any|no||
-to|union|yes||
+children|any|no||Child elements to be rendered within the component.
+to|union|yes||Destination for nav link component.
 query|object|no||
 hash|string|no||
 state|object|no||
 onlyActiveOnIndex|bool|no|false|
-onClick|func|no||
+onClick|func|no||Function specifiying behavior when component is clicked.
 className|any|no||CSS classes to be rendered on the root element of this component.
 target|string|no||
 tab|bool|no||
@@ -1113,9 +1106,9 @@ location|object|no||
 
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
-children|any|no||
-alignment|enum|no|&lt;See the source code&gt;|
-menu|bool|no|false|
+children|any|no||Child elements to be rendered within the component.
+alignment|enum|no|&lt;See the source code&gt;|Alignment of the component to be rendered.
+menu|bool|no|false|Renders a menu that is collapsable on mobile.
 className|any|no||CSS classes to be rendered on the root element of this component.
 -----
 **src\navigation\NavToggle.jsx**

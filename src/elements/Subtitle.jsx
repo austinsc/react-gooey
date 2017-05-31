@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import * as GooeyPropTypes from '../utils/PropTypes';
 
 export default class Subtitle extends Component {
   static displayName = 'Subtitle';
@@ -13,7 +12,7 @@ export default class Subtitle extends Component {
     /**
      * Size of the component to be rendered.
      */
-    size: PropTypes.oneOfType([GooeyPropTypes.title, PropTypes.object]),
+    size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, '1', '2', '3', '4', '5', '6']),
     /**
      * CSS classes to be rendered on the root element of this component.
      */

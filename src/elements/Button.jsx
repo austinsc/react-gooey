@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import * as GooeyPropTypes from '../utils/PropTypes';
 import classNames from 'classnames';
 import Icon from './Icon';
 
@@ -25,15 +24,37 @@ export default class Button extends Component {
     /**
      * Color of the button.
      */
-    color: GooeyPropTypes.buttonColor,
+    color: PropTypes.oneOf([
+      'default',
+      'primary',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark',
+      'link',
+      'light',
+      'white',
+      'black'
+    ]),
     /**
      * Size of the button.
      */
-    size: PropTypes.oneOf(SIZES),
+    size: PropTypes.oneOf([
+      'normal',
+      'small',
+      'medium',
+      'large'
+    ]),
     /**
      * Size of icon rendered within the button.
      */
-    iconSize: PropTypes.oneOf(SIZES),
+    iconSize: PropTypes.oneOf([
+      'normal',
+      'small',
+      'medium',
+      'large'
+    ]),
     /**
      * Replaces the content of the button with a Loading indicator and sets button to a fixed width.
      */

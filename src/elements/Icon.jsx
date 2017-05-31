@@ -1,8 +1,8 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import 'font-awesome/scss/font-awesome';
-import 'font-awesome-animation/dist/font-awesome-animation.css';
+// import 'font-awesome/scss/font-awesome';
+// import 'font-awesome-animation/dist/font-awesome-animation.css';
 
 export default class Icon extends PureComponent {
   static displayName = 'Icon';

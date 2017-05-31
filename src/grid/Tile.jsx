@@ -1,6 +1,6 @@
-import React, {Component} from 'react'; import PropTypes from 'prop-types';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import {GooeyPropTypes} from '../utils';
 
 export default class Tile extends Component {
   static displayName = 'Tile';
@@ -14,7 +14,15 @@ export default class Tile extends Component {
      * CSS classes to be rendered on the root element of this component.
      */
     className: PropTypes.any,
-    size: GooeyPropTypes.column
+    size: PropTypes.oneOf([
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
+      '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12',
+      'one-quarter',
+      'one-third',
+      'half',
+      'two-thirds',
+      'three-quarters'
+    ])
   };
 
   render() {

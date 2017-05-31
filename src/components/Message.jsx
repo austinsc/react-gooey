@@ -1,6 +1,5 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-import * as GooeyPropTypes from '../utils/PropTypes';
 import classNames from 'classnames';
 
 export class Message extends PureComponent {
@@ -17,7 +16,19 @@ export class Message extends PureComponent {
     /**
      * Color of the button.
      */
-    color: GooeyPropTypes.buttonColor
+    color: PropTypes.oneOf([
+      'default',
+      'primary',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark',
+      'link',
+      'light',
+      'white',
+      'black'
+    ])
   };
   static defaultProps = {
     color: 'default'
