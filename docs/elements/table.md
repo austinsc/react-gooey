@@ -1,5 +1,8 @@
 > The inevitable HTML **table**, with special case cells.
 
+```props
+```
+
 ## Modifiers
 
 ```hint|neutral

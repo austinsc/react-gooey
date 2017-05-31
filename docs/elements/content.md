@@ -1,5 +1,8 @@
 > A single class to handle WYSIWYG generated content, where only **HTML tags** are available
-  
+
+```props
+```
+
 When you can't use the CSS classes you want, or when you just want to directly use HTML tags, use `<Content/>` as a container. It can handle almost any HTML tag:
 
  - `<p>` paragraphs

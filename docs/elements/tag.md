@@ -1,5 +1,7 @@
 > Small **tag labels** to insert anywhere
 
+```props
+```
 
 By default, a `<Tag/>` is a 24px high label.
 

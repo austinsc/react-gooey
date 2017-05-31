@@ -1,5 +1,7 @@
 > Native HTML **progress** bars
 
+```props
+```
 
 ```jsx
 <div>

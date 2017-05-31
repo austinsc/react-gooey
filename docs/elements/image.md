@@ -1,5 +1,8 @@
 > A container for **responsive images**
 
+```props
+```
+
 Because images can take a few seconds to load (or not at all), use the `<Image/>` container to specify a **precisely sized** container so that your layout isn"t broken because of image loading or image errors.
 
 ```jsx

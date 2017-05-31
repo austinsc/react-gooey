@@ -41,7 +41,7 @@ const common = {
     // }],
     rules: [{
       test: /\.md$/,
-      use: [/*{loader: 'text-loader'}, */{loader: path.join(config.paths.docs, 'loader')}, {loader: 'raw-loader'}]
+      use: [/*{loader: 'text-loader'}, */{loader: 'catalog/dist/loader'}, {loader: 'raw-loader'}]
     }, {
       test: /\.png$/,
       use: [{loader: 'url-loader?limit=100000&mimetype=image/png'}],

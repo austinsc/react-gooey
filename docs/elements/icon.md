@@ -1,5 +1,8 @@
 > React-gooey is compatible with **Font Awesome** icons
 
+```props
+```
+
 Because the icons can take a few seconds to load, and because you want control over the space the icons will take, you can use `<Icon/>`:
 
 ```jsx

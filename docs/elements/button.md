@@ -1,4 +1,8 @@
 > The classic **button**, in different colors, sizes, and states
+
+```props
+```
+
 ```jsx
 <ButtonGroup>
   <Button text="Button"/>
