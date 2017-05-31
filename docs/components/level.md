@@ -51,7 +51,7 @@ No matter what elements you put inside a `<Level/>`, they will always be **verti
 If you want a **centered** level, you can use as many `<Level.Item/>` as you want, as long as they are direct children of the `<Level/>` container.
 
 ```jsx
-<Level>
+<Level className="has-text-centered">
   <Level.Item>
     <Subtitle size="5">TWEETS
       <Title size="3">3,456</Title>

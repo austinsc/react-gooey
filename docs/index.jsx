@@ -5,7 +5,6 @@ import GithubCorner from 'react-github-corner';
 import {Catalog, CodeSpecimen, ReactSpecimen} from 'catalog';
 import ReactProps from './ReactProps';
 import * as Gooey from '../src/index';
-import {colors} from '../src/utils';
 import logo from '../react-gooey.svg';
 import theme from './theme';
 import '../src/css/main';
@@ -15,8 +14,7 @@ import 'font-awesome-animation/dist/font-awesome-animation.css';
 const documentationImports = {
   // React,
   ReactDOM,
-  ...Gooey,
-  colors
+  ...Gooey
 };
 const pages = [{
   path: '/',

@@ -49,15 +49,15 @@ If you don"t know the exact dimensions but know the **ratio** instead, you can u
 <div>
   <Image ratio="square" src="http://placehold.it/256x256"/>
   <br />
-  <Image size="1by1" src="http://placehold.it/480x480"/>
+  <Image ratio="1by1" src="http://placehold.it/480x480"/>
   <br />
-  <Image size="4by3" src="http://placehold.it/640x480"/>
+  <Image ratio="4by3" src="http://placehold.it/640x480"/>
   <br />
-  <Image size="3by2" src="http://placehold.it/480x320"/>
+  <Image ratio="3by2" src="http://placehold.it/480x320"/>
   <br />
-  <Image size="16by9" src="http://placehold.it/640x360"/>
+  <Image ratio="16by9" src="http://placehold.it/640x360"/>
   <br />
-  <Image size="2by1" src="http://placehold.it/640x320"/>
+  <Image ratio="2by1" src="http://placehold.it/640x320"/>
 </div>
 ```
 

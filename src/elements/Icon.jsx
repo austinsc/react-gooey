@@ -4,6 +4,8 @@ import classNames from 'classnames';
 // import 'font-awesome/scss/font-awesome';
 // import 'font-awesome-animation/dist/font-awesome-animation.css';
 
+const sizes = ['lg', '2x', '3x', '4x', '5x'];
+
 export default class Icon extends PureComponent {
   static displayName = 'Icon';
   static propTypes = {
@@ -14,7 +16,7 @@ export default class Icon extends PureComponent {
     /**
      * Size of the icon element to be rendered.
      */
-    size: PropTypes.oneOf(['lg', '2x', '3x', '4x', '5x']),
+    size: PropTypes.oneOf(['small', 'medium', 'large', 'normal']),
     /**
      * Orientation of the icon element to be rendered.
      */
