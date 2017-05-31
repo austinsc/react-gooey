@@ -36,7 +36,7 @@ export default class Table extends Component {
       [className]: !!className
     });
     return (
-      <div className={classes} {...rest}>{children}</div>
+      <table className={classes} {...rest}>{children}</table>
     );
   }
 }

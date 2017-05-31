@@ -1,6 +1,5 @@
 import React, {Component} from 'react'; import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import {GooeyPropTypes} from '../utils';
 
 export default class Notification extends Component {
   static displayName = 'Notification';
@@ -12,7 +11,17 @@ export default class Notification extends Component {
     /**
      * Color of the notification.
      */
-    color: GooeyPropTypes.color,
+    color: PropTypes.oneOf([
+      'danger',
+      'info',
+      'primary',
+      'warning',
+      'success',
+      'light',
+      'dark',
+      'purple',
+      'orange'
+    ]),
     /**
      * CSS classes to be rendered on the root element of this component.
      */

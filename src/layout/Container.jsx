@@ -13,13 +13,13 @@ export default class Container extends Component {
   };
 
   render() {
-    const {className, children, fluid} = this.props;
+    const {className, children, fluid, ...rest} = this.props;
     const classes = classNames('container', {
       'is-fluid': fluid,
       [className]: !!className
     });
     return (
-      <div className={classes}>
+      <div className={classes} {...rest}>
         {children}
       </div>
     );

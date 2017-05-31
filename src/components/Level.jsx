@@ -1,7 +1,8 @@
-import React, {Component} from 'react'; import PropTypes from 'prop-types';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const Nested = (cn) => function ({className, children}) {
+const Nested = (cn) => function({className, children}) {
   const classes = classNames(`level-${cn}`, {
     [className]: !!className
   });
