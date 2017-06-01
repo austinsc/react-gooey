@@ -41,7 +41,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.11.6",
     "babel-traverse": "^6.13.0",
-    "catalog": "^2.4.4",
+    "catalog": "^3.0.0-rc.3",
     "chai": "^3.5.0",
     "clean-webpack-plugin": "^0.1.10",
     "css-loader": "^0.28.2",
@@ -119,7 +119,6 @@
   ],
   "dependencies": {
     "bulma": "^0.4.1",
-    "catalog": "^3.0.0-rc.3",
     "classnames": "^2.2.5",
     "font-awesome": "^4.6.3",
     "font-awesome-animation": "0.0.10",
