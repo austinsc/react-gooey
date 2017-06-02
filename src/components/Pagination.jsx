@@ -16,7 +16,7 @@ import createNestedComponent, {createNestedListComponent} from '../Nested';
      */
     className: PropTypes.string,
     /**
-     * Size of the card component.
+     * Size of the pagination component.
      */
     size: PropTypes.oneOf([
       'normal',
@@ -25,7 +25,7 @@ import createNestedComponent, {createNestedListComponent} from '../Nested';
       'large'
     ]),
     /**
-     * Position of icon to be rendered within the button.
+     * Position of list to be rendered.
      */
     listPosition: PropTypes.oneOf(['left', 'right', 'centered'])
   };

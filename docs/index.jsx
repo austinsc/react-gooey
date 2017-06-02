@@ -152,7 +152,8 @@ const pages = [{
   }, {
     path: '/components/tabs',
     title: 'Tabs',
-    component: require('../docs/components/tabs.md')
+    component: require('../docs/components/tabs.md'),
+    source: require('!!text-loader!../src/components/Panel.jsx')
   }]
 }, {
   title: 'Layout',
