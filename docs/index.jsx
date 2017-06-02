@@ -11,8 +11,30 @@ import '../src/css/main';
 import 'font-awesome/scss/font-awesome';
 import 'font-awesome-animation/dist/font-awesome-animation.css';
 
+const forms = {
+  todo: {
+    title: "Todo",
+    type: "object",
+    required: ["title"],
+    properties: {
+      title: {type: "string", title: "Title", description: "This is a bit of help text just for you."},
+      done: {type: "boolean", title: "Done?", default: false}
+    }
+  }
+};
+
+const formsui = {
+  todo: {
+    title: {
+      'ui:placeholder': "A new task"
+    }
+  }
+};
+
 const documentationImports = {
   logo,
+  forms,
+  formsui,
   // React,
   ReactDOM,
   ...Gooey
@@ -139,7 +161,8 @@ const pages = [{
   }, {
     path: '/components/nav',
     title: 'Nav',
-    component: require('../docs/components/nav.md')
+    component: require('../docs/components/nav.md'),
+    source: require('!!text-loader!../src/navigation/Nav.jsx')
   }, {
     path: '/components/pagination',
     title: 'Pagination',
@@ -179,7 +202,13 @@ const pages = [{
   pages: [{
     path: '/forms/form',
     title: 'Forms',
-    component: require('../docs/forms/form.md')
+    component: require('../docs/forms/form.md'),
+    source: require('!!text-loader!../src/forms/Form.jsx')
+  }, {
+    path: '/forms/modal',
+    title: 'Form Modal',
+    component: require('../docs/forms/form-modal.md'),
+    source: require('!!text-loader!../src/forms/Form.jsx')
   }]
 }, {
   path: '/proptypes',
