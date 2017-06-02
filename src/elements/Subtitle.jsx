@@ -10,6 +10,10 @@ export default class Subtitle extends Component {
      */
     children: PropTypes.any,
     /**
+     * If true, apply the heading class to the title
+     */
+    heading: PropTypes.bool,
+    /**
      * Size of the component to be rendered.
      */
     size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, '1', '2', '3', '4', '5', '6']),
@@ -23,9 +27,10 @@ export default class Subtitle extends Component {
   };
 
   render() {
-    const {children, size, className, ...rest} = this.props;
+    const {children, heading, size, className, ...rest} = this.props;
     const classes = classNames('subtitle', {
       [`is-${size}`]: !!size,
+      'heading': heading,
       [className]: !!className
     });
     return React.createElement(`h${size}`, {className: classes, ...rest}, children);

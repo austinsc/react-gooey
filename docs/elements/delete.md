@@ -1,4 +1,4 @@
-## A versatile **delete** cross
+> A versatile **delete** cross
 
 ```props
 ```
@@ -16,8 +16,11 @@
 ```jsx
 <div>
   <Delete size="small"/>
+  &nbsp;
   <Delete/>
+  &nbsp;
   <Delete size="medium"/>
+  &nbsp;
   <Delete size="large"/>
 </div>
 ```

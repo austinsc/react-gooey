@@ -1,5 +1,6 @@
 import _ from 'lodash';
-import React, {Component} from 'react'; import PropTypes from 'prop-types';
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 
@@ -91,7 +92,7 @@ export class ModalCard extends Component {
     return (
       <ModalBase onClose={onClose} active={active}>
         <div className={classes} {...rest}>
-         {head}
+          {head}
           <section className="modal-card-body">
             {children}
           </section>
