@@ -17,7 +17,7 @@ No matter what elements you put inside a `<Level/>`, they will always be **verti
 <Level>
   <Level.Left>
     <Level.Item>
-      <Title size="5" subtitle><strong>123</strong> posts</Title>
+      <Subtitle size="5"><strong>123</strong> posts</Subtitle>
     </Level.Item>
     <Level.Item>
       Item Two
@@ -53,22 +53,26 @@ If you want a **centered** level, you can use as many `<Level.Item/>` as you wan
 ```jsx
 <Level className="has-text-centered">
   <Level.Item>
-    <Subtitle size="5">TWEETS
+    <Subtitle size="5" heading>
+      Tweets
       <Title size="3">3,456</Title>
     </Subtitle>
   </Level.Item>
   <Level.Item>
-    <Subtitle size="5">FOLLOWING
+    <Subtitle size="5" heading>
+      Following
       <Title size="3">123</Title>
     </Subtitle>
   </Level.Item>
   <Level.Item>
-    <Subtitle size="5">FOLLOWERS
+    <Subtitle size="5" heading>
+      Followers
       <Title size="3">456K</Title>
     </Subtitle>
   </Level.Item>
   <Level.Item>
-    <Subtitle size="5">LIKES
+    <Subtitle size="5" heading>
+      Likes
       <Title size="3">789</Title>
     </Subtitle>
   </Level.Item>

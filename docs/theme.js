@@ -31,7 +31,7 @@ export default {
   lightColor: greylighter,
 
   // Used in PageHeader
-  pageHeadingBackground: turquoise,
+  pageHeadingBackground: 'linear-gradient(141deg, #009e6c 0%, #00d1b2 71%, #00e7eb 100%)',
   pageHeadingTextColor:  white,
 
   // Used in Menu and PageHeader to make sure the top parts have
