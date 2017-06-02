@@ -11,29 +11,62 @@ A responsive horizontal **nav bar** that can contain links, tabs, buttons, icons
       </Title>
     </Nav.Item>
   </Nav.Left>
-  <NavSection alignment="center">
-    <NavItem>
+  <Nav.Center>
+    <Nav.Item>
       <Icon name="github"/>
       <Icon name="twitter"/>
-    </NavItem>
-  </NavSection>
-  <NavSection alignment="right">
-    <NavItem>
+    </Nav.Item>
+  </Nav.Center>
+  <Nav.Right>
+    <Nav.Item>
       Home
-    </NavItem>
-    <NavItem>
+    </Nav.Item>
+    <Nav.Item>
       Documentation
-    </NavItem>
-    <NavItem>
+    </Nav.Item>
+    <Nav.Item>
       Blog
-    </NavItem>
-    <NavItem>
+    </Nav.Item>
+    <Nav.Item>
       <Button icon="twitter" text="Tweet"/>
-    </NavItem>
-    <NavItem>
+    </Nav.Item>
+    <Nav.Item>
       <Button icon="download" text="Download" color="primary"/>
-    </NavItem>
-  </NavSection>
+    </Nav.Item>
+  </Nav.Right>
+</Nav>
+```
 
+* The `<Nav/>` container can have a shadow by adding the **shadow** modifier
+* The `<Nav.Item/>` can become active by adding the **active** modifier
+* The `<Nav.Item/>` can become a tab by adding the **tab** modifier
+
+```jsx
+<Nav shadow>
+  <Container>
+    <Nav.Left>
+      <Nav.Item>
+        <Image size="24x24" src={logo} />
+        <Title size="5" style={{marginLeft: '.25rem'}}>
+          GOOEY
+        </Title>
+      </Nav.Item>
+    </Nav.Left>
+    <Nav.Toggle/>
+    <Nav.Right menu>
+      <Nav.Link tab active>
+        Home
+      </Nav.Link>
+      <Nav.Link tab>
+        Features
+      </Nav.Link>
+      <Nav.Link tab>
+        Pricing
+      </Nav.Link>
+      <Nav.Link tab>
+        About
+      </Nav.Link>
+  </Nav.Right>
+  </Container>
 </Nav>
 ```

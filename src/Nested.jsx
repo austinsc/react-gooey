@@ -15,3 +15,14 @@ export default function createNestedComponent(baseClassName, elementType = 'div'
     return React.createElement(elementType, ({className: classes, ...rest}), children);
   };
 }
+
+export function createNestedListComponent(baseClassName, elementType = 'div', classMap = {}){
+  const Element = createNestedComponent(baseClassName, elementType, classMap);
+  return function(props) {
+    return (
+      <li>
+        <Element {...props} />
+      </li>
+    );
+  };
+}

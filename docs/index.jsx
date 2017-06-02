@@ -166,7 +166,8 @@ const pages = [{
   }, {
     path: '/components/pagination',
     title: 'Pagination',
-    component: require('../docs/components/pagination.md')
+    component: require('../docs/components/pagination.md'),
+    source: require('!!text-loader!../src/components/Pagination.jsx')
   }, {
     path: '/components/panel',
     title: 'Panel',

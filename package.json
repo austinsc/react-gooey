@@ -55,6 +55,7 @@
     "file-loader": "^0.11.1",
     "gh-pages": "^1.0.0",
     "git-prepush-hook": "^1.0.1",
+    "history": "^3.0.0",
     "html-webpack-plugin": "^2.22.0",
     "html-webpack-template": "^6.0.1",
     "isparta-loader": "^2.0.0",
@@ -120,6 +121,7 @@
   "dependencies": {
     "bulma": "^0.4.1",
     "classnames": "^2.2.5",
+    "css-selector-tokenizer": "^0.7.0",
     "font-awesome": "^4.6.3",
     "font-awesome-animation": "0.0.10",
     "prop-types": "^15.5.10",
