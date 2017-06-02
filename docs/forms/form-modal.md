@@ -9,7 +9,6 @@ The interactive forms are powered by [react-jsonschema-form](https://github.com/
 lang: json
 span: 2
 ---
-// schema
 {
   title: "Todo",
   type: "object",
@@ -18,20 +17,14 @@ span: 2
     title: {
       type: "string", 
       title: "Title", 
-      default: "A new task"
+      default: "A new task",
+      description: "This is a bit of help text just for you."
     },
     done: {
       type: "boolean", 
       title: "Done?", 
       default: false
     }
-  }
-}
-
-// uiSchema
-{
-  title: {
-    'ui:placeholder': "A new task"
   }
 }
 ```
