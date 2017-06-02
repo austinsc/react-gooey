@@ -3,11 +3,14 @@ A responsive horizontal **nav bar** that can contain links, tabs, buttons, icons
 
 ```jsx
 <Nav>
-  <NavSection alignment="left">
-    <NavItem>
-    
-    </NavItem>
-  </NavSection>
+  <Nav.Left>
+    <Nav.Item>
+      <Image size="24x24" src={logo} />
+      <Title size="5" style={{marginLeft: '.25rem'}}>
+        GOOEY
+      </Title>
+    </Nav.Item>
+  </Nav.Left>
   <NavSection alignment="center">
     <NavItem>
       <Icon name="github"/>

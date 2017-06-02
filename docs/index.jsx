@@ -12,6 +12,7 @@ import 'font-awesome/scss/font-awesome';
 import 'font-awesome-animation/dist/font-awesome-animation.css';
 
 const documentationImports = {
+  logo,
   // React,
   ReactDOM,
   ...Gooey
