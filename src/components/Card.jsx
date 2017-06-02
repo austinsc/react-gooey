@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, {Component, Children} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Icon from '../elements/Icon';
 
-const Nested = (cn) => function ({className, children}) {
+const Nested = (cn) => function({className, children}) {
   const classes = classNames(`card-${cn}`, {
     [className]: !!className
   });
@@ -15,20 +15,24 @@ const Nested = (cn) => function ({className, children}) {
 };
 
 class Header extends Component {
-  static displayName = 'Header';
+  static displayName = 'Card.Header';
   static propTypes = {
     icon: PropTypes.string,
     text: PropTypes.string
   };
+
   render() {
-    const {icon, text} = this.props;
+    const {icon, text, className, ...rest} = this.props;
+    const classes = classNames('card-header', {
+      [className]: !!className
+    });
     return (
-      <header className="card-header">
+      <header className={classes} {...rest}>
         {text && <p className="card-header-title">
           {text}
         </p>}
         {icon && (<a className="card-header-icon">
-        <Icon name={icon}/>
+          <Icon name={icon}/>
         </a>)}
       </header>
     );
@@ -36,21 +40,25 @@ class Header extends Component {
 }
 
 class Footer extends Component {
-  static displayName = 'Header';
+  static displayName = 'Card.Footer';
   static propTypes = {
     children: PropTypes.any
   };
+
   render() {
-    const {children} = this.props;
-    const content = children && children.map(x => <div className="card-footer-item">{x}</div>);
+    const {children, className, ...rest} = this.props;
+    const classes = classNames('card-footer', {
+      [className]: !!className
+    });
     return (
-      <div className="card-footer">
-        {content}
+      <div className={classes} {...rest}>
+        {Children.map(children, (x, i) => <div key={i} className="card-footer-item">{x}</div>)}
       </div>
     );
   }
 }
-  export class Card extends Component {
+
+export class Card extends Component {
   static displayName = 'Card';
   static propTypes = {
     /**
@@ -60,11 +68,7 @@ class Footer extends Component {
     /**
      * CSS classes to be rendered on the root element of this component.
      */
-    className: PropTypes.string,
-    /**
-     * Size of the card component.
-     */
-    size: PropTypes.oneOf(['is-full-width'])
+    className: PropTypes.string
   };
   static Header = Header;
   static Image = Nested('image');
