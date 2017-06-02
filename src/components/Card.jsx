@@ -17,7 +17,21 @@ const Nested = (cn) => function({className, children}) {
 class Header extends Component {
   static displayName = 'Card.Header';
   static propTypes = {
+    /**
+     * Child elements to be rendered within the component.
+     */
+    children: PropTypes.any,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
+    className: PropTypes.string,
+    /**
+     *
+     */
     icon: PropTypes.string,
+    /**
+     *
+     */
     text: PropTypes.string
   };
 
@@ -42,7 +56,14 @@ class Header extends Component {
 class Footer extends Component {
   static displayName = 'Card.Footer';
   static propTypes = {
-    children: PropTypes.any
+    /**
+     * Child elements to be rendered within the component.
+     */
+    children: PropTypes.any,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
+    className: PropTypes.string
   };
 
   render() {
