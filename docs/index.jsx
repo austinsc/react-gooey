@@ -191,14 +191,16 @@ const pages = [{
     title: 'Hero',
     component: require('../docs/layout/hero.md'),
     source: require('!!text-loader!../src/layout/Hero.jsx')
+  },{
+    path: '/layout/section',
+    title: 'Section',
+    component: require('../docs/layout/section.md'),
+    source: require('!!text-loader!../src/layout/Section.jsx')
   }, {
     path: '/layout/footer',
     title: 'Footer',
-    component: require('../docs/layout/footer.md')
-  }, {
-    path: '/layout/section',
-    title: 'Section',
-    component: require('../docs/layout/section.md')
+    component: require('../docs/layout/footer.md'),
+    source: require('!!text-loader!../src/layout/Footer.jsx')
   }]
 }, {
   title: 'Forms',

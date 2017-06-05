@@ -4,8 +4,10 @@ import classNames from 'classnames';
 
 export default class Footer extends Component {
   static displayName = 'Footer';
-  static propTypes = {};
-  static defaultProps = {
+  static propTypes = {
+    /**
+     * Child elements to be rendered within the footer.
+     */
     children: PropTypes.any,
     /**
      * CSS classes to be rendered on the root element of this component.

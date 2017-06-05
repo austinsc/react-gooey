@@ -1,6 +1,7 @@
-# Footer Component
+> A simple responsive **footer** which can include anything: lists, headings, columns, icons, buttons...
 
-A simple responsive **footer** which can include anything: lists, headings, columns, icons, buttons...
+```props
+```
 
 ```jsx
 <Footer>
