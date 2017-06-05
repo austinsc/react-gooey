@@ -23,7 +23,10 @@ export default class ModalForm extends PureComponent {
      * Sets the modal state of visibility.
      */
     active: PropTypes.bool,
-    title: PropTypes.node,
+    /**
+     * The title of the modal
+     */
+    title: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     /**
      * Footer element for the component to be rendered.
      */
@@ -89,12 +92,12 @@ export default class ModalForm extends PureComponent {
   };
 
   render() {
-    const {className, schema, hideCloseButton, color, footer, active, ...rest}=this.props;
+    const {className, schema, hideCloseButton, color, footer, active, onClose, ...rest}=this.props;
     const classes = classNames('modal-form', {
       [className]: !!className
     });
     return (
-      <ModalCard className={classes} title={schema.title} hideCloseButton={hideCloseButton} footer={footer} active={active} color={color}>
+      <ModalCard className={classes} title={schema.title} hideCloseButton={hideCloseButton} footer={footer} active={active} color={color} onClose={onClose}>
         <Form schema={schema} {...rest}>
           <span />
         </Form>
