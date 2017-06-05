@@ -171,12 +171,13 @@ const pages = [{
   }, {
     path: '/components/panel',
     title: 'Panel',
-    component: require('../docs/components/panel.md')
+    component: require('../docs/components/panel.md'),
+    source: require('!!text-loader!../src/components/Panel.jsx')
   }, {
     path: '/components/tabs',
     title: 'Tabs',
     component: require('../docs/components/tabs.md'),
-    source: require('!!text-loader!../src/components/Panel.jsx')
+    source: require('!!text-loader!../src/components/Tabs.jsx')
   }]
 }, {
   title: 'Layout',

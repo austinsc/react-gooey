@@ -1,9 +1,11 @@
-# Card Components
-An all-around flexible and composable component
+> An all-around flexible and composable component
+
+```props
+```
 
 `<Card/>`: the main container
   * `<Card.Header/>`: a horizontal bar with a shadow
-    * has props title and text
+    * has props text and icon
   * `<Card.Image/>`: a fullwidth container for a responsive image
   * `<Card.Content/>`: a multi-purpose container for any other element
   * `<Card.Footer/>`: a horizonal list of controls

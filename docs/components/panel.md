@@ -9,6 +9,7 @@ The panel is container for several types:
 * `<Panel.Tabs/>` for navigation
 * `<Panel.Block/>` which can contain other elements
 * `<Panel.Link/>` which can contain an icon and/or text
+* `<Panel.Checkbox/>` which can contain text and an onChange functions
 
 ```jsx
 <Panel>
@@ -31,6 +32,7 @@ The panel is container for several types:
   <Panel.Link text="jgthms.github.io" icon="book" />
   <Panel.Link text="daniellowtw/infBoard" icon="code-fork" />
   <Panel.Link text="mojs" icon="code-fork" />
+  <Panel.Checkbox text="Remember me" />
   <Button text="Reset all filters" color="primary" outlined />
 </Panel>
 ```

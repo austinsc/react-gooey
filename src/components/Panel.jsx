@@ -49,6 +49,37 @@ class Link extends PureComponent {
   }
 }
 
+class Checkbox extends PureComponent {
+  static displayName = 'Panel.Checkbox';
+  static propTypes = {
+    /**
+     * Child elements to be rendered within the box.
+     */
+    children: PropTypes.any,
+    value: PropTypes.bool,
+    onChange: PropTypes.func,
+    text: PropTypes.string,
+    /**
+     * CSS classes to be rendered on the root element of this component.
+     */
+    className: PropTypes.any
+  };
+  static defaultProps = {value: false};
+
+  render() {
+    const {text, value, onChange, className, ...rest} = this.props;
+    const classes = classNames('panel-block', {
+      [className]: !!className
+    });
+    return (
+      <label className={classes} {...rest}>
+        <input type="checkbox" value={value} onChange={onChange}/>
+        {text}
+      </label>
+    );
+  }
+}
+
 export class Panel extends Component {
   static displayName = 'Panel';
   static propTypes = {
@@ -59,17 +90,13 @@ export class Panel extends Component {
     /**
      * CSS classes to be rendered on the root element of this component.
      */
-    className: PropTypes.string,
-    /**
-     * Size of the card component.
-     */
-    size: PropTypes.oneOf(['is-full-width'])
+    className: PropTypes.string
   };
   static Heading = createNestedComponent('panel-heading', 'p');
   static Block = createNestedComponent('panel-block', 'div');
   static Tabs = createNestedComponent('panel-tabs', 'p');
   static Link = Link;
- // static Checkbox = Checkbox;
+  static Checkbox = Checkbox;
   render() {
     const {children, className, ...rest} = this.props;
     const classes = classNames('panel', {
