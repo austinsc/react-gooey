@@ -3,12 +3,14 @@
 There are **2 types** of headings:
 
 ```jsx
-<Title>
-  Title
+<div>
+  <Title>
+    Title
+  </Title>
   <Subtitle>
     Subtitle
   </Subtitle>
-</Title>
+</div>
 ```
 
 
@@ -68,17 +70,11 @@ As a rule of thumb, it is recommended to use a size difference of **two**. So if
 
 ```jsx
 <div>
-  <Title size="1">
-    Title 1
-    <Subtitle size="3">Subtitle 3</Subtitle>
-  </Title>
-  <Title size="2">
-    Title 2
-    <Subtitle size="4">Subtitle 4</Subtitle>
-  </Title>
-  <Title size="3">
-    Title 3
-    <Subtitle size="5">Subtitle 5</Subtitle>
-  </Title>    
+  <Title size="1">Title 1</Title>
+  <Subtitle size="3">Subtitle 3</Subtitle>
+  <Title size="2">Title 2</Title>
+  <Subtitle size="4">Subtitle 4</Subtitle>
+  <Title size="3">Title 3</Title>
+  <Subtitle size="5">Subtitle 5</Subtitle>
 </div>
 ```

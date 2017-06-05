@@ -186,11 +186,11 @@ const pages = [{
     title: 'Container',
     component: require('../docs/layout/container.md'),
     source: require('!!text-loader!../src/layout/Container.jsx')
-
   }, {
     path: '/layout/hero',
     title: 'Hero',
-    component: require('../docs/layout/hero.md')
+    component: require('../docs/layout/hero.md'),
+    source: require('!!text-loader!../src/layout/Hero.jsx')
   }, {
     path: '/layout/footer',
     title: 'Footer',
