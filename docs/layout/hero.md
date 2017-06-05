@@ -1,6 +1,19 @@
-# Hero Components
+> An imposing **hero banner** to showcase something
 
-Heros are a great way to feature information and titles in a colorful way within your application. 
+```props
+```
+
+```jsx
+<Hero>
+  <Hero.Body>
+    <Container>
+      <Title>
+      
+      </Title>
+    </Container>
+  </Hero.Body>
+</Hero>
+```
 
 ```jsx
 <Hero color="success" bold>

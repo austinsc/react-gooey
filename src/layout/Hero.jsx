@@ -39,6 +39,9 @@ export default class Hero extends Component {
       'right'
     ]),
     bold: PropTypes.bool,
+    /**
+     * Child elements to be rendered within the container.
+     */
     children: PropTypes.any,
     /**
      * CSS classes to be rendered on the root element of this component.

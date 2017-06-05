@@ -184,7 +184,9 @@ const pages = [{
   pages: [{
     path: '/layout/container',
     title: 'Container',
-    component: require('../docs/layout/container.md')
+    component: require('../docs/layout/container.md'),
+    source: require('!!text-loader!../src/layout/Container.jsx')
+
   }, {
     path: '/layout/hero',
     title: 'Hero',
