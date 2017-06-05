@@ -1,3 +1,38 @@
-# Panel Components
+> A composable **panel**, for compact controls
 
-Here is some info about the components. 
+```props
+```
+
+The panel is container for several types:
+
+* `<Panel.Heading/>` as the first child
+* `<Panel.Tabs/>` for navigation
+* `<Panel.Block/>` which can contain other elements
+* `<Panel.Link/>` which can contain an icon and/or text
+* `<Panel.Checkbox/>` which can contain text and an onChange functions
+
+```jsx
+<Panel>
+  <Panel.Heading>
+    Repositories
+  </Panel.Heading>
+  <Panel.Block>
+  
+  </Panel.Block>
+  <Panel.Tabs>
+    <a className="is-active">All</a>
+    <a>Public</a>
+    <a>Private</a>
+    <a>Sources</a>
+    <a>Forks</a>
+  </Panel.Tabs>
+  <Panel.Link text="react-gooey" icon="book" active />
+  <Panel.Link text="marksheet" icon="book" />
+  <Panel.Link text="minireset.css" icon="book" />
+  <Panel.Link text="jgthms.github.io" icon="book" />
+  <Panel.Link text="daniellowtw/infBoard" icon="code-fork" />
+  <Panel.Link text="mojs" icon="code-fork" />
+  <Panel.Checkbox text="Remember me" />
+  <Button text="Reset all filters" color="primary" outlined />
+</Panel>
+```

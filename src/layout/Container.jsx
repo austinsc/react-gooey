@@ -4,7 +4,13 @@ import classNames from 'classnames';
 export default class Container extends Component {
   static displayName = 'Container';
   static propTypes = {
+    /**
+     * Child elements to be rendered within the container.
+     */
     children: PropTypes.any,
+    /**
+     * Renders the container with a 20px margin on the left and right sides without a maximum width.
+     */
     fluid: PropTypes.bool,
     /**
      * CSS classes to be rendered on the root element of this component.

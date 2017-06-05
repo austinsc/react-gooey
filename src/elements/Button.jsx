@@ -90,7 +90,7 @@ export default class Button extends Component {
     /**
      * Icon to be rendered within the button.
      */
-    icon: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    icon: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     /**
      * Position of icon to be rendered within the button.
      */
@@ -129,7 +129,7 @@ export default class Button extends Component {
       if(typeof icon === 'string') {
         iconComponent = <Icon name={icon} wrap wrapSize={iconSize || bulmaSizeToFontAwesomeSize(size)} />;
       } else {
-        iconComponent = <Icon {...icon} />;
+        iconComponent = icon;
       }
     }
 

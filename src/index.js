@@ -3,6 +3,8 @@ export {default as Level} from './components/Level';
 export {default as ModalCard} from './components/Modal';
 export {default as Card} from './components/Card';
 export {Pagination} from './components/Pagination';
+export {Panel} from './components/Panel';
+export {Tabs} from './components/Tabs';
 export {Message} from './components/Message';
 export {MediaObject} from './components/MediaObject';
 export {default as Menu, Label as MenuLabel, List as MenuList} from './components/Menu';

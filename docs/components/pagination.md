@@ -1,8 +1,9 @@
-# Pagination Components
-A responsive, usable, and flexible **pagination**
+> A responsive, usable, and flexible **pagination**
+
+```props
+```
 
 The pagination component consists of several elements:
-
 * `<Pagination.Previous/>` and `<Pagination.Next/>` for incremental navigation
 * `<Pagination.List/>` which displays page items:
   * `<Pagination.Link/>` for the page numbers

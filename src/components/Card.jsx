@@ -28,7 +28,7 @@ class Header extends Component {
     /**
      *
      */
-    icon: PropTypes.string,
+    icon: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
     /**
      *
      */
@@ -40,13 +40,26 @@ class Header extends Component {
     const classes = classNames('card-header', {
       [className]: !!className
     });
+    let iconComponent = null;
+    if(icon) {
+      if(typeof icon === 'string') {
+        iconComponent = (
+          <span className="panel-icon">
+            <Icon name={icon} wrap={false}/>
+          </span>
+        );
+      } else {
+        iconComponent =
+          <span className="panel-icon">{icon}</span>;
+      }
+    }
     return (
       <header className={classes} {...rest}>
         {text && <p className="card-header-title">
           {text}
         </p>}
         {icon && (<a className="card-header-icon">
-          <Icon name={icon}/>
+          {iconComponent}
         </a>)}
       </header>
     );

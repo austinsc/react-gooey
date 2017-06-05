@@ -171,18 +171,22 @@ const pages = [{
   }, {
     path: '/components/panel',
     title: 'Panel',
-    component: require('../docs/components/panel.md')
+    component: require('../docs/components/panel.md'),
+    source: require('!!text-loader!../src/components/Panel.jsx')
   }, {
     path: '/components/tabs',
     title: 'Tabs',
-    component: require('../docs/components/tabs.md')
+    component: require('../docs/components/tabs.md'),
+    source: require('!!text-loader!../src/components/Tabs.jsx')
   }]
 }, {
   title: 'Layout',
   pages: [{
     path: '/layout/container',
     title: 'Container',
-    component: require('../docs/layout/container.md')
+    component: require('../docs/layout/container.md'),
+    source: require('!!text-loader!../src/layout/Container.jsx')
+
   }, {
     path: '/layout/hero',
     title: 'Hero',
