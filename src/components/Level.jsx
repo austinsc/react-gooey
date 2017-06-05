@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import createNestedComponent from '../Nested';
 
-export class Level extends Component {
+export default class Level extends Component {
   static displayName = 'Level';
   static propTypes = {
     /**

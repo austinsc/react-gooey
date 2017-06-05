@@ -1,7 +1,7 @@
 // Components
-export {Level, LevelItem, LevelSection} from './components/Level';
-export {ModalCard} from './components/Modal';
-export {Card} from './components/Card';
+export {default as Level} from './components/Level';
+export {default as ModalCard} from './components/Modal';
+export {default as Card} from './components/Card';
 export {Pagination} from './components/Pagination';
 export {Message} from './components/Message';
 export {MediaObject} from './components/MediaObject';
@@ -46,3 +46,4 @@ export {default as Footer} from './layout/Footer';
 
 // Forms
 export {default as Form} from './forms/Form';
+export {default as ModalForm} from './forms/ModalForm';

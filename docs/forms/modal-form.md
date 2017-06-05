@@ -31,6 +31,19 @@ span: 2
 
 ```jsx
 span: 4
+state: {show: false}
 ---
-<Form schema={forms.todo} uiSchema={formsui.todo} />
+<div>
+   <ModalForm title="Modal Title" active={state && state.show} onClose={() => setState({show: false})} footer={[
+                (<Button key="save" text="Save Changes" color="success" />), 
+                (<Button key="cancel" text="Cancel" />)
+              ]} schema={forms.todo} uiSchema={formsui.todo}>
+     <p>
+       Here is some content in the modal body! 
+     </p>
+   </ModalForm>
+   <Button onClick={() => setState({show: true})}>
+     Launch Modal
+   </Button>
+</div>
 ```

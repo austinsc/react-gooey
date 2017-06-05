@@ -45,7 +45,7 @@ export default class Form extends Component {
 
   render() {
     return (
-      <JsonForm {...this.props} />
+      <JsonForm className="form" {...this.props} />
     );
   }
 }

@@ -2,6 +2,7 @@ import _ from 'lodash';
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import Delete from "../elements/Delete";
 
 
 class ModalBase extends Component {
@@ -37,14 +38,17 @@ class ModalBase extends Component {
   }
 }
 
-export class ModalCard extends Component {
+export default class ModalCard extends Component {
   static displayName = 'ModalCard';
   static propTypes = {
     /**
      * Sets the modal state of visibility.
      */
     active: PropTypes.bool,
-    title: PropTypes.node,
+    /**
+     * The title of the modal
+     */
+    title: PropTypes.oneOfType([PropTypes.node, PropTypes.string]),
     /**
      * Footer element for the component to be rendered.
      */
@@ -57,6 +61,22 @@ export class ModalCard extends Component {
      * Specifies whether to hide the close button on the modal component.
      */
     hideCloseButton: PropTypes.bool,
+    /**
+     * Color of the modal header.
+     */
+    color: PropTypes.oneOf([
+      'default',
+      'primary',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'dark',
+      'link',
+      'light',
+      'white',
+      'black'
+    ]),
     /**
      * Child elements to be rendered within the component.
      */
@@ -71,12 +91,13 @@ export class ModalCard extends Component {
   };
 
   render() {
-    const {onClose, title, children, className, hideCloseButton, footer, active, ...rest} = this.props;
+    const {onClose, title, color, children, className, hideCloseButton, footer, active, ...rest} = this.props;
     const classes = classNames('modal-card', {
-      [className]: !!className
+      [className]: !!className,
+      [`is-${color}`]: !!color
     });
 
-    const closeButton = hideCloseButton ? null : <button className="delete" onClick={onClose}/>;
+    const closeButton = hideCloseButton ? null : <Delete onClick={onClose}/>;
     const foot = !footer ? null : (
       <footer className="modal-card-foot">
         {footer}

@@ -52,7 +52,7 @@ If you want a more classic modal, with a head, a body and a foot, specify the ti
 state: {show: false}
 ---
 <div>
-  <ModalCard title="Modal Title" active={state && state.show} onClose={() => setState({show: false})} footer={[
+  <ModalCard title="Modal Title" color="primary" active={state && state.show} onClose={() => setState({show: false})} footer={[
                (<Button key="save" text="Save Changes" color="success" />), 
                (<Button key="cancel" text="Cancel" />)
              ]}>

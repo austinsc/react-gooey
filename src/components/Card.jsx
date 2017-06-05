@@ -79,7 +79,7 @@ class Footer extends Component {
   }
 }
 
-export class Card extends Component {
+export default class Card extends Component {
   static displayName = 'Card';
   static propTypes = {
     /**
