@@ -210,8 +210,8 @@ const pages = [{
   }, {
     path: '/forms/modal',
     title: 'Form Modal',
-    component: require('../docs/forms/form-modal.md'),
-    source: require('!!text-loader!../src/forms/Form.jsx')
+    component: require('./forms/modal-form.md'),
+    source: require('!!text-loader!../src/forms/ModalForm.jsx')
   }]
 }, {
   path: '/proptypes',
