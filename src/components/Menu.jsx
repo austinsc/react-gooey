@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import createNestedComponent from '../Nested';
 
-class Link extends Component {
+class Link extends PureComponent {
   static displayName = 'Menu.Link';
   static propTypes = {
     /**
