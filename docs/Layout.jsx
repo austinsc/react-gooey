@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ReactDOM from 'react-dom';
 import {withRouter} from "react-router-dom";
-import {Hero, Title, Container, Content, Subtitle, Nav, Tabs, Tab, Level, Table, Button, Message} from "../src/index";
+import {Hero, Title, Container, Content, Subtitle, Nav, Tabs, Tab, Level, Table, Button, Message, Box, Columns, Column, Image} from "../src/index";
 import * as Gooey from '../src/index';
-import logo from '../react-gooey.svg';
+import logo from '../react-gooey-white.svg';
 import routes from './routes';
 import transformJSX from './transformJSX';
 import {renderers} from 'commonmark-react-renderer';
@@ -243,12 +243,19 @@ export default class Layout extends PureComponent {
           </Hero.Head>
           <Hero.Body>
             <Container>
-              <Title>
-                Gooey
-                <Subtitle>
-                  A <strong>bulma</strong> CSS based UI framework
-                </Subtitle>
-              </Title>
+              <Level>
+                <Level.Item style={{maxWidth: '100px'}}>
+                    <Image src={logo} style={{width: '80px'}}/>
+                </Level.Item>
+                <Level.Item style={{flexGrow: 5, justifyContent: 'left'}}>
+                  <Title>
+                    Gooey
+                    <Subtitle>
+                      A <strong>bulma</strong> CSS based UI framework
+                    </Subtitle>
+                  </Title>
+                </Level.Item>
+              </Level>
             </Container>
           </Hero.Body>
           <Hero.Foot>
