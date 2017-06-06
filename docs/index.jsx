@@ -7,6 +7,7 @@ import ReactProps from './ReactProps';
 import * as Gooey from '../src/index';
 import logo from '../react-gooey.svg';
 import theme from './theme';
+import routes from './routes';
 import '../src/css/main';
 import 'font-awesome/scss/font-awesome';
 import 'font-awesome-animation/dist/font-awesome-animation.css';
@@ -49,7 +50,7 @@ const specimen = {
 ReactDOM.render(
   <div>
     <GithubCorner href={`https://github.com/${USER}/${NAME}`} bannerColor="#fff" octoColor="#000" width={80} height={80} direction="right"/>
-    <Catalog imports={documentationImports} pages={pages} specimens={specimen} title={`${NAME} v${VERSION}`} logoSrc={logo} theme={theme}/>
+    <Catalog imports={documentationImports} pages={routes} specimens={specimen} title={`${NAME} v${VERSION}`} logoSrc={logo} theme={theme}/>
   </div>,
   document.getElementById('app')
 );
