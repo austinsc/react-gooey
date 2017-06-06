@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ReactDOM from 'react-dom';
 import {withRouter} from "react-router-dom";
-import {Hero, Title, Container, Content, Subtitle, Nav, Tabs, Tab, Notification, Table, Button} from "../src/index";
+import {Hero, Title, Container, Content, Subtitle, Nav, Tabs, Tab, Notification, Table, Button, Message} from "../src/index";
 import * as Gooey from '../src/index';
 import logo from '../react-gooey.svg';
 import routes from './routes';
@@ -13,6 +13,7 @@ import ReactMarkdown from 'react-markdown';
 import {parse} from 'react-docgen';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import {monokaiSublime as monokai} from 'react-syntax-highlighter/dist/styles';
+import {parseSpecimenBody} from './parseBody';
 
 const forms = {
   todo: {
@@ -117,7 +118,7 @@ class Props extends Component {
 }
 
 class Examplar extends Component {
-  state = {elementState:{}};
+  state = {elementState: {}};
 
   setElementState(nextState) {
     if(typeof nextState === 'function') {
@@ -135,85 +136,44 @@ class Examplar extends Component {
     let code = '';
 
     if(jsx) {
-      const transformed = transformJSX(source, {
-        ...Gooey,
-        state: this.state.elementState,
-        setState: this.setElementState
-      });
+      const transformed = transformJSX(source, {...documentationImports, state: this.state.elementState, setState: this.setElementState});
       element = transformed.element;
-      error = transformed.error
-        ? <Notification color="warning">{`Couldn't render specimen: ${transformed.error}`}</Notification>
-        : null;
+      error = transformed.error && <Message color="danger">{`Couldn't render specimen: ${transformed.error}`}</Message>;
       code = source;
     } else {
       element = children;
       code = source;
     }
 
-    if(error) return error;
-
     return (
-      <section>
+      <section className="example">
         {error}
         {element}
+        <hr />
         {!noSource && syntax('html', code)}
       </section>
     );
   }
 }
 
-
-class Example extends Component {
-  static displayName = 'Example';
-
-  state = {code: false};
-
-  render() {
-    const {code} = this.state;
-    const {source} = this.props;
-    if(!source) {
-      return null;
-    }
-    const body = <pre>{source}</pre>;
-    return (
-      <div style={{width: '100%', margin: '24px 10px 0 0'}}>
-        <div className="level">
-          <div className="level-right">
-            <div className="level-item">
-              <h2 className="title is-4" id="properties">{code ? 'Component Source' : 'Example'}</h2>
-            </div>
-          </div>
-          <div className="level-right">
-            <div className="level-item">
-              <div className="field">
-                <p className="control">
-                  <Button color="primary" icon={!code ? 'code' : 'list'} onClick={() => this.setState({code: !code})}>{code ? 'View Properties' : 'View Code'}</Button>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        {body}
-      </div>
-    );
-  }
-}
-
 function createCodeBlock(src) {
   return function CodeBlock(props) { // eslint-disable-line camelcase
-    console.dir(props);
     const bonus = props.language.split('|');
     const lang = bonus[0];
     if(lang === 'props') {
       return <Props source={src}/>
     } else if(lang === 'hint') {
       return (
-        <Notification color={bonus.length > 1 ? bonus[1] : 'info'}>
+        <Message color={bonus.length > 1 ? bonus[1] : 'info'}>
           {props.literal}
-        </Notification>
+        </Message>
       );
     } else if(lang === 'jsx') {
       return <Examplar source={props.literal}/>;
+    } else if(lang === 'color-palette') {
+      const poops = parseSpecimenBody()(props.literal, documentationImports);
+      console.dir(poops);
+      return <span />;
     }
     return syntax(lang, props.literal);
   }
