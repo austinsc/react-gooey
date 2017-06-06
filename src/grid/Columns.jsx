@@ -5,6 +5,9 @@ import classNames from 'classnames';
 export class Columns extends Component {
   static displayName = 'Columns';
   static propTypes = {
+    /**
+     * Child elements to be rendered within the columns.
+     */
     children: PropTypes.any,
     /**
      * CSS classes to be rendered on the root element of this component.

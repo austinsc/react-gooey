@@ -1,7 +1,5 @@
 # Colors
 
-
-## Colors
 ```color-palette
 colors:
  - {name: "Orange", value: "hsl(14, 100%, 53%)"}
