@@ -5,12 +5,13 @@ import ReactDOM from 'react-dom';
 import GithubCorner from 'react-github-corner';
 import {Route, Switch} from 'react-router';
 import {HashRouter} from 'react-router-dom';
-import {Catalog, CodeSpecimen, ReactSpecimen} from 'catalog';
+// import {Catalog, CodeSpecimen, ReactSpecimen} from 'catalog';
 import ReactProps from './ReactProps';
 import * as Gooey from '../src/index';
 import logo from '../react-gooey.svg';
 import Layout from './Layout';
 import theme from './theme';
+import ReactMarkdown from 'react-markdown';
 import routes from './routes';
 import '../src/css/main';
 import 'font-awesome/scss/font-awesome';
@@ -44,25 +45,21 @@ const documentationImports = {
   ...Gooey
 };
 
-const specimen = {
-  js: props => <CodeSpecimen {...props} lang="javascript"/>,
-  jsx: props => <ReactSpecimen {...props} />,
-  props: props => <ReactProps {...props} />
-};
+// const specimen = {
+//   js: props => <CodeSpecimen {...props} lang="javascript"/>,
+//   jsx: props => <ReactSpecimen {...props} />,
+//   props: props => <ReactProps {...props} />
+// };
 
 const routeMap = _.flatten(routes.map(x => x.path ? x : x.pages.map(y => y)));
-
+window.ROUTES = routeMap;
 ReactDOM.render(
   <HashRouter>
     <Layout>
-    <Switch>
-      <Route exact path="/" component={() => (<div>{routeMap[0].path}</div>)}/>
       <Switch>
-        {routeMap.map((x, i) => {
-          <Route exact path={x.path} component={x.component}/>
-        })}
+        <Route exact path="/" component={() => (<div>{routeMap[0].path}</div>)}/>
+        {routeMap.map((x, i) => <Route exact path={x.path} component={() => <ReactMarkdown source={x.component}/>}/>)}
       </Switch>
-    </Switch>
     </Layout>
   </HashRouter>,
   document.getElementById('app')

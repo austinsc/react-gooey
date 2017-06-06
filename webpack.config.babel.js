@@ -4,8 +4,6 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import SystemBellPlugin from 'system-bell-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
-import Dashboard from 'webpack-dashboard';
-import DashboardPlugin from 'webpack-dashboard/plugin';
 import merge from 'webpack-merge';
 const pkg = require('./package.json');
 
@@ -41,7 +39,7 @@ const common = {
     // }],
     rules: [{
       test: /\.md$/,
-      use: [/*{loader: 'text-loader'}, */{loader: 'catalog/dist/loader'}, {loader: 'raw-loader'}]
+      use: [/*{loader: 'text-loader'}, {loader: 'catalog/dist/loader'}, */{loader: 'raw-loader'}]
     }, {
       test: /\.png$/,
       use: [{loader: 'url-loader?limit=100000&mimetype=image/png'}],
@@ -119,7 +117,6 @@ const siteCommon = {
 };
 
 if(TARGET === 'start' || TARGET === 'dev') {
-  const dashboard = new Dashboard();
 
   module.exports = merge(common, siteCommon, {
     devtool: 'eval-source-map',
@@ -127,7 +124,6 @@ if(TARGET === 'start' || TARGET === 'dev') {
       docs: [config.paths.docs]
     },
     plugins: [
-      new DashboardPlugin(dashboard.setData),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': '"development"'
       }),
