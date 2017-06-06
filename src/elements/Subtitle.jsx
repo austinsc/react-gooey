@@ -14,6 +14,10 @@ export default class Subtitle extends Component {
      */
     heading: PropTypes.bool,
     /**
+     * If true, render the element as a <p> tag
+     */
+    nested: PropTypes.bool,
+    /**
      * Size of the component to be rendered.
      */
     size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, '1', '2', '3', '4', '5', '6']),
@@ -27,13 +31,13 @@ export default class Subtitle extends Component {
   };
 
   render() {
-    const {children, heading, size, className, ...rest} = this.props;
+    const {children, heading, size, className, nested, ...rest} = this.props;
     const classes = classNames('subtitle', {
       [`is-${size}`]: !!size,
       'heading': heading,
       [className]: !!className
     });
-    return React.createElement(`h${size}`, {className: classes, ...rest}, children);
+    return React.createElement(nested ? 'p' : `h${size}`, {className: classes, ...rest}, children);
   }
 }
 

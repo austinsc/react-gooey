@@ -9,6 +9,7 @@ import {Catalog, CodeSpecimen, ReactSpecimen} from 'catalog';
 import ReactProps from './ReactProps';
 import * as Gooey from '../src/index';
 import logo from '../react-gooey.svg';
+import Layout from './Layout';
 import theme from './theme';
 import routes from './routes';
 import '../src/css/main';
@@ -52,19 +53,17 @@ const specimen = {
 const routeMap = _.flatten(routes.map(x => x.path ? x : x.pages.map(y => y)));
 
 ReactDOM.render(
-  <div>
-    {/*<GithubCorner href={`https://github.com/${USER}/${NAME}`} bannerColor="#fff" octoColor="#000" width={80} height={80} direction="right"/>*/}
-    {/*<Catalog imports={documentationImports} pages={routes} specimens={specimen} title={`${NAME} v${VERSION}`} logoSrc={logo} theme={theme}/>*/}
-    <HashRouter>
+  <HashRouter>
+    <Layout>
+    <Switch>
+      <Route exact path="/" component={() => (<div>{routeMap[0].path}</div>)}/>
       <Switch>
-        <Route exact path="/" component={() => (<div>{routeMap[0].path}</div>)}/>
-        <Switch>
-          {routeMap.map((x, i) => {
+        {routeMap.map((x, i) => {
           <Route exact path={x.path} component={x.component}/>
         })}
-        </Switch>
       </Switch>
-    </HashRouter>
-    </div>,
+    </Switch>
+    </Layout>
+  </HashRouter>,
   document.getElementById('app')
 );
