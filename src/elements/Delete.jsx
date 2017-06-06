@@ -12,7 +12,7 @@ export default class Delete extends Component {
   static displayName = 'Delete';
   static propTypes = {
     /**
-     * Changes the size of the delete element rendered.
+     * Changes the size of the delete element to be rendered.
      */
     size: PropTypes.oneOf(SIZES),
     /**

@@ -3,13 +3,13 @@
 ```props
 ```
 
-The panel is container for several types:
+The panel is a container for several types:
 
-* `<Panel.Heading/>` as the first child
-* `<Panel.Tabs/>` for navigation
-* `<Panel.Block/>` which can contain other elements
-* `<Panel.Link/>` which can contain an icon and/or text
-* `<Panel.Checkbox/>` which can contain text and an onChange functions
+* `<Panel.Heading />` as the first child
+* `<Panel.Tabs />` for navigation
+* `<Panel.Block />` which can contain other elements
+* `<Panel.Link />` which can contain an icon and/or text
+* `<Panel.Checkbox />` which can contain text and an onChange function
 
 ```jsx
 <Panel>
