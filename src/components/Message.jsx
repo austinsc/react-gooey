@@ -6,7 +6,7 @@ export class Message extends PureComponent {
   static displayName = 'Message';
   static propTypes = {
     /**
-     * Child elements to be rendered within the box.
+     * Child elements to be rendered within the component.
      */
     children: PropTypes.any,
     /**
@@ -14,7 +14,7 @@ export class Message extends PureComponent {
      */
     className: PropTypes.any,
     /**
-     * Color of the button.
+     * Color of the message.
      */
     color: PropTypes.oneOf([
       'default',
