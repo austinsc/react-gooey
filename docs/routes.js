@@ -33,7 +33,7 @@ export default [{
     path: '/elements/delete',
     title: 'Delete',
     component: require('../docs/elements/delete.md'),
-    source: require('!!text-loader!../src/elements/ButtonGroup.jsx')
+    source: require('!!text-loader!../src/elements/Delete.jsx')
   }, {
     path: '/elements/content',
     title: 'Content',
