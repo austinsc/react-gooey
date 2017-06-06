@@ -1,7 +1,10 @@
 /* eslint-disable global-require, import/no-unresolved, react/no-multi-comp */
+import _ from 'lodash';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import GithubCorner from 'react-github-corner';
+import {Route, Switch} from 'react-router';
+import {HashRouter} from 'react-router-dom';
 import {Catalog, CodeSpecimen, ReactSpecimen} from 'catalog';
 import ReactProps from './ReactProps';
 import * as Gooey from '../src/index';
@@ -46,11 +49,22 @@ const specimen = {
   props: props => <ReactProps {...props} />
 };
 
+const routeMap = _.flatten(routes.map(x => x.path ? x : x.pages.map(y => y)));
 
 ReactDOM.render(
   <div>
-    <GithubCorner href={`https://github.com/${USER}/${NAME}`} bannerColor="#fff" octoColor="#000" width={80} height={80} direction="right"/>
-    <Catalog imports={documentationImports} pages={routes} specimens={specimen} title={`${NAME} v${VERSION}`} logoSrc={logo} theme={theme}/>
-  </div>,
+    {/*<GithubCorner href={`https://github.com/${USER}/${NAME}`} bannerColor="#fff" octoColor="#000" width={80} height={80} direction="right"/>*/}
+    {/*<Catalog imports={documentationImports} pages={routes} specimens={specimen} title={`${NAME} v${VERSION}`} logoSrc={logo} theme={theme}/>*/}
+    <HashRouter>
+      <Switch>
+        <Route exact path="/" component={() => (<div>{routeMap[0].path}</div>)}/>
+        <Switch>
+          {routeMap.map((x, i) => {
+          <Route exact path={x.path} component={x.component}/>
+        })}
+        </Switch>
+      </Switch>
+    </HashRouter>
+    </div>,
   document.getElementById('app')
 );
