@@ -6,7 +6,7 @@
 The interactive forms are powered by [react-jsonschema-form](https://github.com/mozilla-services/react-jsonschema-form). 
 
 ```code
-lang: json
+lang: js
 span: 2
 ---
 // schema
