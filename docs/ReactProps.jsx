@@ -34,15 +34,12 @@ function propTable(meta) {
 
 export default class ReactProps extends Component {
   static displayName = 'ReactProps';
-  static contextTypes = {
-    catalog: PropTypes.object.isRequired
-  };
 
   state = {code: false};
 
   render() {
     const {code} = this.state;
-    const {source} = this.context.catalog.page;
+    const {source} = this.props;
     if(!source) {
       return null;
     }
