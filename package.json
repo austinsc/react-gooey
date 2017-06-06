@@ -40,6 +40,7 @@
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.11.6",
+    "babel-standalone": "^6.24.2",
     "babel-traverse": "^6.13.0",
     "chai": "^3.5.0",
     "clean-webpack-plugin": "^0.1.10",
@@ -78,7 +79,6 @@
     "react-addons-test-utils": "^15.3.0",
     "react-doc-generator": "^1.2.5",
     "react-dom": "^15.3.0",
-    "react-github-corner": "^0.3.0",
     "rimraf": "^2.5.4",
     "sass-loader": "^6.0.5",
     "sass-variable-loader": "^0.1.2",
@@ -119,6 +119,7 @@
   "dependencies": {
     "bulma": "^0.4.1",
     "classnames": "^2.2.5",
+    "commonmark-react-renderer": "^4.3.3",
     "css-selector-tokenizer": "^0.7.0",
     "font-awesome": "^4.6.3",
     "font-awesome-animation": "0.0.10",
