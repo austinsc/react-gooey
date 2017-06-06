@@ -1,54 +1,38 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import createNestedComponent from '../Nested';
 
-
-export class Label extends PureComponent {
-  static displayName = 'Label';
+class Link extends Component {
+  static displayName = 'Menu.Link';
   static propTypes = {
     /**
-     * The display text to be rendered in the menu label
+     * Changes the style of the link to active.
      */
-    text: PropTypes.string,
+    active: PropTypes.bool,
+    /**
+     * Child elements to be rendered within the component.
+     */
+    children: PropTypes.any,
     /**
      * CSS classes to be rendered on the root element of this component.
      */
-    className: PropTypes.any
+    className: PropTypes.string
   };
 
   render() {
-    const {className, text, ...rest}=this.props;
-    const classes = classNames('menu-label', {
+    const {text, active, children, className, ...rest} = this.props;
+    const classes = classNames('', {
+      'is-active': active,
       [className]: !!className
     });
     return (
-      <p {...rest} className={classes}>
-        {text}
-      </p>
+      <li>
+        <a className={classes}{...rest}>{text || children}</a>
+      </li>
     );
   }
 }
-
-export class List extends PureComponent {
-  static displayName = 'List';
-  static propTypes = {
-    /**
-     * CSS classes to be rendered on the root element of this component.
-     */
-    className: PropTypes.any
-  };
-
-  render() {
-    const {className, ...rest}=this.props;
-    const classes = classNames('menu-list', {
-      [className]: !!className
-    });
-    return (
-      <ul {...rest} className={classes} />
-    );
-  }
-}
-
 
 /**
  * A simple menu for any type of vertical navigation. Mark <a> tags with the is-active className to render them as the active menu item.
@@ -66,6 +50,10 @@ export default class Menu extends PureComponent {
     className: PropTypes.any
   };
   static defaultProps = {};
+
+  static Label = createNestedComponent('menu-label', 'p');
+  static List = createNestedComponent('menu-label', 'ul');
+  static Link = Link;
 
   render() {
     const {className, ...rest}=this.props;

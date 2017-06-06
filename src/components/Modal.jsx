@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Delete from "../elements/Delete";
 
-
 class ModalBase extends Component {
   static displayName = 'ModalBase';
   static propTypes = {
