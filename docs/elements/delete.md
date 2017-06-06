@@ -26,24 +26,26 @@ It comes in **4** sizes:
 </div>
 ```
 
+By default, the `<Delete />` component
+
 You can use it for Gooey `Tags`, `Notifications`, and `Messages`:
 
 ```jsx
 <Tag color="success">
    Hello World  
-  <Delete size="small"/>
+  <Delete size="small" button/>
 </Tag>
 ```
 ```jsx
 <Notification color="danger">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit  
-  <Delete size="medium"/>
+  <Delete size="medium" button/>
 </Notification>
 ```
 ```jsx
 <Message color="info">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor sit amet, consectetur adipiscing elit  
-  <Delete size="medium"/>
+  <Delete size="medium" button/>
 </Message>
 ```
 

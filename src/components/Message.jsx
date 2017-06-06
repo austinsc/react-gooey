@@ -27,13 +27,14 @@ class Header extends PureComponent {
   static defaultProps = {delete: false};
 
   render() {
-    const {text, deleteButton, className, ...rest} = this.props;
+    const {text, children, deleteButton, className, ...rest} = this.props;
     const classes = classNames('message-header', {
       [className]: !!className
     });
     return (
       <div className={classes} {...rest}>
         <p>{text}</p>
+        {children}
         {deleteButton && <Delete/>}
       </div>
     );

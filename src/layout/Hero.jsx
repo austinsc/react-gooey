@@ -1,22 +1,14 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
-const Nested = (cn) => function({className, children}) {
-  const classes = classNames(`hero-${cn}`, {
-    [className]: !!className
-  });
-  return (
-    <div className={classes}>
-      {children}
-    </div>
-  );
-};
+import createNestedComponent from '../Nested';
 
 export default class Hero extends Component {
   static displayName = 'Hero';
   static propTypes = {
-    title: PropTypes.any,
+    /**
+     * The color of the hero component to be rendered.
+     */
     color: PropTypes.oneOf([
       'default',
       'primary',
@@ -27,17 +19,18 @@ export default class Hero extends Component {
       'dark',
       'light'
     ]).isRequired,
+    /**
+     * The size of the hero component to be rendered.
+     */
     size: PropTypes.oneOf([
       'small',
       'medium',
       'large',
       'fullheight'
     ]).isRequired,
-    align: PropTypes.oneOf([
-      'center',
-      'left',
-      'right'
-    ]),
+    /**
+     * Generates a subtle gradient style for the component.
+     */
     bold: PropTypes.bool,
     /**
      * Child elements to be rendered within the container.
@@ -46,24 +39,21 @@ export default class Hero extends Component {
     /**
      * CSS classes to be rendered on the root element of this component.
      */
-    className: PropTypes.string,
-    contain: PropTypes.bool
+    className: PropTypes.string
   };
   static defaultProps = {
     color: 'default',
     size: 'small',
     align: 'center'
   };
-
-  static Head = Nested('head');
-  static Body = Nested('body');
-  static Foot = Nested('foot');
+  static Head = createNestedComponent('hero-head', 'div');
+  static Body = createNestedComponent('hero-body', 'div');
+  static Foot = createNestedComponent('hero-foot', 'div');
 
   render() {
-    const {color, className, bold, align, size, children} = this.props;
+    const {color, className, bold, size, children} = this.props;
     const classes = classNames('hero', {
       [`is-${color}`]: color !== 'default',
-      [`is-${align}`]: align !== 'center',
       [`is-${size}`]: size !== 'small',
       'is-bold': bold,
       [className]: !!className
