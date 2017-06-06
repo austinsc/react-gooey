@@ -62,6 +62,13 @@ form.form {
   }
 }
 
+.content {
+  pre,
+  code {
+    font-family: "Source Code Pro", monospace;
+    font-size: 1.1rem;
+  }
+}
 
 // Example
 .example {
@@ -71,12 +78,13 @@ form.form {
   padding: 1.5rem;
   position: relative;
 
-  &>hr {
+  & > hr {
     background-color: #ffdd57;
   }
 
   pre, code {
     padding: 0;
+
   }
 
   &:not(:first-child) {

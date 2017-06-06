@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ReactDOM from 'react-dom';
 import {withRouter} from "react-router-dom";
-import {Hero, Title, Container, Content, Subtitle, Nav, Tabs, Tab, Notification, Table, Button, Message} from "../src/index";
+import {Hero, Title, Container, Content, Subtitle, Nav, Tabs, Tab, Level, Table, Button, Message} from "../src/index";
 import * as Gooey from '../src/index';
 import logo from '../react-gooey.svg';
 import routes from './routes';
@@ -12,7 +12,7 @@ import {renderers} from 'commonmark-react-renderer';
 import ReactMarkdown from 'react-markdown';
 import {parse} from 'react-docgen';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import {monokaiSublime as monokai} from 'react-syntax-highlighter/dist/styles';
+import {vs as theme} from 'react-syntax-highlighter/dist/styles';
 import {parseSpecimenBody} from './parseBody';
 
 const forms = {
@@ -47,9 +47,11 @@ const main = routes.map(x => ({title: x.title, path: x.path || (x.pages && x.pag
 
 function syntax(lang, code) {
   return (
-    <SyntaxHighlighter language={lang} style={monokai} showLineNumbers wrapLines>
-      {code}
-    </SyntaxHighlighter>
+    <div>
+      <SyntaxHighlighter language={lang} style={theme} showLineNumbers wrapLines>
+        {code}
+      </SyntaxHighlighter>
+    </div>
   );
 }
 
@@ -95,22 +97,22 @@ class Props extends Component {
     const body = code ? syntax('jsx', source) : propTable(parse(source));
     return (
       <div style={{width: '100%', margin: '24px 10px 0 0'}}>
-        <div className="level">
-          <div className="level-right">
-            <div className="level-item">
-              <h2 className="title is-4" id="properties">{code ? 'Component Source' : 'Properties'}</h2>
-            </div>
-          </div>
-          <div className="level-right">
-            <div className="level-item">
+        <Level>
+          <Level.Left>
+            <Level.Item>
+              <Title size="4" id="properties">{code ? 'Component Source' : 'Properties'}</Title>
+            </Level.Item>
+          </Level.Left>
+          <Level.Right>
+            <Level.Item>
               <div className="field">
                 <p className="control">
                   <Button color="primary" icon={!code ? 'code' : 'list'} onClick={() => this.setState({code: !code})}>{code ? 'View Properties' : 'View Code'}</Button>
                 </p>
               </div>
-            </div>
-          </div>
-        </div>
+            </Level.Item>
+          </Level.Right>
+        </Level>
         {body}
       </div>
     );
@@ -118,7 +120,7 @@ class Props extends Component {
 }
 
 class Examplar extends Component {
-  state = {elementState: {}};
+  state = {elementState: {}, showCode: false};
 
   setElementState(nextState) {
     if(typeof nextState === 'function') {
@@ -129,7 +131,8 @@ class Examplar extends Component {
   }
 
   render() {
-    const {children, noSource, source} = this.props;
+    const {children, source} = this.props;
+    const {showCode} = this.state;
     const jsx = typeof source === 'string';
     let element = null;
     let error = null;
@@ -138,7 +141,7 @@ class Examplar extends Component {
     if(jsx) {
       const transformed = transformJSX(source, {...documentationImports, state: this.state.elementState, setState: this.setElementState});
       element = transformed.element;
-      error = transformed.error && <Message color="danger">{`Couldn't render specimen: ${transformed.error}`}</Message>;
+      error = transformed.error && <Message color="danger"><Message.Body>{`Couldn't render specimen: ${transformed.error}`}</Message.Body></Message>;
       code = source;
     } else {
       element = children;
@@ -150,7 +153,23 @@ class Examplar extends Component {
         {error}
         {element}
         <hr />
-        {!noSource && syntax('html', code)}
+        <Level>
+          <Level.Left>
+            <Level.Item>
+              <Title size="4" id="properties">Example Source</Title>
+            </Level.Item>
+          </Level.Left>
+          <Level.Right>
+            <Level.Item>
+              <div className="field">
+                <p className="control">
+                  <Button color="primary" icon="code" onClick={() => this.setState({showCode: !showCode})}>View Code</Button>
+                </p>
+              </div>
+            </Level.Item>
+          </Level.Right>
+        </Level>
+        {showCode && syntax('html', code)}
       </section>
     );
   }
@@ -165,7 +184,9 @@ function createCodeBlock(src) {
     } else if(lang === 'hint') {
       return (
         <Message color={bonus.length > 1 ? bonus[1] : 'info'}>
-          {props.literal}
+          <Message.Body>
+            {props.literal}
+          </Message.Body>
         </Message>
       );
     } else if(lang === 'jsx') {
