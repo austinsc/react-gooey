@@ -57,8 +57,8 @@ ReactDOM.render(
   <HashRouter>
     <Layout>
       <Switch>
-        <Route exact path="/" component={() => (<div>{routeMap[0].path}</div>)}/>
-        {routeMap.map((x, i) => <Route exact path={x.path} component={() => <ReactMarkdown source={x.component}/>}/>)}
+        <Route exact path="/" component={() => <ReactMarkdown source={routeMap[0].component}/>}/>
+        {routeMap.map((x, i) => <Route key={i} exact path={x.path} component={() => <ReactMarkdown source={x.component}/>}/>)}
       </Switch>
     </Layout>
   </HashRouter>,
