@@ -6,6 +6,7 @@ import {Catalog, CodeSpecimen, ReactSpecimen} from 'catalog';
 import ReactProps from './ReactProps';
 import * as Gooey from '../src/index';
 import logo from '../react-gooey.svg';
+import Layout from './Layout';
 import theme from './theme';
 import routes from './routes';
 import '../src/css/main';
@@ -48,9 +49,10 @@ const specimen = {
 
 
 ReactDOM.render(
-  <div>
-    <GithubCorner href={`https://github.com/${USER}/${NAME}`} bannerColor="#fff" octoColor="#000" width={80} height={80} direction="right"/>
-    <Catalog imports={documentationImports} pages={routes} specimens={specimen} title={`${NAME} v${VERSION}`} logoSrc={logo} theme={theme}/>
-  </div>,
+  <Layout>
+
+    {/*<GithubCorner href={`https://github.com/${USER}/${NAME}`} bannerColor="#fff" octoColor="#000" width={80} height={80} direction="right"/>*/}
+    {/*<Catalog imports={documentationImports} pages={routes} specimens={specimen} title={`${NAME} v${VERSION}`} logoSrc={logo} theme={theme}/>*/}
+  </Layout>,
   document.getElementById('app')
 );

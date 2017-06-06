@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Children} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -33,7 +33,12 @@ export default class Title extends Component {
       'heading': heading,
       [className]: !!className
     });
-    return React.createElement(`h${size}`, {className: classes, ...rest}, children);
+    return React.createElement(`h${size}`, {className: classes, ...rest}, Children.map(children, x => {
+      if(x && x.type && x.type.displayName === 'Subtitle') {
+        return {...x, props: {nested: true, ...x.props}};
+      }
+      return x;
+    }));
   }
 }
 
