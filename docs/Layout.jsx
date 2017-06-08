@@ -100,7 +100,10 @@ class Props extends Component {
 class Example extends Component {
   static displayName = 'Example';
 
-  state = {elementState: {}, showCode: false};
+  constructor(props) {
+    super(props);
+    this.state = {elementState: {...props.state}, showCode: false};
+  }
 
   setElementState(nextState) {
     if(typeof nextState === 'function') {
@@ -118,7 +121,7 @@ class Example extends Component {
     let code = '';
 
     if(typeof source === 'string') {
-      const transformed = transformJSX(source, {...documentationImports, state: this.state.elementState, setState: this.setElementState});
+      const transformed = transformJSX(source, {...documentationImports, state: this.state.elementState, setState: ::this.setElementState});
       element = transformed.element;
       error = transformed.error && <Message color="danger"><Message.Body>{`Couldn't render specimen: ${transformed.error}`}</Message.Body></Message>;
       code = source;
@@ -176,7 +179,12 @@ function createCodeBlock(src) {
         </Message>
       );
     } else if(lang === 'jsx') {
-      return <Example source={props.literal}/>;
+      const parts = props.literal.split('---');
+      let other = {};
+      if(parts.length > 1) {
+        other = yaml.load(parts[0]);
+      }
+      return <Example {...other} source={parts[parts.length - 1]}/>;
     } else if(lang === 'color-palette') {
       const {colors} = yaml.load(props.literal);
       return <ColorPallet colors={colors}/>;
