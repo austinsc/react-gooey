@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-export default class Footer extends Component {
+export default class Footer extends PureComponent {
   static displayName = 'Footer';
   static propTypes = {
     /**
@@ -16,12 +16,12 @@ export default class Footer extends Component {
   };
 
   render() {
-    const {className, children} = this.props;
+    const {className, children, ...rest} = this.props;
     const classes = classNames('footer', {
       [className]: !!className
     });
     return (
-      <footer className={classes}>
+      <footer {...rest} className={classes}>
         {children}
       </footer>
     );

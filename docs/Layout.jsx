@@ -1,9 +1,7 @@
-import React, {Component, PureComponent, createElement} from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import React, {Component, PureComponent} from 'react';
 import ReactDOM from 'react-dom';
 import {withRouter} from "react-router-dom";
-import {Hero, Title, Container, Content, Subtitle, Nav, Tabs, Tab, Level, Table, Button, Message, Box, Columns, Column, Image} from "../src/index";
+import {Hero, Title, Container, Content, Subtitle, Nav, Tabs, Tab, Level, Table, Button, Message, Box, Columns, Column, Image, Footer} from "../src/index";
 import * as Gooey from '../src/index';
 import logo from '../react-gooey-white.svg';
 import routes from './routes';
@@ -13,7 +11,7 @@ import ReactMarkdown from 'react-markdown';
 import {parse} from 'react-docgen';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import {vs as theme} from 'react-syntax-highlighter/dist/styles';
-import {parseSpecimenBody} from './parseBody';
+import yaml from 'js-yaml';
 import examples from './forms/examples.json';
 
 const documentationImports = {
@@ -142,6 +140,27 @@ class Example extends Component {
   }
 }
 
+class ColorPallet extends PureComponent {
+  render() {
+    const {colors} = this.props;
+    return (
+      <ul className="color-pallet">
+        {colors.map((x, i) => (
+          <li key={i} style={{backgroundColor: x.value}}>
+            <Box>
+              <Title size="3" style={{marginBottom: 0}}>
+                {x.name}
+                <Subtitle size="5">{x.value}</Subtitle>
+              </Title>
+            </Box>
+          </li>
+        ))}
+      </ul>
+    );
+  }
+}
+
+
 function createCodeBlock(src) {
   return function CodeBlock(props) { // eslint-disable-line camelcase
     const bonus = props.language.split('|');
@@ -152,28 +171,27 @@ function createCodeBlock(src) {
       return (
         <Message color={bonus.length > 1 ? bonus[1] : 'info'}>
           <Message.Body>
-            {props.literal}
+            <ReactMarkdown source={props.literal}/>
           </Message.Body>
         </Message>
       );
     } else if(lang === 'jsx') {
       return <Example source={props.literal}/>;
     } else if(lang === 'color-palette') {
-      const poops = parseSpecimenBody()(props.literal, documentationImports);
-      console.dir(poops);
-      return <span />;
+      const {colors} = yaml.load(props.literal);
+      return <ColorPallet colors={colors}/>;
     }
     return syntax(lang, props.literal);
   }
 }
 
-export class Page extends Component {
+export class Page extends PureComponent {
   render() {
     const {page} = this.props;
     return (
       <Container>
         <Content>
-          <ReactMarkdown source={page.component} renderers={{...renderers, CodeBlock: createCodeBlock(page.source)}}/>}/>
+          <ReactMarkdown source={page.component} renderers={{...renderers, CodeBlock: createCodeBlock(page.source)}}/>
         </Content>
       </Container>
     );
@@ -240,6 +258,18 @@ export default class Layout extends PureComponent {
         {submenu}
         <br style={{marginTop: '1em'}}/>
         {children}
+        <Footer style={{marginTop: '3rem'}}>
+          <Columns>
+            <Column>
+              <Box>
+                Blah Blah
+              </Box>
+            </Column>
+            <Column className="has-text-centered">
+              MIT License
+            </Column>
+          </Columns>
+        </Footer>
       </div>
     );
   }

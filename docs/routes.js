@@ -11,11 +11,13 @@ export default [{
   pages: [{
     path: '/grid/columns',
     title: 'Columns',
-    component: require('../docs/grid/columns.md')
+    component: require('../docs/grid/columns.md'),
+    source: require('!!text-loader!../src/grid/Columns.jsx')
   }, {
     path: '/grid/tiles',
     title: 'Tiles',
-    component: require('../docs/grid/tiles.md')
+    component: require('../docs/grid/tiles.md'),
+    source: require('!!text-loader!../src/grid/Tile.jsx')
   }]
 }, {
   title: 'Elements',
@@ -174,8 +176,4 @@ export default [{
     component: require('./forms/modal-form.md'),
     source: require('!!text-loader!../src/forms/ModalForm.jsx')
   }]
-}, {
-  path: '/proptypes',
-  title: 'PropTypes',
-  component: require('../docs/props.md')
 }];

@@ -15,7 +15,8 @@ export {default as Nav} from './navigation/Nav';
 export {default as NavToggle} from './navigation/NavToggle';
 
 // Grid
-export {Columns, Column} from './grid/Columns';
+export {default as Columns} from './grid/Columns';
+export {default as Column} from './grid/Column';
 export {default as Tile}from './grid/Tile';
 
 // Elements
