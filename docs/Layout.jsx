@@ -1,7 +1,7 @@
 import React, {Component, PureComponent} from 'react';
 import ReactDOM from 'react-dom';
 import {withRouter} from "react-router-dom";
-import {Hero, Title, Container, Content, Subtitle, Nav, Tabs, Tab, Level, Table, Button, Message, Box, Columns, Column, Image, Footer} from "../src/index";
+import {Hero, Title, Container, Content, Subtitle, Nav, Tabs, Tab, Level, Table, Button, Message, Box, Columns, Column, Image, Footer, Icon} from "../src/index";
 import * as Gooey from '../src/index';
 import logo from '../react-gooey-white.svg';
 import routes from './routes';
@@ -190,9 +190,7 @@ export class Page extends PureComponent {
     const {page} = this.props;
     return (
       <Container>
-        <Content>
-          <ReactMarkdown source={page.component} renderers={{...renderers, CodeBlock: createCodeBlock(page.source)}}/>
-        </Content>
+        <ReactMarkdown source={page.component} renderers={{...renderers, CodeBlock: createCodeBlock(page.source)}} className="page"/>
       </Container>
     );
   }
@@ -222,10 +220,6 @@ export default class Layout extends PureComponent {
     return (
       <div>
         <Hero color="primary" size="small" bold>
-          <Hero.Head>
-            <Container>
-            </Container>
-          </Hero.Head>
           <Hero.Body>
             <Container>
               <Level>
@@ -233,10 +227,10 @@ export default class Layout extends PureComponent {
                   <Image src={logo} style={{width: '80px'}}/>
                 </Level.Item>
                 <Level.Item style={{flexGrow: 5, justifyContent: 'left'}}>
-                  <Title>
+                  <Title heading>
                     Gooey
                     <Subtitle>
-                      A <strong>bulma</strong> CSS based UI framework
+                      A <strong>bulma</strong> CSS based React Component Library
                     </Subtitle>
                   </Title>
                 </Level.Item>
