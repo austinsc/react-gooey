@@ -1,4 +1,5 @@
-> Small **tag labels** to insert anywhere
+# Tag
+Small **tag labels** to insert anywhere
 
 ```props
 ```

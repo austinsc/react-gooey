@@ -1,4 +1,5 @@
-> The inevitable HTML **table**, with special case cells.
+# Table
+The inevitable HTML **table**, with special case cells.
 
 ```props
 ```

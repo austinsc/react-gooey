@@ -1,4 +1,5 @@
-> A responsive, usable, and flexible **pagination**
+# Pagination
+A responsive, usable, and flexible **pagination**
 
 ```props
 ```

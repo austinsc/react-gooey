@@ -1,4 +1,5 @@
-> A composable **panel**, for compact controls
+# Panel
+A composable **panel**, for compact controls
 
 ```props
 ```
@@ -12,12 +13,13 @@ The panel is a container for several types:
 * `<Panel.Checkbox />` which can contain text and an onChange function
 
 ```jsx
+<div style={{backgroundColor: 'white'}}>
 <Panel>
   <Panel.Heading>
     Repositories
   </Panel.Heading>
   <Panel.Block>
-  
+    <input className="input" type="text" placeholder="Search"/>
   </Panel.Block>
   <Panel.Tabs>
     <a className="is-active">All</a>
@@ -35,4 +37,5 @@ The panel is a container for several types:
   <Panel.Checkbox text="Remember me" />
   <Button text="Reset all filters" color="primary" outlined />
 </Panel>
+</div>
 ```

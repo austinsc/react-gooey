@@ -19,7 +19,8 @@ The `<Icon/>` container is always slightly bigger than the font-size used:
 ```jsx
 <div>
   <Icon name="home" size="small"/>
-  <Icon name="home" size="medium"/>
   <Icon name="home"/>
+  <Icon name="home" size="medium"/>
+  <Icon name="home" size="large"/>
 </div>
 ```

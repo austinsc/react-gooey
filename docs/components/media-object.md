@@ -1,12 +1,13 @@
-> The famous `<MediaObject/>` prevalent in social media interfaces, but useful in any context
+# Media Object
+The famous `<MediaObject/>` prevalent in social media interfaces, but useful in any context
   
-The media object is a UI element perfect for repeatable and nestable content.
+The media object is a UI element perfect for **repeatable** and **nestable** content.
 
 ```jsx
 <div>
   <MediaObject>
     <MediaObject.Left>
-      <Image size='64x64' src='http://placehold.it/128x128'/>
+      <Image size='64x64' src='//placehold.it/128x128'/>
     </MediaObject.Left>
     <MediaObject.Content>
       <Content>
@@ -29,7 +30,7 @@ You can include any other ReactGooey element, like inputs, icons, buttons... or 
 ```jsx
 <MediaObject>
   <MediaObject.Left>
-    <Image size='64x64' src='http://placehold.it/128x128'/>
+    <Image size='64x64' src='//placehold.it/128x128'/>
   </MediaObject.Left>
   <MediaObject.Content>
     <p className="control">
@@ -37,16 +38,16 @@ You can include any other ReactGooey element, like inputs, icons, buttons... or 
     </p>
     <br />
     <Level>
-      <LevelSection left>
-        <LevelItem>
+      <Level.Left>
+        <Level.Item>
           <Button color='info' text='Post comment'/>
-        </LevelItem>
-      </LevelSection>
-      <LevelSection right>
-        <LevelItem>
+        </Level.Item>
+      </Level.Left>
+      <Level.Right>
+        <Level.Item>
           <Button color='info' outlined text='Press enter to submit'/>
-        </LevelItem>
-      </LevelSection>
+        </Level.Item>
+      </Level.Right>
     </Level>
   </MediaObject.Content>
 </MediaObject>
@@ -59,7 +60,7 @@ You can nest media objects up to **3 levels** deep.
 ```jsx
 <MediaObject>
   <MediaObject.Left>
-    <Image size='64x64' src='http://placehold.it/128x128'/>
+    <Image size='64x64' src='//placehold.it/128x128'/>
   </MediaObject.Left>
   <MediaObject.Content>
     <Content>
@@ -74,7 +75,7 @@ You can nest media objects up to **3 levels** deep.
       </p>    
       <MediaObject>
         <MediaObject.Left>
-          <Image size='64x64' src='http://placehold.it/128x128'/>
+          <Image size='64x64' src='//placehold.it/128x128'/>
         </MediaObject.Left>
         <MediaObject.Content>
           <Content>

@@ -127,7 +127,7 @@ export default class Icon extends PureComponent {
     const {wrap, wrapSize, name, size, rotate, flip, spin, fixedWidth, stack, inverse, className, wrench, ring, horizontal, vertical, flash, bounce, float, pulse, skip, shake, tada, passing, burst, fast, slow, hover, ...rest}=this.props;
     const faa = (wrench || ring || horizontal || vertical || flash || bounce || float || pulse || shake || tada || passing || burst);
     const css = classNames(className, `fa fa-${name}`, {
-      [`fa-${size}`]: size,
+      // [`fa-${size}`]: size,
       [`fa-rotate-${rotate}`]: rotate,
       [`fa-flip-${flip}`]: flip,
       [`fa-stack-${stack}`]: stack,
@@ -152,7 +152,7 @@ export default class Icon extends PureComponent {
       'animated': !hover && faa,
       'animated-hover': hover && faa
     });
-    const wrapClass = classNames('icon', {[`is-${wrapSize}`]: wrapSize});
+    const wrapClass = classNames('icon', {[`is-${size}`]: size && size !== 'normal'});
 
     return wrap ? (
       <span className={wrapClass}>

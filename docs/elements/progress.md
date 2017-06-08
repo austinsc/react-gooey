@@ -1,4 +1,5 @@
-> Native HTML **progress** bars
+# Progress
+Native HTML **progress** bars
 
 ```props
 ```

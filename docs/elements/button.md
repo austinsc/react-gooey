@@ -1,4 +1,5 @@
-> The classic **button**, in different colors, sizes, and states
+# Button
+The classic **button**, in different colors, sizes, and states
 
 ```props
 ```
@@ -31,7 +32,7 @@
 
 ## Styles
 
-> Outlined
+Outlined
 ```jsx
 <ButtonGroup>
   <Button text="Outlined" outlined/>
@@ -42,7 +43,7 @@
 </ButtonGroup>
 ```
 
-> Inverted (the text color becomes the background color, and vice-versa)
+Inverted (the text color becomes the background color, and vice-versa)
 ```jsx
 <ButtonGroup>
   <Button text="Inverted" inverted/>
@@ -53,7 +54,7 @@
 </ButtonGroup>
 ```
 
-> Invert Outlined (the invert color becomes the text and border colors)
+Invert Outlined (the invert color becomes the text and border colors)
 ```jsx
 <ButtonGroup>
   <Button text="Invert Outlined" inverted outlined/>
@@ -66,7 +67,7 @@
 
 ## States
 
-> Normal
+Normal
 ```jsx
 <ButtonGroup>
   <Button text="Normal"/>
@@ -78,7 +79,7 @@
 </ButtonGroup>
 ```
 
-> Hover
+Hover
 ```jsx
 <ButtonGroup>
   <Button text="Hover" hovered/>
@@ -90,7 +91,7 @@
 </ButtonGroup>
 ```
 
-> Focus
+Focus
 ```jsx
 <ButtonGroup>
   <Button text="Focus" focused/>
@@ -102,7 +103,7 @@
 </ButtonGroup>
 ```
 
-> Active
+Active
 ```jsx
 <ButtonGroup>
   <Button text="Active" active/>
@@ -114,7 +115,7 @@
 </ButtonGroup>
 ```
 
-> Loading
+Loading
 ```jsx
 <ButtonGroup>
   <Button text="Loading" loading/>
@@ -126,7 +127,7 @@
 </ButtonGroup>
 ```
 
-> Disabled
+Disabled
 ```jsx
 <ButtonGroup>
   <Button text="Disabled" disabled/>
@@ -138,7 +139,7 @@
 </ButtonGroup>
 ```
 
-> With Font-Awesome icons
+With Font-Awesome icons
 ```jsx
 <ButtonGroup>
   <Button text="Github" icon="github"/>
@@ -173,7 +174,7 @@
 ```
 
 ## Button Group
-> If you want to **group** buttons together, wrap them in a `<ButtonGroup/>`:
+If you want to **group** buttons together, wrap them in a `<ButtonGroup/>`:
 ```jsx
 <ButtonGroup>
   <Button text="Save Changes" color="primary"/>
@@ -183,7 +184,7 @@
 ```
 
 ## Add-ons
-> If you want to use buttons as **addons**, use the addons modifier on the `<ButtonGroup/>` container:
+If you want to use buttons as **addons**, use the addons modifier on the `<ButtonGroup/>` container:
 
 ```jsx
 <ButtonGroup addons>

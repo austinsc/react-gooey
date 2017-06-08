@@ -1,4 +1,5 @@
-> A container for **responsive images**
+# Image
+A container for **responsive images**
 
 ```props
 ```

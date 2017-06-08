@@ -1,4 +1,5 @@
-> An all-around flexible and composable component
+# Card
+An all-around flexible and composable component
 
 ```props
 ```
@@ -13,12 +14,12 @@
 ```jsx
 <Card>
   <Card.Image>
-    <Image ratio="4by3" src="http://placehold.it/1280x960"/>
+    <Image ratio="4by3" src="//placehold.it/1280x960"/>
   </Card.Image>
   <Card.Content>
     <MediaObject>
       <MediaObject.Left>
-        <Image size='64x64' src='http://placehold.it/128x128'/>
+        <Image size='64x64' src='//placehold.it/128x128'/>
       </MediaObject.Left>
       <MediaObject.Content>
           <Title size="4"> John Smith </Title>

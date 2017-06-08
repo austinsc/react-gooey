@@ -1,4 +1,5 @@
-> Bold **notification** blocks, to alert users of something
+# Notification
+Bold **notification** blocks, to alert users of something
 
 ```props
 ```

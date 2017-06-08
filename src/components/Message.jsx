@@ -24,7 +24,7 @@ class Header extends PureComponent {
      */
     className: PropTypes.any
   };
-  static defaultProps = {delete: false};
+  static defaultProps = {deleteButton: false};
 
   render() {
     const {text, children, deleteButton, className, ...rest} = this.props;
@@ -33,8 +33,7 @@ class Header extends PureComponent {
     });
     return (
       <div className={classes} {...rest}>
-        <p>{text}</p>
-        {children}
+        <p>{text || children}</p>
         {deleteButton && <Delete/>}
       </div>
     );

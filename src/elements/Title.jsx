@@ -14,6 +14,10 @@ export default class Title extends Component {
      */
     heading: PropTypes.bool,
     /**
+     * If true, render the element as a <p> tag
+     */
+    nested: PropTypes.bool,
+    /**
      * Size of the title component.
      */
     size: PropTypes.oneOf([1, 2, 3, 4, 5, 6, '1', '2', '3', '4', '5', '6']),
@@ -27,13 +31,13 @@ export default class Title extends Component {
   };
 
   render() {
-    const {children, heading, size, className, ...rest} = this.props;
+    const {children, heading, nested, size, className, ...rest} = this.props;
     const classes = classNames('title', {
       [`is-${size}`]: !!size,
       'heading': heading,
       [className]: !!className
     });
-    return React.createElement(`h${size}`, {className: classes, ...rest}, Children.map(children, x => {
+    return React.createElement(nested ? 'p' : `h${size}`, {className: classes, ...rest}, Children.map(children, x => {
       if(x && x.type && x.type.displayName === 'Subtitle') {
         return {...x, props: {nested: true, ...x.props}};
       }

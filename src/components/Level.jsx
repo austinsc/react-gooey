@@ -18,6 +18,7 @@ export default class Level extends Component {
   static Left = createNestedComponent('level-left');
   static Right = createNestedComponent('level-right');
   static Item = createNestedComponent('level-item');
+  static Link = createNestedComponent('level-item', 'a');
 
   render() {
     const {children, className, ...rest} = this.props;

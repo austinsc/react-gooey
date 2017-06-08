@@ -21,14 +21,14 @@ class Link extends PureComponent {
   };
 
   render() {
-    const {text, active, children, className, ...rest} = this.props;
+    const {active, children, className, ...rest} = this.props;
     const classes = classNames('', {
       'is-active': active,
       [className]: !!className
     });
     return (
       <li>
-        <a className={classes}{...rest}>{text || children}</a>
+        <a className={classes}{...rest}>{children}</a>
       </li>
     );
   }
@@ -52,7 +52,7 @@ export default class Menu extends PureComponent {
   static defaultProps = {};
 
   static Label = createNestedComponent('menu-label', 'p');
-  static List = createNestedComponent('menu-label', 'ul');
+  static List = createNestedComponent('menu-list', 'ul');
   static Link = Link;
 
   render() {
