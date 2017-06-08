@@ -5,10 +5,7 @@
   
 The interactive forms are powered by [react-jsonschema-form](https://github.com/mozilla-services/react-jsonschema-form). 
 
-```code
-lang: js
-span: 2
----
+```js
 // schema
 {
   title: "Todo",
@@ -37,7 +34,5 @@ span: 2
 ```
 
 ```jsx
-span: 4
----
-<Form schema={forms.todo} uiSchema={formsui.todo} />
+<Form schema={forms.todo} uiSchema={ui.todo} />
 ```

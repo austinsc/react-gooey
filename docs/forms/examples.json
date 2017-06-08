@@ -1,0 +1,20 @@
+{
+  "forms":{
+    "todo": {
+      "title": "Todo",
+      "type": "object",
+      "required": ["title"],
+      "properties": {
+        "title": {"type": "string", "title": "Title", "description": "This is a bit of help text just for you."},
+        "done": {"type": "boolean", "title": "Done?", "default": false}
+      }
+    }
+  },
+  "ui": {
+    "todo": {
+      "title": {
+        "ui:placeholder": "A new task"
+      }
+    }
+  }
+}

@@ -14,32 +14,12 @@ import {parse} from 'react-docgen';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import {vs as theme} from 'react-syntax-highlighter/dist/styles';
 import {parseSpecimenBody} from './parseBody';
-
-const forms = {
-  todo: {
-    title: "Todo",
-    type: "object",
-    required: ["title"],
-    properties: {
-      title: {type: "string", title: "Title", description: "This is a bit of help text just for you."},
-      done: {type: "boolean", title: "Done?", default: false}
-    }
-  }
-};
-
-const formsui = {
-  todo: {
-    title: {
-      'ui:placeholder': "A new task"
-    }
-  }
-};
+import examples from './forms/examples.json';
 
 const documentationImports = {
   logo,
-  forms,
-  formsui,
   ReactDOM,
+  ...examples,
   ...Gooey
 };
 
@@ -119,7 +99,9 @@ class Props extends Component {
   }
 }
 
-class Examplar extends Component {
+class Example extends Component {
+  static displayName = 'Example';
+
   state = {elementState: {}, showCode: false};
 
   setElementState(nextState) {
@@ -133,12 +115,11 @@ class Examplar extends Component {
   render() {
     const {children, source} = this.props;
     const {showCode} = this.state;
-    const jsx = typeof source === 'string';
     let element = null;
     let error = null;
     let code = '';
 
-    if(jsx) {
+    if(typeof source === 'string') {
       const transformed = transformJSX(source, {...documentationImports, state: this.state.elementState, setState: this.setElementState});
       element = transformed.element;
       error = transformed.error && <Message color="danger"><Message.Body>{`Couldn't render specimen: ${transformed.error}`}</Message.Body></Message>;
@@ -149,27 +130,13 @@ class Examplar extends Component {
     }
 
     return (
-      <section className="example">
+      <section className="example" style={showCode ? {paddingBottom: '0'} : {}}>
         {error}
-        {element}
-        <hr />
-        <Level>
-          <Level.Left>
-            <Level.Item>
-              <Title size="4" id="properties">Example Source</Title>
-            </Level.Item>
-          </Level.Left>
-          <Level.Right>
-            <Level.Item>
-              <div className="field">
-                <p className="control">
-                  <Button color="primary" icon="code" onClick={() => this.setState({showCode: !showCode})}>View Code</Button>
-                </p>
-              </div>
-            </Level.Item>
-          </Level.Right>
-        </Level>
-        {showCode && syntax('html', code)}
+        <figure>
+          {element}
+        </figure>
+        <Button style={{width: '100%'}} color="primary" icon="code" outlined onClick={() => this.setState({showCode: !showCode})}>Show Example Code</Button>
+        {showCode && syntax('html', code.trim())}
       </section>
     );
   }
@@ -190,7 +157,7 @@ function createCodeBlock(src) {
         </Message>
       );
     } else if(lang === 'jsx') {
-      return <Examplar source={props.literal}/>;
+      return <Example source={props.literal}/>;
     } else if(lang === 'color-palette') {
       const poops = parseSpecimenBody()(props.literal, documentationImports);
       console.dir(poops);
@@ -245,7 +212,7 @@ export default class Layout extends PureComponent {
             <Container>
               <Level>
                 <Level.Item style={{maxWidth: '100px'}}>
-                    <Image src={logo} style={{width: '80px'}}/>
+                  <Image src={logo} style={{width: '80px'}}/>
                 </Level.Item>
                 <Level.Item style={{flexGrow: 5, justifyContent: 'left'}}>
                   <Title>
