@@ -27,16 +27,17 @@
 }
 
 ul.color-pallet {
-  list-style: none none;
+  list-style: none none !important;
   li {
     padding: 2rem;
   }
 }
 
 .page {
-  @include content();
+  //@include content();
   section.example {
-    @include reset();
+    //@include reset();
+
     $check-light: #fff;
     $check-dark: #ededed;
     border: 1px solid #ffdd57;
@@ -90,6 +91,11 @@ ul.color-pallet {
       &:not(:last-child) {
         margin-bottom: 1.5rem;
       }
+    }
+
+    // Fixes for examples
+    h5 {
+      margin-bottom: 0;
     }
   }
 }
