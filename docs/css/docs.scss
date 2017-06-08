@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+@import "../../src/css/reset";
+@import "../../src/css/fonts/roboto";
+@import "../../src/css/fonts/raleway";
+@import "../../src/css/variables";
+@import "../../src/css/gooey";
+@import "./content.sass";
+@import "./minireset.sass";
+
+.content {
+  pre,
+  code {
+    font-family: "Source Code Pro", monospace;
+    //font-size: 1.1rem;
+  }
+}
+
+// Example
+
+@media screen and (min-width: 769px), print {
+  .example.is-fullwidth {
+    border-left: none;
+    border-right: none;
+    padding: 0;
+  }
+}
+
+ul.color-pallet {
+  list-style: none none !important;
+  li {
+    padding: 2rem;
+  }
+}
+
+.page {
+  //@include content();
+  section.example {
+    //@include reset();
+
+    $check-light: #fff;
+    $check-dark: #ededed;
+    border: 1px solid #ffdd57;
+    border-top-right-radius: 3px;
+    color: rgba(0, 0, 0, 0.7);
+    padding: .5rem;
+    position: relative;
+    > figure {
+      padding: .5rem;
+      background-color: $check-light;
+      background-image: linear-gradient(45deg, $check-dark 25%, $check-dark 25%, transparent 75%, $check-dark 75%, $check-dark), linear-gradient(45deg, $check-dark 25%, transparent 25%, transparent 75%, $check-dark 75%, $check-dark);
+      background-size: 8px 8px;
+      background-position: 0 0, 4px 4px;
+      margin-bottom: .5rem;
+    }
+
+    & > hr {
+      background-color: #ffdd57;
+    }
+
+    pre, code {
+      padding: 0;
+    }
+
+    &:not(:first-child) {
+      margin-top: 2rem;
+    }
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+    &:before {
+      background: #ffdd57;
+      border-radius: 3px 3px 0 0;
+      bottom: 100%;
+      content: "Example";
+      display: inline-block;
+      font-size: 7px;
+      font-weight: bold;
+      left: -1px;
+      letter-spacing: 1px;
+      padding: 3px 5px;
+      position: absolute;
+      text-transform: uppercase;
+      vertical-align: top;
+    }
+    + .highlight {
+      border: 1px solid #ffdd57;
+      border-radius: 0 0 3px 3px;
+      border-top: none;
+      margin-top: -1.5rem;
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    // Fixes for examples
+    h5 {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,7 +1,8 @@
-import React, {Component, PureComponent} from 'react';
+import _ from 'lodash';
+import React, {Component, PureComponent, createElement} from 'react';
 import ReactDOM from 'react-dom';
 import {withRouter} from "react-router-dom";
-import {Hero, Title, Container, Content, Subtitle, Nav, Tabs, Tab, Level, Table, Button, Message, Box, Columns, Column, Image, Footer} from "../src/index";
+import {Hero, Title, Container, Content, Subtitle, Nav, Tabs, Tab, Level, Table, Button, Message, Box, Columns, Column, Image, Footer, Icon} from "../src/index";
 import * as Gooey from '../src/index';
 import logo from '../react-gooey-white.svg';
 import routes from './routes';
@@ -100,7 +101,10 @@ class Props extends Component {
 class Example extends Component {
   static displayName = 'Example';
 
-  state = {elementState: {}, showCode: false};
+  constructor(props) {
+    super(props);
+    this.state = {elementState: {...props.state}, showCode: false};
+  }
 
   setElementState(nextState) {
     if(typeof nextState === 'function') {
@@ -118,7 +122,7 @@ class Example extends Component {
     let code = '';
 
     if(typeof source === 'string') {
-      const transformed = transformJSX(source, {...documentationImports, state: this.state.elementState, setState: this.setElementState});
+      const transformed = transformJSX(source, {...documentationImports, state: this.state.elementState, setState: ::this.setElementState});
       element = transformed.element;
       error = transformed.error && <Message color="danger"><Message.Body>{`Couldn't render specimen: ${transformed.error}`}</Message.Body></Message>;
       code = source;
@@ -176,7 +180,12 @@ function createCodeBlock(src) {
         </Message>
       );
     } else if(lang === 'jsx') {
-      return <Example source={props.literal}/>;
+      const parts = props.literal.split('---');
+      let other = {};
+      if(parts.length > 1) {
+        other = yaml.load(parts[0]);
+      }
+      return <Example {...other} source={parts[parts.length - 1]}/>;
     } else if(lang === 'color-palette') {
       const {colors} = yaml.load(props.literal);
       return <ColorPallet colors={colors}/>;
@@ -190,9 +199,7 @@ export class Page extends PureComponent {
     const {page} = this.props;
     return (
       <Container>
-        <Content>
-          <ReactMarkdown source={page.component} renderers={{...renderers, CodeBlock: createCodeBlock(page.source)}}/>
-        </Content>
+        <ReactMarkdown source={page.component} renderers={{...renderers, CodeBlock: createCodeBlock(page.source)}} className="page"/>
       </Container>
     );
   }
@@ -222,10 +229,6 @@ export default class Layout extends PureComponent {
     return (
       <div>
         <Hero color="primary" size="small" bold>
-          <Hero.Head>
-            <Container>
-            </Container>
-          </Hero.Head>
           <Hero.Body>
             <Container>
               <Level>
@@ -233,10 +236,10 @@ export default class Layout extends PureComponent {
                   <Image src={logo} style={{width: '80px'}}/>
                 </Level.Item>
                 <Level.Item style={{flexGrow: 5, justifyContent: 'left'}}>
-                  <Title>
+                  <Title heading>
                     Gooey
                     <Subtitle>
-                      A <strong>bulma</strong> CSS based UI framework
+                      A <strong>bulma</strong> CSS based React Component Library
                     </Subtitle>
                   </Title>
                 </Level.Item>

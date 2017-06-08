@@ -6,7 +6,7 @@ import {Route, Switch} from 'react-router';
 import {HashRouter} from 'react-router-dom';
 import Layout, {Page} from './Layout';
 import routes from './routes';
-import '../src/css/main';
+import './css/docs';
 import 'font-awesome/scss/font-awesome';
 import 'font-awesome-animation/dist/font-awesome-animation.css';
 
