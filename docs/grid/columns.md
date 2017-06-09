@@ -7,7 +7,7 @@ To build a **grid**, just:
 Each column will have an **equal width**, no matter the number of columns.
 ```jsx
 <Columns>
-  <Column fullwidth>
+  <Column>
     <Notification color="info">
       First column
     </Notification>
