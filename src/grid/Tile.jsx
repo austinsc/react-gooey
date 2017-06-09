@@ -5,15 +5,33 @@ import classNames from 'classnames';
 export default class Tile extends Component {
   static displayName = 'Tile';
   static propTypes = {
+    /**
+     * Renders an ancestor tile.
+     */
     ancestor: PropTypes.bool,
+    /**
+     * Renders a parent tile.
+     */
     parent: PropTypes.bool,
+    /**
+     * Renders a child tile.
+     */
     child: PropTypes.bool,
+    /**
+     * Renders a vertical tile.
+     */
     vertical: PropTypes.bool,
+    /**
+     * Child elements to be rendered within the tile.
+     */
     children: PropTypes.any,
     /**
      * CSS classes to be rendered on the root element of this component.
      */
     className: PropTypes.any,
+    /**
+     * Horizontal size of tile element to be rendered.
+     */
     size: PropTypes.oneOf([
       1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
       '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12',

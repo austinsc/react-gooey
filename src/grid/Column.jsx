@@ -39,6 +39,7 @@ export default class Column extends Component {
   render() {
     const {children, size, offset, device, narrow, className, ...rest} = this.props;
     const suffix = device ? `-${device}` : '';
+    const ops = {'is-fullwidth': !!rest.fullwidth};
     let map = {
       [className]: !!className,
       [`is-offset-${offset}`]: offset,
