@@ -6,7 +6,7 @@
     "Emily Moore <emily.moore@rovisys.com>"
   ],
   "user": "austinsc",
-  "version": "0.1.3",
+  "version": "1.4.2",
   "scripts": {
     "start": "webpack-dev-server",
     "docgen": "react-doc-generator ./src -o ./docs/props.md",
