@@ -1,8 +1,4 @@
-# Tile
 A **single tile** element to build 2-dimensional Metro-like, Pinterest-like, or whatever-you-like grids
-
-```props
-```
 
 To build intricate 2-dimensional, you only need a **single element** - the tile:
 

@@ -3,7 +3,26 @@ import React, {Component, PureComponent, createElement} from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import {withRouter} from "react-router-dom";
-import {Hero, Title, Container, Content, Subtitle, Nav, Tabs, Tab, Level, Table, Button, Message, Box, Columns, Column, Image, Footer, Icon} from "../src/index";
+import {
+  Hero,
+  Title,
+  Container,
+  Content,
+  Subtitle,
+  Nav,
+  Tabs,
+  Tab,
+  Level,
+  Table,
+  Button,
+  Message,
+  Box,
+  Columns,
+  Column,
+  Image,
+  Footer,
+  Icon
+} from "../src/index";
 import * as Gooey from '../src/index';
 import logo from '../react-gooey-white.svg';
 import routes from './routes';
@@ -70,7 +89,7 @@ class Props extends Component {
 
   render() {
     const {source} = this.props;
-    if(!source) {
+    if (!source) {
       return null;
     }
     const meta = parse(source);
@@ -81,24 +100,24 @@ class Props extends Component {
       <section className="props">
         <Table bordered>
           <thead>
-            <tr>
-              <th>Property</th>
-              <th>Type</th>
-              <th colSpan={1 + hasEnum}>Description</th>
-            </tr>
+          <tr>
+            <th>Property</th>
+            <th>Type</th>
+            <th colSpan={1 + hasEnum}>Description</th>
+          </tr>
           </thead>
           <tbody>
-            {props.map(x => {
-              const isEnum = x.type.name === 'enum';
-              return (
-                <tr key={x.name} style={{fontWeight: x.required ? 'bold' : 'inherit'}}>
-                  <td>{x.name}</td>
-                  <td>{x.type.name}</td>
-                  <td colSpan={hasEnum && isEnum ? 1 : hasEnum ? 2 : 1}>{x.description}</td>
-                  {hasEnum && isEnum && <td>{isEnum && x.type.value && x.type.value.map(y => y.value).join(', ')}</td>}
-                </tr>
-              );
-            })}
+          {props.map(x => {
+            const isEnum = x.type.name === 'enum';
+            return (
+              <tr key={x.name} style={{fontWeight: x.required ? 'bold' : 'inherit'}}>
+                <td>{x.name}</td>
+                <td>{x.type.name}</td>
+                <td colSpan={hasEnum && isEnum ? 1 : hasEnum ? 2 : 1}>{x.description}</td>
+                {hasEnum && isEnum && <td>{isEnum && x.type.value && x.type.value.map(y => y.value).join(', ')}</td>}
+              </tr>
+            );
+          })}
           </tbody>
         </Table>
       </section>
@@ -115,7 +134,7 @@ class Example extends Component {
   }
 
   setElementState(nextState) {
-    if(typeof nextState === 'function') {
+    if (typeof nextState === 'function') {
       this.setState(({elementState}) => ({elementState: {...elementState, ...nextState(elementState)}}));
     } else {
       this.setState({elementState: {...this.state.elementState, ...nextState}});
@@ -129,10 +148,15 @@ class Example extends Component {
     let error = null;
     let code = '';
 
-    if(typeof source === 'string') {
-      const transformed = transformJSX(source, {...documentationImports, state: this.state.elementState, setState: ::this.setElementState});
+    if (typeof source === 'string') {
+      const transformed = transformJSX(source, {
+        ...documentationImports,
+        state: this.state.elementState,
+        setState: ::this.setElementState
+      });
       element = transformed.element;
-      error = transformed.error && <Message color="danger"><Message.Body>{`Couldn't render specimen: ${transformed.error}`}</Message.Body></Message>;
+      error = transformed.error && <Message
+          color="danger"><Message.Body>{`Couldn't render specimen: ${transformed.error}`}</Message.Body></Message>;
       code = source;
     } else {
       element = children;
@@ -145,7 +169,8 @@ class Example extends Component {
         <figure>
           {element}
         </figure>
-        <Button style={{width: '100%'}} color="primary" icon="code" outlined onClick={() => this.setState({showCode: !showCode})}>Show Example Code</Button>
+        <Button style={{width: '100%'}} color="primary" icon="code" outlined
+                onClick={() => this.setState({showCode: !showCode})}>Show Example Code</Button>
         {showCode && syntax('html', code.trim())}
       </section>
     );
@@ -177,9 +202,9 @@ function createCodeBlock(src) {
   return function CodeBlock(props) { // eslint-disable-line camelcase
     const bonus = props.language.split('|');
     const lang = bonus[0];
-    if(lang === 'props') {
+    if (lang === 'props') {
       return null; //<Props source={src}/>
-    } else if(lang === 'hint') {
+    } else if (lang === 'hint') {
       return (
         <Message color={bonus.length > 1 ? bonus[1] : 'info'}>
           <Message.Body>
@@ -187,14 +212,14 @@ function createCodeBlock(src) {
           </Message.Body>
         </Message>
       );
-    } else if(lang === 'jsx') {
+    } else if (lang === 'jsx') {
       const parts = props.literal.split('---');
       let other = {};
-      if(parts.length > 1) {
+      if (parts.length > 1) {
         other = yaml.load(parts[0]);
       }
       return <Example {...other} source={parts[parts.length - 1]}/>;
-    } else if(lang === 'color-palette') {
+    } else if (lang === 'color-palette') {
       const {colors} = yaml.load(props.literal);
       return <ColorPallet colors={colors}/>;
     }
@@ -207,20 +232,21 @@ export class Page extends PureComponent {
     const {page} = this.props;
     let src = null;
     let props = null;
-    if(page.source) {
+    if (page.source) {
       src = (
         <section className="source">
           {syntax('javascript', page.source)}
         </section>
       );
-      props = <Props source={page.source} />
+      props = <Props source={page.source}/>
     }
 
     return (
       <Container>
         <Title className="page-header">{page.title}</Title>
         {props}
-        <ReactMarkdown source={page.component} renderers={{...renderers, CodeBlock: createCodeBlock(page.source)}} className="page"/>
+        <ReactMarkdown source={page.component} renderers={{...renderers, CodeBlock: createCodeBlock(page.source)}}
+                       className="page"/>
         {src}
       </Container>
     );
@@ -228,7 +254,7 @@ export class Page extends PureComponent {
 }
 
 @withRouter
-export default class Layout extends PureComponent {
+export default class Layout extends Component {
   static displayName = 'Layout';
   static propTypes = {};
   static defaultProps = {};
@@ -254,17 +280,32 @@ export default class Layout extends PureComponent {
           <Hero.Body>
             <Container>
               <Level>
-                <Level.Item style={{maxWidth: '100px'}}>
-                  <Image src={logo} style={{width: '80px'}}/>
-                </Level.Item>
-                <Level.Item style={{flexGrow: 5, justifyContent: 'left'}}>
-                  <Title heading>
-                    Gooey
-                    <Subtitle>
-                      A <strong>bulma</strong> CSS based React Component Library
-                    </Subtitle>
-                  </Title>
-                </Level.Item>
+                <Level.Left>
+                  <Level.Item style={{maxWidth: '100px'}}>
+                    <Image src={logo} style={{width: '80px'}}/>
+                  </Level.Item>
+                  <Level.Item style={{flexGrow: 5, justifyContent: 'left'}}>
+                    <Title heading>
+                      Gooey
+                      <Subtitle>
+                        A <strong>bulma</strong> CSS based React Component Library
+                      </Subtitle>
+                    </Title>
+                  </Level.Item>
+                </Level.Left>
+                <Level.Right>
+                  <Level.Item>
+                    <Box style={{padding: 0}}>
+                    <pre style={{background: 'none'}}>
+                      <code className="code">npm install react-gooey --save</code>
+                    </pre>
+                    </Box>
+                  </Level.Item>
+                  <Level.Item>
+                    <Button icon="github" color="light" outlined size="large" iconSize="large"
+                            onClick={() => window.open('https://github.com/austinsc/react-gooey')}/>
+                  </Level.Item>
+                </Level.Right>
               </Level>
             </Container>
           </Hero.Body>
@@ -283,17 +324,19 @@ export default class Layout extends PureComponent {
         {submenu}
         <br style={{marginTop: '1em'}}/>
         {children}
-        <Footer style={{marginTop: '3rem'}}>
-          <Columns>
-            <Column>
-              <Box>
-                Blah Blah
-              </Box>
-            </Column>
-            <Column className="has-text-centered">
-              MIT License
-            </Column>
-          </Columns>
+        <Footer style={{marginTop: '5rem'}}>
+          <Container>
+            <Columns>
+              <Column>
+                  <p>Made with ❤ by <a href="https://github.com/austinsc" target="_blank">@austinsc</a> and <a href="https://github.com/em3896101" target="_blank">@em3896101</a>.</p>
+                  <p>A special thanks to <a href="http://jgthms.com" target="_blank">Jeremy Thomas</a> for all of the hard work on <a href="http://bulma.io" target="_blank"><strong>Bulma</strong></a>.</p>
+              </Column>
+              <Column className="has-text-centered">
+                <p>Copyright (c) 2017 Stephen C. Austin and Contributors.</p>
+                <p>MIT License. See the <a href="https://github.com/austinsc/react-gooey/blob/master/LICENSE" target="_blank">LICENSE</a> included in the source code for more information.</p>
+              </Column>
+            </Columns>
+          </Container>
         </Footer>
       </div>
     );

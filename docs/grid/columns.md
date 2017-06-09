@@ -1,19 +1,13 @@
-# Columns
 A simple way to build responsive columns
 
-```props
-```
-
 To build a **grid**, just:
-
  * Add a `<Columns />` container
  * Add as many `<Column />` elements as you want
 
 Each column will have an **equal width**, no matter the number of columns.
-
 ```jsx
 <Columns>
-  <Column fullwidth>
+  <Column>
     <Notification color="info">
       First column
     </Notification>
