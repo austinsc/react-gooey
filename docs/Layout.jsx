@@ -74,27 +74,31 @@ class Props extends Component {
       return null;
     }
     const meta = parse(source);
+    console.dir(meta);
     const props = Object.keys(meta.props).map(x => ({...meta.props[x], name: x}));
+    const hasEnum = props.filter(x => x.type.name === 'enum').length > 0;
     return (
       <section className="props">
         <Table bordered>
           <thead>
             <tr>
-              <th><strong>Property</strong></th>
-              <th><strong>Type</strong></th>
-              <th><strong>Required</strong></th>
-              <th><strong>Description</strong></th>
+              <th>Property</th>
+              <th>Type</th>
+              <th colSpan={1 + hasEnum}>Description</th>
             </tr>
           </thead>
           <tbody>
-            {props.map(x => (
-              <tr key={x.name}>
-                <td>{x.name}</td>
-                <td>{x.type.name}</td>
-                <td>{x.required.toString()}</td>
-                <td>{x.description}</td>
-              </tr>
-            ))}
+            {props.map(x => {
+              const isEnum = x.type.name === 'enum';
+              return (
+                <tr key={x.name} style={{fontWeight: x.required ? 'bold' : 'inherit'}}>
+                  <td>{x.name}</td>
+                  <td>{x.type.name}</td>
+                  <td colSpan={hasEnum && isEnum ? 1 : hasEnum ? 2 : 1}>{x.description}</td>
+                  {hasEnum && isEnum && <td>{isEnum && x.type.value && x.type.value.map(y => y.value).join(', ')}</td>}
+                </tr>
+              );
+            })}
           </tbody>
         </Table>
       </section>

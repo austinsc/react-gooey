@@ -49,6 +49,9 @@ ul.color-pallet {
 
       thead > tr {
         background-color: $white-ter;
+        font-weight: 100;
+        font-size: 1.1em;
+        text-transform: uppercase;
       }
     }
 
@@ -142,10 +145,6 @@ section.source {
   color: rgba(0, 0, 0, 0.7);
   padding: .5rem;
   position: relative;
-
-  > table {
-    margin-bottom: 0;
-  }
 
   &:before {
     background: $primary;
