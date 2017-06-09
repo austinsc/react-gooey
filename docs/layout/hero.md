@@ -1,8 +1,4 @@
-# Hero
 An imposing **hero banner** to showcase something
-
-```props
-```
 
 ```jsx
 <Hero>
@@ -10,10 +6,10 @@ An imposing **hero banner** to showcase something
     <Container>
       <Title>
         Hero title
+        <Subtitle>
+          Hero subtitle
+        </Subtitle>
       </Title>
-      <Subtitle>
-        Hero subtitle
-      </Subtitle>
     </Container>
   </Hero.Body>
 </Hero>
@@ -28,10 +24,10 @@ As with buttons, you can choose one of the **7 different colors**
   <Container>
     <Title>
       Primary title
+      <Subtitle>
+        Primary subtitle
+      </Subtitle>
     </Title>
-    <Subtitle>
-      Primary subtitle
-    </Subtitle>
   </Container>
   </Hero.Body>
 </Hero>
@@ -43,11 +39,11 @@ As with buttons, you can choose one of the **7 different colors**
     <Hero.Body>
     <Container>
       <Title>
-        Info title
-      </Title>        
-      <Subtitle>
-        Info subtitle
-      </Subtitle>
+        Info title        
+        <Subtitle>
+          Info subtitle
+        </Subtitle>
+      </Title>
     </Container>
     </Hero.Body>
   </Hero>
@@ -55,43 +51,51 @@ As with buttons, you can choose one of the **7 different colors**
     <Hero.Body>
     <Container>
       <Title>
-        Success title
-      </Title>        
-      <Subtitle>
-        Success subtitle
-      </Subtitle>
+        Success title 
+        <Subtitle>
+          Success subtitle
+        </Subtitle>
+      </Title>       
     </Container>
     </Hero.Body>
   </Hero>
   <Hero color="warning">
     <Hero.Body>
     <Container>
-      <Title>Warning title</Title>
-      <Subtitle>Warning subtitle</Subtitle>
+      <Title>
+        Warning title
+        <Subtitle>Warning subtitle</Subtitle>
+      </Title>
     </Container>
     </Hero.Body>
   </Hero>
   <Hero color="danger">
     <Hero.Body>
     <Container>
-      <Title>Danger title</Title>
-      <Subtitle>Danger subtitle</Subtitle>
+      <Title>
+        Danger title
+        <Subtitle>Danger subtitle</Subtitle>
+      </Title>
     </Container>
     </Hero.Body>
   </Hero>
   <Hero color="light">
     <Hero.Body>
     <Container>
-      <Title>Light title</Title>
-      <Subtitle>Light Subtitle</Subtitle>
+      <Title>
+        Light title
+        <Subtitle>Light Subtitle</Subtitle>
+      </Title>
     </Container>
     </Hero.Body>
   </Hero>
   <Hero color="dark">
     <Hero.Body>
     <Container>
-      <Title>Dark title</Title>
-      <Subtitle>Dark subtitle</Subtitle>
+      <Title>
+        Dark title
+        <Subtitle>Dark subtitle</Subtitle>
+      </Title>
     </Container>
     </Hero.Body>
   </Hero>
@@ -105,8 +109,10 @@ By adding the `bold` modifier, you can generate a subtle **gradient**
 <Hero color="primary" bold>
   <Hero.Body>
   <Container>
-    <Title>Primary bold title</Title>
-    <Subtitle>Primary bold subtitle</Subtitle>
+    <Title>
+      Primary bold title
+      <Subtitle>Primary bold subtitle</Subtitle>
+    </Title>
   </Container>
   </Hero.Body>
 </Hero>
@@ -117,48 +123,60 @@ By adding the `bold` modifier, you can generate a subtle **gradient**
   <Hero color="info" bold>
     <Hero.Body>
     <Container>
-      <Title>Info bold title</Title>
-      <Subtitle>Info bold subtitle </Subtitle>
+      <Title>
+        Info bold title
+        <Subtitle>Info bold subtitle </Subtitle>
+      </Title>
     </Container>
     </Hero.Body>
   </Hero>
   <Hero color="success" bold>
     <Hero.Body>
     <Container>
-      <Title>Success bold title</Title>
-      <Subtitle>Success bold subtitle</Subtitle>
+      <Title>
+        Success bold title
+        <Subtitle>Success bold subtitle</Subtitle>
+      </Title>
     </Container>
     </Hero.Body>
   </Hero>
   <Hero color="warning" bold>
     <Hero.Body>
     <Container>
-      <Title>Warning bold title</Title>
-      <Subtitle>Warning bold subtitle</Subtitle>
+      <Title>
+        Warning bold title
+        <Subtitle>Warning bold subtitle</Subtitle>
+      </Title>
     </Container>
     </Hero.Body>
   </Hero>
   <Hero color="danger" bold>
     <Hero.Body>
     <Container>
-      <Title>Danger bold title</Title>
-      <Subtitle>Danger bold subtitle</Subtitle>
+      <Title>
+        Danger bold title
+        <Subtitle>Danger bold subtitle</Subtitle>
+      </Title>
     </Container>
     </Hero.Body>
   </Hero>
   <Hero color="light" bold>
     <Hero.Body>
     <Container>
-      <Title>Light bold title</Title>
-      <Subtitle>Light bold Subtitle</Subtitle>
+      <Title>
+        Light bold title
+        <Subtitle>Light bold Subtitle</Subtitle>
+      </Title>
     </Container>
     </Hero.Body>
   </Hero>
   <Hero color="dark" bold>
     <Hero.Body>
     <Container>
-      <Title>Dark bold title</Title>
-      <Subtitle>Dark bold subtitle</Subtitle>
+      <Title>
+        Dark bold title
+        <Subtitle>Dark bold subtitle</Subtitle>
+      </Title>
     </Container>
     </Hero.Body>
   </Hero>
@@ -172,8 +190,10 @@ You can have even more imposing banners by using one of **3 different sizes**
 <Hero color="primary" size="medium">
   <Hero.Body>
   <Container>
-    <Title>Medium title</Title>
-    <Subtitle>Medium subtitle</Subtitle>
+    <Title>
+      Medium title
+      <Subtitle>Medium subtitle</Subtitle>
+    </Title>
   </Container>
   </Hero.Body>
 </Hero>
@@ -183,8 +203,10 @@ You can have even more imposing banners by using one of **3 different sizes**
 <Hero color="info" size="large">
   <Hero.Body>
   <Container>
-    <Title>Large title</Title>
-    <Subtitle>Large subtitle</Subtitle>
+    <Title>
+      Large title
+      <Subtitle>Large subtitle</Subtitle>
+    </Title>
   </Container>
   </Hero.Body>
 </Hero>
@@ -194,8 +216,10 @@ You can have even more imposing banners by using one of **3 different sizes**
 <Hero color="success" size="fullheight">
   <Hero.Body>
   <Container>
-    <Title>Full Height title</Title>
-    <Subtitle>Full Height subtitle</Subtitle>
+    <Title>
+      Full Height title
+      <Subtitle>Full Height subtitle</Subtitle>
+    </Title>
   </Container>
   </Hero.Body>
 </Hero>
@@ -239,8 +263,10 @@ You can split the hero in **3 vertical parts**:
    </Hero.Head>
   <Hero.Body>
     <Container className="has-text-centered">
-      <Title>Title</Title>
-      <Subtitle>Subtitle</Subtitle>
+      <Title>
+        Title
+        <Subtitle>Subtitle</Subtitle>
+      </Title>
     </Container>
   </Hero.Body>
   <Hero.Foot>

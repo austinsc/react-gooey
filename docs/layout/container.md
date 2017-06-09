@@ -1,8 +1,4 @@
-# Container
 A simple **container** to center your content horizontally
-
-```props
-```
 
 The `<Container/>` class can be used in any context, but mostly as a direct child of either:
   * `<Nav/>`
@@ -11,7 +7,6 @@ The `<Container/>` class can be used in any context, but mostly as a direct chil
   * `<Footer/>`
 
 This is how the container will behave:
-
   * on **mobile** and **tablet**, it will have a margin of **20px** on both the left and right sides.
   * on **desktop** (>= 1000px), it will have a maximum width of **960px** and will be **horizontally centered**.
   * on **widescreen** (>= 1192px), it will have a maximum width of **1152px**.

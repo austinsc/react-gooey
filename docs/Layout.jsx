@@ -302,7 +302,7 @@ export default class Layout extends Component {
                     </Box>
                   </Level.Item>
                   <Level.Item>
-                    <Button icon="github" color="dark" outlined size="large" iconSize="large"
+                    <Button icon="github" color="light" outlined size="large" iconSize="large"
                             onClick={() => window.open('https://github.com/austinsc/react-gooey')}/>
                   </Level.Item>
                 </Level.Right>
