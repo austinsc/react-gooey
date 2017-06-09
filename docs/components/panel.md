@@ -35,7 +35,9 @@ The panel is a container for several types:
   <Panel.Link text="daniellowtw/infBoard" icon="code-fork" />
   <Panel.Link text="mojs" icon="code-fork" />
   <Panel.Checkbox text="Remember me" />
-  <Button text="Reset all filters" color="primary" outlined />
+  <Panel.Block>
+    <Button text="Reset all filters" color="primary" outlined className="is-fullwidth" />
+  </Panel.Block>
 </Panel>
 </div>
 ```
