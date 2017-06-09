@@ -13,7 +13,7 @@ Each column will have an **equal width**, no matter the number of columns.
 
 ```jsx
 <Columns>
-  <Column>
+  <Column fullwidth>
     <Notification color="info">
       First column
     </Notification>
