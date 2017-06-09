@@ -1,8 +1,4 @@
-# Panel
 A composable **panel**, for compact controls
-
-```props
-```
 
 The panel is a container for several types:
 

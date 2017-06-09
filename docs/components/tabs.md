@@ -1,11 +1,7 @@
-# Tabs
 Simple responsive horizontal navigation **tabs**, with different styles
 
-```props
-```
-
 **Tabs** require a `<Tabs/>` container and a `<Tab/>` component for each element.
-  * `<Tab/>` has props **active**, 
+  * `<Tab/>` has prop **active**, 
 
 The **default** tabs style has a single border at the bottom.
 
@@ -61,30 +57,39 @@ To use an `<Icon/>` on the `<Tab/>`, use the **icon** prop:
 You can choose **3 additional sizes**: small, medium, and large.
 
 ```jsx
-<Tabs size="small">
-  <Tab text="Pictures" active />
-  <Tab text="Music" />
-  <Tab text="Videos" />
-  <Tab text="Documents" />
-</Tabs>
-```
-
-```jsx
-<Tabs size="medium">
-  <Tab text="Pictures" active />
-  <Tab text="Music" />
-  <Tab text="Videos" />
-  <Tab text="Documents" />
-</Tabs>
-```
-
-```jsx
-<Tabs size="large">
-  <Tab text="Pictures" active />
-  <Tab text="Music" />
-  <Tab text="Videos" />
-  <Tab text="Documents" />
-</Tabs>
+<div>
+  <Tabs size="small">
+    <Tab text="Small" />
+    <Tab text="Pictures" active />
+    <Tab text="Music" />
+    <Tab text="Videos" />
+    <Tab text="Documents" />
+  </Tabs>
+  <br />
+  <Tabs>
+    <Tab text="Normal" />
+    <Tab text="Pictures" active />
+    <Tab text="Music" />
+    <Tab text="Videos" />
+    <Tab text="Documents" />
+  </Tabs>
+  <br />
+  <Tabs size="medium">
+    <Tab text="Medium" />
+    <Tab text="Pictures" active />
+    <Tab text="Music" />
+    <Tab text="Videos" />
+    <Tab text="Documents" />
+  </Tabs>
+  <br />
+  <Tabs size="large">
+    <Tab text="Large" />
+    <Tab text="Pictures" active />
+    <Tab text="Music" />
+    <Tab text="Videos" />
+    <Tab text="Documents" />
+  </Tabs>
+</div>
 ```
 
 -------------

@@ -1,12 +1,8 @@
-# Card
 An all-around flexible and composable component
 
-```props
-```
-
-`<Card/>`: the main container
+* `<Card/>`: the main container
   * `<Card.Head/>`: a horizontal bar with a shadow
-    * has props text and icon
+    * has prop icon
   * `<Card.Image/>`: a fullwidth container for a responsive image
   * `<Card.Content/>`: a multi-purpose container for any other element
   * `<Card.Foot/>`: a horizonal list of controls
@@ -22,8 +18,12 @@ An all-around flexible and composable component
         <Image size='64x64' src='//placehold.it/128x128'/>
       </MediaObject.Left>
       <MediaObject.Content>
-          <Title size="4"> John Smith </Title>
-          <Subtitle size="6"> @johnsmith </Subtitle>
+          <Title size="4"> 
+            John Smith 
+            <Subtitle size="6"> 
+              @johnsmith 
+            </Subtitle>
+          </Title>
       </MediaObject.Content>
     </MediaObject>
     <Content>
@@ -56,10 +56,11 @@ An all-around flexible and composable component
   <Card.Content>
     <Title size="3"> 
       “There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.”
+      <Subtitle size="5">
+        Jeff Atwood
+      </Subtitle>
     </Title>
-    <Subtitle size="5">
-      Jeff Atwood
-    </Subtitle>
+
   </Card.Content>
   <Card.Foot>
     <span>View on <a>Twitter</a></span>

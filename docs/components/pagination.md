@@ -1,8 +1,4 @@
-# Pagination
 A responsive, usable, and flexible **pagination**
-
-```props
-```
 
 The pagination component consists of several elements:
 * `<Pagination.Previous/>` and `<Pagination.Next/>` for incremental navigation
@@ -32,7 +28,7 @@ All elements are optional so you can compose your pagination as you wish.
 </Pagination>
 ```
 
-You can disable some links if they are not active, or change the amount of page numbers available.
+You can **disable** some links if they are not active, or change the amount of page numbers available.
 ```jsx
 <Pagination>
   <Pagination.Previous title="This is the first page" disabled>
@@ -96,56 +92,61 @@ By default, the list is located on the left, and the previous/next buttons on th
 The pagination comes in **3 additional sizes**.
 ```jsx
 <div>
-  <Pagination size="small">
+  <Pagination listPosition="centered" size="small">
     <Pagination.Previous>
-      Previous
+      Small
     </Pagination.Previous>
-    <Pagination.Next>
-      Next Page
-    </Pagination.Next>
-      <Pagination.List>
-        <Pagination.Link>1</Pagination.Link>
-        <Pagination.Ellipsis/>
-        <Pagination.Link>45</Pagination.Link>
-        <Pagination.Link current>46</Pagination.Link>
-        <Pagination.Link>47</Pagination.Link>
-        <Pagination.Ellipsis/>
-        <Pagination.Link>86</Pagination.Link>
-      </Pagination.List>
+    <Pagination.List>
+      <Pagination.Link>1</Pagination.Link>
+      <Pagination.Ellipsis/>
+      <Pagination.Link>45</Pagination.Link>
+      <Pagination.Link current>46</Pagination.Link>
+      <Pagination.Link>47</Pagination.Link>
+      <Pagination.Ellipsis/>
+      <Pagination.Link>86</Pagination.Link>
+    </Pagination.List>
   </Pagination>
-  <Pagination size="medium">
+  <Pagination listPosition="centered">
     <Pagination.Previous>
-      Previous
+      Normal
     </Pagination.Previous>
-    <Pagination.Next>
-      Next Page
-    </Pagination.Next>
-      <Pagination.List>
-        <Pagination.Link>1</Pagination.Link>
-        <Pagination.Ellipsis/>
-        <Pagination.Link>45</Pagination.Link>
-        <Pagination.Link current>46</Pagination.Link>
-        <Pagination.Link>47</Pagination.Link>
-        <Pagination.Ellipsis/>
-        <Pagination.Link>86</Pagination.Link>
-      </Pagination.List>
+    <Pagination.List>
+      <Pagination.Link>1</Pagination.Link>
+      <Pagination.Ellipsis/>
+      <Pagination.Link>45</Pagination.Link>
+      <Pagination.Link current>46</Pagination.Link>
+      <Pagination.Link>47</Pagination.Link>
+      <Pagination.Ellipsis/>
+      <Pagination.Link>86</Pagination.Link>
+    </Pagination.List>
   </Pagination>
-  <Pagination size="large">
+  <Pagination listPosition="centered" size="medium">
     <Pagination.Previous>
-      Previous
+      Medium
     </Pagination.Previous>
-    <Pagination.Next>
-      Next Page
-    </Pagination.Next>
-      <Pagination.List>
-        <Pagination.Link>1</Pagination.Link>
-        <Pagination.Ellipsis/>
-        <Pagination.Link>45</Pagination.Link>
-        <Pagination.Link current>46</Pagination.Link>
-        <Pagination.Link>47</Pagination.Link>
-        <Pagination.Ellipsis/>
-        <Pagination.Link>86</Pagination.Link>
-      </Pagination.List>
+   <Pagination.List>
+     <Pagination.Link>1</Pagination.Link>
+     <Pagination.Ellipsis/>
+     <Pagination.Link>45</Pagination.Link>
+     <Pagination.Link current>46</Pagination.Link>
+     <Pagination.Link>47</Pagination.Link>
+     <Pagination.Ellipsis/>
+     <Pagination.Link>86</Pagination.Link>
+   </Pagination.List>
+  </Pagination>
+  <Pagination listPosition="centered" size="large">
+    <Pagination.Previous>
+      Large
+    </Pagination.Previous>
+    <Pagination.List>
+      <Pagination.Link>1</Pagination.Link>
+      <Pagination.Ellipsis/>
+      <Pagination.Link>45</Pagination.Link>
+      <Pagination.Link current>46</Pagination.Link>
+      <Pagination.Link>47</Pagination.Link>
+      <Pagination.Ellipsis/>
+      <Pagination.Link>86</Pagination.Link>
+    </Pagination.List>
   </Pagination>
 </div>
 ```

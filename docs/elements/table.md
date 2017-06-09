@@ -1,10 +1,4 @@
-# Table
 The inevitable HTML **table**, with special case cells.
-
-```props
-```
-
--------------
 
 ## Modifiers
 

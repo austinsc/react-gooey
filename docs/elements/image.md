@@ -1,8 +1,4 @@
-# Image
 A container for **responsive images**
-
-```props
-```
 
 Because images can take a few seconds to load (or not at all), use the `<Image/>` container to specify a **precisely sized** container so that your layout isn"t broken because of image loading or image errors.
 
@@ -53,19 +49,32 @@ Because the `<Image/>` is fixed in size, you can use an image that is **twice as
 If you don"t know the exact dimensions but know the **ratio** instead, you can use one of the **5 ratio modifers**:
 
 ```jsx|span-4
-<div>
-  <Image ratio="square" src="http://placehold.it/256x256"/>
-  <br />
-  <Image ratio="1by1" src="http://placehold.it/480x480"/>
-  <br />
-  <Image ratio="4by3" src="http://placehold.it/640x480"/>
-  <br />
-  <Image ratio="3by2" src="http://placehold.it/480x320"/>
-  <br />
-  <Image ratio="16by9" src="http://placehold.it/640x360"/>
-  <br />
-  <Image ratio="2by1" src="http://placehold.it/640x320"/>
-</div>
+<Columns>
+  <Column size="2">
+    <Notification color="info">square</Notification>
+    <Image ratio="square" src="http://placehold.it/256x256"/>
+  </Column>
+  <Column size="2">
+    <Notification color="success">1by1</Notification>
+    <Image ratio="1by1" src="http://placehold.it/480x480"/>
+  </Column>
+  <Column size="2">
+    <Notification color="warning">4by3</Notification>
+    <Image ratio="4by3" src="http://placehold.it/640x480"/>
+  </Column>
+  <Column size="2">
+    <Notification color="danger">3by2</Notification>
+    <Image ratio="3by2" src="http://placehold.it/480x320"/>
+  </Column>
+  <Column size="2">
+    <Notification color="primary">16by9</Notification>
+    <Image ratio="16by9" src="http://placehold.it/640x360"/>
+    </Column>
+    <Column size="2">
+      <Notification color="dark">2by1</Notification>
+      <Image ratio="2by1" src="http://placehold.it/640x320"/>
+    </Column>
+</Columns>
 ```
 
 The `<Image/>` container will take up the **whole width** while maintaining the perfect ratio.

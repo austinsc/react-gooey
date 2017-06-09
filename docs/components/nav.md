@@ -1,8 +1,4 @@
-# Navigation
-A responsive horizontal **nav bar** that can contain links, tabs, buttons, icons, and a logo
-
-```props
-```
+A responsive horizontal **nav bar** that can contain links, tabs, buttons, icons, or a logo
 
 ```jsx
 <Nav>

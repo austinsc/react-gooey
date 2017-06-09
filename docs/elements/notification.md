@@ -1,8 +1,4 @@
-# Notification
 Bold **notification** blocks, to alert users of something
-
-```props
-```
 
 ```jsx
 <Notification>

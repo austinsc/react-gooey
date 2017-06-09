@@ -1,8 +1,4 @@
-# Menu
 A simple **menu**, for any type of vertical navigation
-
-```props
-```
 
 ```jsx
 <Menu>
@@ -31,5 +27,4 @@ A simple **menu**, for any type of vertical navigation
     <Menu.Link>Balance</Menu.Link>
   </Menu.List>
 </Menu>
-
 ```

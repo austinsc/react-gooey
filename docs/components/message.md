@@ -1,8 +1,4 @@
-# Message Components
 Colored **message** blocks, to emphasize part of your page.
-
-```props
-```
 
 ```jsx
 <Message>
@@ -78,7 +74,7 @@ Colored **message** blocks, to emphasize part of your page.
 -------------
 
 ## Message body only
-You can **omit** the message Head:
+You can **omit** the message head:
 ```jsx
 <Message>
   <Message.Body>
