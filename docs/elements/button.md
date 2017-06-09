@@ -1,8 +1,4 @@
-# Button
 The classic **button**, in different colors, sizes, and states
-
-```props
-```
 
 ```jsx
 <ButtonGroup>
@@ -36,7 +32,7 @@ The classic **button**, in different colors, sizes, and states
 
 ## Styles
 
-Outlined
+#### Outlined
 ```jsx
 <ButtonGroup>
   <Button text="Outlined" outlined/>
@@ -47,7 +43,7 @@ Outlined
 </ButtonGroup>
 ```
 
-Inverted (the text color becomes the background color, and vice-versa)
+#### Inverted (the text color becomes the background color, and vice-versa)
 ```jsx
 <ButtonGroup>
   <Button text="Inverted" inverted/>
@@ -58,7 +54,7 @@ Inverted (the text color becomes the background color, and vice-versa)
 </ButtonGroup>
 ```
 
-Invert Outlined (the invert color becomes the text and border colors)
+#### Invert Outlined (the invert color becomes the text and border colors)
 ```jsx
 <ButtonGroup>
   <Button text="Invert Outlined" inverted outlined/>
@@ -73,7 +69,7 @@ Invert Outlined (the invert color becomes the text and border colors)
 
 ## States
 
-Normal
+#### Normal
 ```jsx
 <ButtonGroup>
   <Button text="Normal"/>
@@ -85,7 +81,7 @@ Normal
 </ButtonGroup>
 ```
 
-Hover
+#### Hover
 ```jsx
 <ButtonGroup>
   <Button text="Hover" hovered/>
@@ -97,7 +93,7 @@ Hover
 </ButtonGroup>
 ```
 
-Focus
+#### Focus
 ```jsx
 <ButtonGroup>
   <Button text="Focus" focused/>
@@ -109,7 +105,7 @@ Focus
 </ButtonGroup>
 ```
 
-Active
+#### Active
 ```jsx
 <ButtonGroup>
   <Button text="Active" active/>
@@ -121,7 +117,7 @@ Active
 </ButtonGroup>
 ```
 
-Loading
+#### Loading
 ```jsx
 <ButtonGroup>
   <Button text="Loading" loading/>
@@ -133,7 +129,7 @@ Loading
 </ButtonGroup>
 ```
 
-Disabled
+#### Disabled
 ```jsx
 <ButtonGroup>
   <Button text="Disabled" disabled/>

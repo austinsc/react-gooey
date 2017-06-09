@@ -178,7 +178,7 @@ function createCodeBlock(src) {
     const bonus = props.language.split('|');
     const lang = bonus[0];
     if(lang === 'props') {
-      return <Props source={src}/>
+      return null; //<Props source={src}/>
     } else if(lang === 'hint') {
       return (
         <Message color={bonus.length > 1 ? bonus[1] : 'info'}>
@@ -206,16 +206,20 @@ export class Page extends PureComponent {
   render() {
     const {page} = this.props;
     let src = null;
+    let props = null;
     if(page.source) {
       src = (
         <section className="source">
           {syntax('javascript', page.source)}
         </section>
       );
+      props = <Props source={page.source} />
     }
 
     return (
       <Container>
+        <Title className="page-header">{page.title}</Title>
+        {props}
         <ReactMarkdown source={page.component} renderers={{...renderers, CodeBlock: createCodeBlock(page.source)}} className="page"/>
         {src}
       </Container>

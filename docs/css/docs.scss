@@ -36,41 +36,7 @@ ul.color-pallet {
 
 .page {
   @include content();
-  section.props {
-    margin: 2rem 0 1em;
-    border: 1px solid $success;
-    border-top-right-radius: 3px;
-    color: rgba(0, 0, 0, 0.7);
-    padding: .5rem;
-    position: relative;
 
-    > table {
-      margin-bottom: 0;
-
-      thead > tr {
-        background-color: $white-ter;
-        font-weight: 100;
-        font-size: 1.1em;
-        text-transform: uppercase;
-      }
-    }
-
-    &:before {
-      background: $success;
-      border-radius: 3px 3px 0 0;
-      bottom: 100%;
-      content: "Props";
-      display: inline-block;
-      font-size: 7px;
-      font-weight: bold;
-      left: -1px;
-      letter-spacing: 1px;
-      padding: 3px 5px;
-      position: absolute;
-      text-transform: uppercase;
-      vertical-align: top;
-    }
-  }
   section.example {
     //@include reset();
 
@@ -139,9 +105,43 @@ ul.color-pallet {
       padding: 0;
       list-style: none none;
     }
+  }
+}
 
+section.props {
+  margin: 2rem 0 1em;
+  border: 1px solid $success;
+  border-top-right-radius: 3px;
+  color: rgba(0, 0, 0, 0.7);
+  padding: .5rem;
+  position: relative;
+
+  > table {
+    margin-bottom: 0;
+
+    thead > tr {
+      background-color: $white-ter;
+      font-weight: 100;
+      font-size: 1.1em;
+      text-transform: uppercase;
+    }
   }
 
+  &:before {
+    background: $success;
+    border-radius: 3px 3px 0 0;
+    bottom: 100%;
+    content: "Props";
+    display: inline-block;
+    font-size: 7px;
+    font-weight: bold;
+    left: -1px;
+    letter-spacing: 1px;
+    padding: 3px 5px;
+    position: absolute;
+    text-transform: uppercase;
+    vertical-align: top;
+  }
 }
 
 section.source {
