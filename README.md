@@ -19,7 +19,7 @@ The test setup is based on Karma/Mocha/Chai/Phantom. Code coverage report is gen
 
 ### Documentation Site
 
-[http://gooey.pwnt.co](http://gooey.pwnt.co)
+[https://austinsc.github.io/react-gooey](https://austinsc.github.io/react-gooey)
 
 * Building - **npm run gh-pages** - Builds the documentation into `./gh-pages` directory.
 * Deploying - **npm run deploy-gh-pages** - Deploys the contents of `./gh-pages` to the `gh-pages` branch. GitHub will pick this up automatically. Your site will be available through *austinsc.github.io/<project name>`.
