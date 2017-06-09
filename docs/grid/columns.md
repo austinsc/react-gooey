@@ -1,4 +1,5 @@
-> A simple way to build responsive columns
+# Columns
+A simple way to build responsive columns
 
 ```props
 ```
@@ -220,46 +221,6 @@ The other columns will fill up the **remaining** space automatically.
 </div>
 ```
 
-### Different sizes per breakpoint
-
-You can define a column **size** for each viewport size: **mobile**, **tablet**, and **desktop**.
-
-```jsx
-<Columns>
-  <Column size={{mobile: 'half', tablet: 'one-third', desktop: 'one-quarter'}}>
-    <Notification color="info">
-      <p>mobile: half</p>
-      <p>tablet: one-third</p>
-      <p>desktop: one-quarter</p>
-    </Notification>
-  </Column>
-  <Column>
-    <Notification color="warning">
-      Auto
-    </Notification>
-  </Column>
-  <Column>
-    <Notification color="success">
-      Auto
-    </Notification>
-  </Column>
-  <Column>
-    <Notification color="warning">
-      Auto
-    </Notification>
-  </Column>
-  <Column>
-    <Notification color="success">
-      Auto
-    </Notification>
-  </Column>
-</Columns>
-```
-
-```hint
-If you want to see how the breakpoints are applied, resize your browser window and see how the same column varies in width at each breakpoint.
-```
-
 -------------
 
 ## Offset
@@ -359,6 +320,90 @@ If you _only_ want columns on **desktop**, just **enable** the desktop prop on t
 </Columns>
 ```
 
+-------------
+
+### Different sizes per breakpoint
+
+You can define a column **size** for each viewport size: **mobile**, **tablet**, and **desktop**.
+
+```jsx
+<Columns>
+  <Column size={{mobile: 'half', tablet: 'one-third', desktop: 'one-quarter'}}>
+    <Notification color="info">
+      <p>mobile: half</p>
+      <p>tablet: one-third</p>
+      <p>desktop: one-quarter</p>
+    </Notification>
+  </Column>
+  <Column>
+    <Notification color="warning">
+      Auto
+    </Notification>
+  </Column>
+  <Column>
+    <Notification color="success">
+      Auto
+    </Notification>
+  </Column>
+  <Column>
+    <Notification color="warning">
+      Auto
+    </Notification>
+  </Column>
+  <Column>
+    <Notification color="success">
+      Auto
+    </Notification>
+  </Column>
+</Columns>
+```
+
+```hint
+If you want to see how the breakpoints are applied, resize your browser window and see how the same column varies in width at each breakpoint.
+```
+
+-------------
+
+## Nesting
+You can **nest** columns to have more flexibility in your design. You only need to follow this structure:
+
+* `<Columns />`: top-level columns container
+  * `<Column />`
+    * `<Columns />`: nested columns
+      * `<Column />` and so on…
+      
+The difference with multiline columns is the **order** in the HTML code: all the **blue** columns appear before the **red** ones. Resize to a narrower viewport to see the result.
+
+```jsx
+<Columns >
+  <Column color="info">
+    <Notification color="info">First column</Notification>    
+    <Columns mobile>
+      <Column>
+        <Notification color="info">First nested column</Notification>    
+      </Column>
+      <Column>
+        <Notification color="info">Second nested column</Notification>    
+      </Column>
+    </Columns>
+  </Column>
+  <Column color="danger">
+    <Notification color="danger">Second column</Notification>    
+    <Columns mobile>
+      <Column size="half">
+        <Notification color="danger">50%</Notification>    
+      </Column>
+      <Column>
+        <Notification color="danger">Auto</Notification>    
+      </Column>
+      <Column>
+        <Notification color="danger">Auto</Notification>    
+      </Column>
+    </Columns>
+  </Column>
+  
+</Columns>
+```
 
 -------------
 

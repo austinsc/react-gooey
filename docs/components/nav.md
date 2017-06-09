@@ -1,6 +1,9 @@
 # Navigation
 A responsive horizontal **nav bar** that can contain links, tabs, buttons, icons, and a logo
 
+```props
+```
+
 ```jsx
 <Nav>
   <Nav.Left>

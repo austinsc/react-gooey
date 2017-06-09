@@ -81,11 +81,6 @@ export default [{
     title: 'Title',
     component: require('../docs/elements/title.md'),
     source: require('!!text-loader!../src/elements/Title.jsx')
-  }, {
-    path: '/elements/subtitle',
-    title: 'Subtitle',
-    component: require('../docs/elements/subtitle.md'),
-    source: require('!!text-loader!../src/elements/Subtitle.jsx')
   }]
 }, {
   title: 'Components',

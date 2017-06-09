@@ -43,8 +43,7 @@ export default class Hero extends Component {
   };
   static defaultProps = {
     color: 'default',
-    size: 'small',
-    align: 'center'
+    size: 'small'
   };
   static Head = createNestedComponent('hero-head', 'div');
   static Body = createNestedComponent('hero-body', 'div');

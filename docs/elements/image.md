@@ -10,6 +10,8 @@ Because images can take a few seconds to load (or not at all), use the `<Image/>
 <Image size="128x128" src="http://placehold.it/128x128"/>
 ```
 
+-------------
+
 ## Fixed square images
 
 There are **7** dimensions to choose from, useful for **avatars**.
@@ -32,6 +34,8 @@ There are **7** dimensions to choose from, useful for **avatars**.
 </div>
 ```
 
+-------------
+
 ## Retina images
 
 Because the `<Image/>` is fixed in size, you can use an image that is **twice as big**. So for example, in a `128x128` container, you can use a `256x256` image, but resized to **128x128** pixels.
@@ -41,6 +45,8 @@ Because the `<Image/>` is fixed in size, you can use an image that is **twice as
   <Image size="128x128" src="http://placehold.it/256x256"/>
 </div>
 ```
+
+-------------
 
 ## Responsive images with ratios
 

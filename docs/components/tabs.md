@@ -18,6 +18,8 @@ The **default** tabs style has a single border at the bottom.
 </Tabs>
 ```
 
+-------------
+
 ## Alignment
 To align the tabs list, set the **alignment** prop on the `<Tabs/>` container:
 
@@ -39,6 +41,8 @@ To align the tabs list, set the **alignment** prop on the `<Tabs/>` container:
 </Tabs>
 ```
 
+-------------
+
 ## Icons
 To use an `<Icon/>` on the `<Tab/>`, use the **icon** prop:
 
@@ -51,8 +55,9 @@ To use an `<Icon/>` on the `<Tab/>`, use the **icon** prop:
 </Tabs>
 ```
 
-## Sizes
+-------------
 
+## Sizes
 You can choose **3 additional sizes**: small, medium, and large.
 
 ```jsx
@@ -81,6 +86,8 @@ You can choose **3 additional sizes**: small, medium, and large.
   <Tab text="Documents" />
 </Tabs>
 ```
+
+-------------
 
 ## Styles
 If you want a more classic style with **borders**, just append the `boxed` modifier.

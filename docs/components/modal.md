@@ -29,6 +29,8 @@ state: {show: false}
 </div>
 ```
 
+-------------
+
 ## Image Modal
 Because a modal can contain anything you want, you can very simply use it to build an image gallery for example:
 ```jsx
@@ -43,6 +45,8 @@ state: {show: false}
   </Button>
 </div>
 ```
+
+-------------
 
 ## Modal Card
 If you want a more classic modal, with a head, a body and a foot, specify the title and footer.

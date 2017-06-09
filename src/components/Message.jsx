@@ -4,8 +4,8 @@ import classNames from 'classnames';
 import createNestedComponent from '../Nested';
 import Delete from "../elements/Delete";
 
-class Header extends PureComponent {
-  static displayName = 'Message.Header';
+class Head extends PureComponent {
+  static displayName = 'Message.Head';
   static propTypes = {
     /**
      * Child elements to be rendered within the box.
@@ -16,24 +16,19 @@ class Header extends PureComponent {
      */
     deleteButton: PropTypes.bool,
     /**
-     * Text to be rendered on the component.
-     */
-    text: PropTypes.string,
-    /**
      * CSS classes to be rendered on the root element of this component.
      */
     className: PropTypes.any
   };
-  static defaultProps = {deleteButton: false};
 
   render() {
-    const {text, children, deleteButton, className, ...rest} = this.props;
+    const {children, deleteButton, className, ...rest} = this.props;
     const classes = classNames('message-header', {
       [className]: !!className
     });
     return (
       <div className={classes} {...rest}>
-        <p>{text || children}</p>
+        {children}
         {deleteButton && <Delete/>}
       </div>
     );
@@ -71,7 +66,7 @@ export class Message extends PureComponent {
   static defaultProps = {
     color: 'default'
   };
-  static Header = Header;
+  static Head = Head;
   static Body = createNestedComponent('message-body', 'div');
 
   render() {

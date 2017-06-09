@@ -45,7 +45,9 @@ You can use it for Gooey `Tags`, `Notifications`, and `Messages`:
 ```
 ```jsx
 <Message color="info">
-  <Message.Header deleteButton>Info</Message.Header>
+  <Message.Head deleteButton>
+    <p>Info</p>
+  </Message.Head>
   <Message.Body>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque risus mi, tempus quis placerat ut, porta nec nulla. 
     Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum felis venenatis efficitur. Aenean ac 

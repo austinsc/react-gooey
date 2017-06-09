@@ -2,20 +2,10 @@ import React, {Component, Children} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Icon from '../elements/Icon';
+import createNestedComponent from '../Nested';
 
-const Nested = (cn) => function({className, children}) {
-  const classes = classNames(`card-${cn}`, {
-    [className]: !!className
-  });
-  return (
-    <div className={classes}>
-      {children}
-    </div>
-  );
-};
-
-class Header extends Component {
-  static displayName = 'Card.Header';
+class Head extends Component {
+  static displayName = 'Card.Head';
   static propTypes = {
     /**
      * Child elements to be rendered within the component.
@@ -28,15 +18,11 @@ class Header extends Component {
     /**
      *
      */
-    icon: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-    /**
-     *
-     */
-    text: PropTypes.string
+    icon: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
   };
 
   render() {
-    const {icon, text, className, ...rest} = this.props;
+    const {icon, children, className, ...rest} = this.props;
     const classes = classNames('card-header', {
       [className]: !!className
     });
@@ -55,8 +41,8 @@ class Header extends Component {
     }
     return (
       <header className={classes} {...rest}>
-        {text && <p className="card-header-title">
-          {text}
+        {children && <p className="card-header-title">
+          {children}
         </p>}
         {icon && (<a className="card-header-icon">
           {iconComponent}
@@ -66,8 +52,8 @@ class Header extends Component {
   }
 }
 
-class Footer extends Component {
-  static displayName = 'Card.Footer';
+class Foot extends Component {
+  static displayName = 'Card.Foot';
   static propTypes = {
     /**
      * Child elements to be rendered within the component.
@@ -104,10 +90,10 @@ export default class Card extends Component {
      */
     className: PropTypes.string
   };
-  static Header = Header;
-  static Image = Nested('image');
-  static Content = Nested('content');
-  static Footer = Footer;
+  static Head = Head;
+  static Image = createNestedComponent('card-image');
+  static Content = createNestedComponent('card-content');
+  static Foot = Foot;
 
   render() {
     const {children, className, ...rest} = this.props;

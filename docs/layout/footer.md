@@ -1,4 +1,5 @@
-> A simple responsive **footer** which can include anything: lists, headings, columns, icons, buttons...
+# Footer
+A simple responsive **footer** which can include anything: lists, headings, columns, icons, buttons...
 
 ```props
 ```

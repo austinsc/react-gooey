@@ -53,6 +53,8 @@ You can include any other ReactGooey element, like inputs, icons, buttons... or 
 </MediaObject>
 ```
 
+-------------
+
 ## Nesting
 
 You can nest media objects up to **3 levels** deep.

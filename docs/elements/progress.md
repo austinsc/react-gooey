@@ -15,6 +15,8 @@ Native HTML **progress** bars
 </div>
 ```
 
+-------------
+
 ## Sizes
 
 ```jsx

@@ -26,7 +26,6 @@ export default class Table extends Component {
     className: PropTypes.any
   };
 
-
   render() {
     const {children, bordered, striped, narrow, className, ...rest}=this.props;
     const classes = classNames('table', {

@@ -1,16 +1,7 @@
 import React, {PureComponent} from 'react'; import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import createNestedComponent from '../Nested';
 
-const Nested = (cn) => function ({className, children}) {
-  const classes = classNames(`media-${cn}`, {
-    [className]: !!className
-  });
-  return (
-    <div className={classes}>
-      {children}
-    </div>
-  );
-};
 
 export class MediaObject extends PureComponent {
   static displayName = 'MediaObject';
@@ -24,10 +15,9 @@ export class MediaObject extends PureComponent {
      */
     className: PropTypes.string
   };
-  static Left = Nested('left');
-  static Right = Nested('right');
-  static Content = Nested('content');
-
+  static Left = createNestedComponent('media-left');
+  static Right = createNestedComponent('media-right');
+  static Content = createNestedComponent('media-content');
 
   render() {
     const {children, className, ...rest} = this.props;

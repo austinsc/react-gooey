@@ -1,4 +1,8 @@
-> Simple **headings** to add depth to your page
+# Title
+Simple **headings** to add depth to your page
+
+```props
+```
 
 There are **2 types** of headings:
 
@@ -12,7 +16,6 @@ There are **2 types** of headings:
   </Subtitle>
 </div>
 ```
-
 
 There are **6 sizes** available:
 

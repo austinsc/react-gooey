@@ -4,12 +4,11 @@ The inevitable HTML **table**, with special case cells.
 ```props
 ```
 
+-------------
+
 ## Modifiers
 
-```hint|neutral
 Add **borders** to all the cells.
-```
-
 ```jsx
 <Table bordered>
   <thead>
@@ -27,10 +26,7 @@ Add **borders** to all the cells.
 </Table>
 ```
 
-```hint|neutral
 Add **stripes** to the table.
-```
-
 ```jsx
 <Table striped>
   <thead>
@@ -60,10 +56,7 @@ Add **stripes** to the table.
 </Table>
 ```
 
-```hint|neutral
 Make the cells **narrower**.
-```
-
 ```jsx
 <Table narrow>
   <thead>
@@ -93,10 +86,7 @@ Make the cells **narrower**.
 </Table>
 ```
 
-```hint|neutral
 You can **combine** all three modifiers.
-```
-
 ```jsx
 <Table bordered striped narrow>
   <thead>

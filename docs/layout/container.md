@@ -1,4 +1,5 @@
-> A simple **container** to center your content horizontally
+# Container
+A simple **container** to center your content horizontally
 
 ```props
 ```

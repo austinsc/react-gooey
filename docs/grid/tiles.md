@@ -1,6 +1,10 @@
-> A **single tile** element to build 2-dimensional Metro-like, Pinterest-like, or whatever-you-like grids
+# Tile
+A **single tile** element to build 2-dimensional Metro-like, Pinterest-like, or whatever-you-like grids
 
-To build intricate 2-dimensional, you only need a single element: the tile:
+```props
+```
+
+To build intricate 2-dimensional, you only need a **single element** - the tile:
 
 ```jsx
 <Tile>
@@ -20,14 +24,13 @@ The `<Tile/>` element has **16 modifiers**:
     + `vertical`
  - **12 horizontal size** modifiers
     + from `1` to `12`
+
     
 ## How it works: Nesting
  
 Everything is a `<Tile/>`! To create a grid of tiles, you only need to **nest** `<Tile/>` elements.
 
-```hint|span-3,neutral
 Start with an **ancestor** tile that will wrap all other tiles:
-```
 
 ```jsx|span-3
 <Tile>
@@ -37,8 +40,7 @@ Start with an **ancestor** tile that will wrap all other tiles:
 </Tile>
 ```
 
-```hint|span-3,neutral
-Add tile elements that will distribute themselves **horizontally**:```
+Add tile elements that will distribute themselves **horizontally**:
 
 ```jsx|span-3
 <Tile ancestor>
