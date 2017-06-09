@@ -34,7 +34,7 @@ ul.color-pallet {
 }
 
 .page {
-  //@include content();
+  @include content();
   section.example {
     //@include reset();
 
