@@ -1,9 +1,5 @@
-# Forms
 A multipurpose JSON schema driven form container
 
-```props
-```
-  
 The interactive forms are powered by [react-jsonschema-form](https://github.com/mozilla-services/react-jsonschema-form). 
 
 ```js
