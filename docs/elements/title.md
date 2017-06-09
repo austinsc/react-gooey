@@ -1,4 +1,8 @@
-> Simple **headings** to add depth to your page
+# Title
+Simple **headings** to add depth to your page
+
+```props
+```
 
 There are **2 types** of headings:
 
@@ -12,7 +16,6 @@ There are **2 types** of headings:
   </Subtitle>
 </div>
 ```
-
 
 There are **6 sizes** available:
 
@@ -63,6 +66,7 @@ There are **6 sizes** available:
 ```
 
 When you **combine** a `<Title/>` and a `<Subtitle/>`, they move closer together.
+
 
 ```hint
 As a rule of thumb, it is recommended to use a size difference of **two**. So if you use a `<Title size="1"/>`, combine it with a `<Subtitle size="3"/>`.

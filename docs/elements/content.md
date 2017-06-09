@@ -53,7 +53,9 @@ This `<Content/>` class can be used in any, whenever you just want to write some
 </Content>
 ```
 
-> Sizes
+-------------
+
+## Sizes
 
 You can use the `size` modifier (**medium**, **large**, **normal**) to change the font size.
 

@@ -1,6 +1,9 @@
 # Level
 A multi-purpose **horizontal level**, which can contain almost any other element.
 
+```props
+```
+
 `<Level/>`: main container
   * `<Level.Left/>` for left section
   * `<Level.Right/>` for right section
@@ -39,6 +42,8 @@ No matter what elements you put inside a `<Level/>`, they will always be **verti
   </Level.Right>
 </Level>
 ```
+
+-------------
 
 ## Centered Level
 If you want a **centered** level, you can use as many `<Level.Item/>` as you want, as long as they are direct children of the `<Level/>` container.

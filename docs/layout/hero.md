@@ -1,4 +1,5 @@
-> An imposing **hero banner** to showcase something
+# Hero
+An imposing **hero banner** to showcase something
 
 ```props
 ```
@@ -244,12 +245,12 @@ You can split the hero in **3 vertical parts**:
   </Hero.Body>
   <Hero.Foot>
     <Tabs>
-        <Tabs.Item text="Overview" active />
-        <Tabs.Item text="Modifiers" />
-        <Tabs.Item text="Grid" />
-        <Tabs.Item text="Elements" />
-        <Tabs.Item text="Components" />
-        <Tabs.Item text="Layout" />
+        <Tab active >Overview</Tab>
+        <Tab>Modifiers</Tab>
+        <Tab>Grid</Tab>
+        <Tab>Elements</Tab>
+        <Tab>Components</Tab>
+        <Tab>Layout</Tab>
     </Tabs>
   </Hero.Foot>
 </Hero>

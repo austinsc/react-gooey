@@ -12,59 +12,33 @@ By default, a `<Tag/>` is a 24px high label.
 ```
 
 
-```hint|span-6,neutral
+```hint
 There are **9 different colors** available.
 ```
 
-```jsx|span-3
-<Tag text="Black" color="black"/>
-```
-
-```jsx|span-3
-<Tag text="Dark" color="dark"/>
-```
-
-```jsx|span-3
-<Tag text="White" color="white"/>
-```
-
-```jsx|span-3
-<Tag text="Light" color="light"/>
-```
-
-```jsx|span-3
-<Tag text="Primary" color="primary"/>
-```
-
-```jsx|span-3
-<Tag text="Info" color="info"/>
-```
-
-```jsx|span-3
-<Tag text="Success" color="success"/>
-```
-
-```jsx|span-3
-<Tag text="Warning" color="warning"/>
-```
-
-```jsx|span-3
-<Tag text="Danger" color="danger"/>
+```jsx
+<div>
+  <Tag text="Black" color="black"/>
+  <Tag text="Dark" color="dark"/>
+  <Tag text="White" color="white"/>
+  <Tag text="Light" color="light"/>
+  <Tag text="Primary" color="primary"/>
+  <Tag text="Info" color="info"/>
+  <Tag text="Success" color="success"/>
+  <Tag text="Warning" color="warning"/>
+  <Tag text="Danger" color="danger"/>
+</div>
 ```
 
 
-```hint|span-6,neutral
+```hint
 And **3** sizes.
 ```
 
-```jsx|span-3
-<Tag text="Small" color="dark" size="small"/>
-```
-
-```jsx|span-3
-<Tag text="Medium" color="primary" size="medium"/>
-```
-
-```jsx|span-3
-<Tag text="Large" color="info" size="large"/>
+```jsx
+<div>
+  <Tag text="Small" color="dark" size="small"/>
+  <Tag text="Medium" color="primary" size="medium"/>
+  <Tag text="Large" color="info" size="large"/>
+</div>
 ```

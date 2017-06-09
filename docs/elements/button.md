@@ -19,6 +19,8 @@ The classic **button**, in different colors, sizes, and states
 </ButtonGroup>
 ```
 
+-------------
+
 ## Sizes
 
 ```jsx
@@ -29,6 +31,8 @@ The classic **button**, in different colors, sizes, and states
   <Button text="Large" size="large"/>
 </ButtonGroup>
 ```
+
+-------------
 
 ## Styles
 
@@ -64,6 +68,8 @@ Invert Outlined (the invert color becomes the text and border colors)
   <Button text="Invert Outlined" color="danger" inverted outlined/>
 </ButtonGroup>
 ```
+
+-------------
 
 ## States
 
@@ -173,6 +179,8 @@ With Font-Awesome icons
 </div>
 ```
 
+-------------
+
 ## Button Group
 If you want to **group** buttons together, wrap them in a `<ButtonGroup/>`:
 ```jsx
@@ -182,6 +190,8 @@ If you want to **group** buttons together, wrap them in a `<ButtonGroup/>`:
   <Button text="Delete Post" color="danger"/>
 </ButtonGroup>
 ```
+
+-------------
 
 ## Add-ons
 If you want to use buttons as **addons**, use the addons modifier on the `<ButtonGroup/>` container:

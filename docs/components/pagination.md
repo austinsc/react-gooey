@@ -90,6 +90,8 @@ By default, the list is located on the left, and the previous/next buttons on th
 </Pagination>
 ```
 
+-------------
+
 ## Sizes
 The pagination comes in **3 additional sizes**.
 ```jsx

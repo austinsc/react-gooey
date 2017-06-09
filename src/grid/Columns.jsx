@@ -13,9 +13,21 @@ export default class Columns extends Component {
      * CSS classes to be rendered on the root element of this component.
      */
     className: PropTypes.any,
+    /**
+     * Allows columns to work on mobile devices.
+     */
     mobile: PropTypes.bool,
+    /**
+     * For columns only on desktop.
+     */
     desktop: PropTypes.bool,
+    /**
+     * For nested columns.
+     */
     multiline: PropTypes.bool,
+    /**
+     * Removes the space between the columns.
+     */
     gapless: PropTypes.bool
   };
 
