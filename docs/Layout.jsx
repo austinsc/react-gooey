@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import React, {Component, PureComponent, createElement} from 'react';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import {withRouter} from "react-router-dom";
 import {Hero, Title, Container, Content, Subtitle, Nav, Tabs, Tab, Level, Table, Button, Message, Box, Columns, Column, Image, Footer, Icon} from "../src/index";
@@ -10,10 +11,10 @@ import transformJSX from './transformJSX';
 import {renderers} from 'commonmark-react-renderer';
 import ReactMarkdown from 'react-markdown';
 import {parse} from 'react-docgen';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import {vs as theme} from 'react-syntax-highlighter/dist/styles';
 import yaml from 'js-yaml';
 import examples from './forms/examples.json';
+import Prism from 'prismjs';
+
 
 const documentationImports = {
   logo,
@@ -24,76 +25,79 @@ const documentationImports = {
 
 const main = routes.map(x => ({title: x.title, path: x.path || (x.pages && x.pages[0] && x.pages[0].path)}));
 
-function syntax(lang, code) {
-  return (
-    <div>
-      <SyntaxHighlighter language={lang} style={theme} showLineNumbers wrapLines>
-        {code}
-      </SyntaxHighlighter>
-    </div>
-  );
+class Code extends PureComponent {
+  static propTypes = {
+    async: PropTypes.bool,
+    className: PropTypes.string,
+    children: PropTypes.any
+  };
+
+  componentDidMount() {
+    this._hightlight();
+  }
+
+  componentDidUpdate() {
+    this._hightlight();
+  }
+
+  _hightlight() {
+    Prism.highlightElement(this.refs.code, this.props.async);
+  }
+
+  render() {
+    const {className, children} = this.props;
+
+    return (
+      <pre>
+        <code ref="code" className={className}>
+          {children}
+        </code>
+      </pre>
+    );
+  }
 }
 
-function propTable(meta) {
-  const props = Object.keys(meta.props).map(x => ({...meta.props[x], name: x}));
+function syntax(lang, code) {
   return (
-    <div>
-      <Table bordered>
-        <thead>
-          <tr>
-            <th><strong>Property</strong></th>
-            <th><strong>Type</strong></th>
-            <th><strong>Required</strong></th>
-            <th><strong>Description</strong></th>
-          </tr>
-        </thead>
-        <tbody>
-          {props.map(x => (
-            <tr key={x.name}>
-              <td>{x.name}</td>
-              <td>{x.type.name}</td>
-              <td>{x.required.toString()}</td>
-              <td>{x.description}</td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-    </div>
+    <Code className={`language-${lang}`}>
+      {code}
+    </Code>
   );
 }
 
 class Props extends Component {
   static displayName = 'Props';
 
-  state = {code: false};
-
   render() {
-    const {code} = this.state;
     const {source} = this.props;
     if(!source) {
       return null;
     }
-    const body = code ? syntax('jsx', source) : propTable(parse(source));
+    const meta = parse(source);
+    const props = Object.keys(meta.props).map(x => ({...meta.props[x], name: x}));
     return (
-      <div style={{width: '100%', margin: '24px 10px 0 0'}}>
-        <Level>
-          <Level.Left>
-            <Level.Item>
-              <Title size="4" id="properties">{code ? 'Component Source' : 'Properties'}</Title>
-            </Level.Item>
-          </Level.Left>
-          <Level.Right>
-            <Level.Item>
-              <div className="field">
-                <p className="control">
-                  <Button color="primary" icon={!code ? 'code' : 'list'} onClick={() => this.setState({code: !code})}>{code ? 'View Properties' : 'View Code'}</Button>
-                </p>
-              </div>
-            </Level.Item>
-          </Level.Right>
-        </Level>
-        {body}
-      </div>
+      <section className="props">
+        <Table bordered>
+          <thead>
+            <tr>
+              <th><strong>Property</strong></th>
+              <th><strong>Type</strong></th>
+              <th><strong>Required</strong></th>
+              <th><strong>Description</strong></th>
+            </tr>
+          </thead>
+          <tbody>
+            {props.map(x => (
+              <tr key={x.name}>
+                <td>{x.name}</td>
+                <td>{x.type.name}</td>
+                <td>{x.required.toString()}</td>
+                <td>{x.description}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </section>
     );
   }
 }
@@ -197,9 +201,19 @@ function createCodeBlock(src) {
 export class Page extends PureComponent {
   render() {
     const {page} = this.props;
+    let src = null;
+    if(page.source) {
+      src = (
+        <section className="source">
+          {syntax('javascript', page.source)}
+        </section>
+      );
+    }
+
     return (
       <Container>
         <ReactMarkdown source={page.component} renderers={{...renderers, CodeBlock: createCodeBlock(page.source)}} className="page"/>
+        {src}
       </Container>
     );
   }
