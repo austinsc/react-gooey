@@ -1,6 +1,9 @@
 # Level
 A multi-purpose **horizontal level**, which can contain almost any other element.
 
+```props
+```
+
 `<Level/>`: main container
   * `<Level.Left/>` for left section
   * `<Level.Right/>` for right section

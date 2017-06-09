@@ -1,6 +1,9 @@
 # Menu
 A simple **menu**, for any type of vertical navigation
 
+```props
+```
+
 ```jsx
 <Menu>
   <Menu.Label>General</Menu.Label>

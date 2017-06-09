@@ -1,6 +1,9 @@
 # Media Object
 The famous `<MediaObject/>` prevalent in social media interfaces, but useful in any context
-  
+
+```props
+```
+
 The media object is a UI element perfect for **repeatable** and **nestable** content.
 
 ```jsx

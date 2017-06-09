@@ -1,6 +1,9 @@
 # Message Components
 Colored **message** blocks, to emphasize part of your page.
 
+```props
+```
+
 ```jsx
 <Message>
   <Message.Head deleteButton>
