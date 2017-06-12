@@ -7,7 +7,7 @@ state: {show: false}
     <ModalCard active={state && state.show} onClose={() => setState({show: false})} hideCloseButton>
       <MediaObject>
         <MediaObject.Left>
-          <Image size='64x64' src='http://placehold.it/128x128'/>
+          <Image size='64x64' src='//placehold.it/128x128'/>
         </MediaObject.Left>
         <MediaObject.Content>
           <Content>
@@ -37,7 +37,7 @@ state: {show: false}
 ---
 <div>
   <ModalCard active={state && state.show} onClose={() => setState({show: false})} hideCloseButton>
-    <Image src="http://placehold.it/1280x960.png"/>
+    <Image src="//placehold.it/1280x960.png"/>
   </ModalCard>
   <Button onClick={() => setState({show: true})}>
     Launch Image Modal

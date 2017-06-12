@@ -34,7 +34,7 @@ state: {show: false}
    <ModalForm title="Modal Title" active={state && state.show} onClose={() => setState({show: false})} footer={[
                 (<Button key="save" text="Save Changes" color="success" />), 
                 (<Button key="cancel" text="Cancel" />)
-              ]} schema={forms.todo} uiSchema={formsui.todo}>
+              ]} schema={forms.todo} uiSchema={ui.todo}>
      <p>
        Here is some content in the modal body! 
      </p>

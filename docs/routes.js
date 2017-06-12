@@ -42,11 +42,6 @@ export default [{
     component: require('../docs/elements/delete.md'),
     source: require('!!text-loader!../src/elements/Delete.jsx')
   }, {
-    path: '/elements/form',
-    title: 'Form',
-    component: require('../docs/elements/form.md'),
-    source: require('!!text-loader!../src/elements/Form.jsx')
-  }, {
     path: '/elements/icon',
     title: 'Icon',
     component: require('../docs/elements/icon.md'),
