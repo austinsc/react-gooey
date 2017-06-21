@@ -49,7 +49,7 @@ function Help(props) {
 function ErrorList(props) {
   const {errors = []} = props;
   if(errors.length === 0) {
-    return <div />;
+    return null;
   }
   return (
     <div>
@@ -91,7 +91,7 @@ export class DefaultTemplate extends Component {
   };
 
   render() {
-    const {id, classNames, label, children, errors, help, description, hidden, required, displayLabel} = this.props;
+    const {id, classNames, label, children, errors, help, rawErrors, hidden, required, displayLabel, rawDescription} = this.props;
     if(hidden) {
       return children;
     }
@@ -99,9 +99,10 @@ export class DefaultTemplate extends Component {
     return (
       <div className={classNames}>
         {displayLabel && <Label label={label} required={required} id={id}/>}
-        {displayLabel && description ? description : null}
-        {children}
-        {errors}
+        <div className="control">
+          {children}
+        </div>
+        {rawErrors && rawErrors.length ? errors : <p className="help description">{rawDescription}</p>}
         {help}
       </div>
     );
