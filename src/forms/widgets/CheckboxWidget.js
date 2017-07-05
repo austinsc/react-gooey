@@ -26,7 +26,7 @@ export default class CheckboxWidget extends Component {
         {schema.description && <DescriptionField description={schema.description}/>}
         <label className="checkbox" htmlFor={id} disabled={disabled || readonly}>
           <input type="checkbox" id={id} checked={typeof value === 'undefined' ? false : value} required={required} disabled={disabled || readonly} autoFocus={autofocus} onChange={event => onChange(event.target.checked)}/>
-          {label}
+          &nbsp;{label}
         </label>
       </p>
     );
