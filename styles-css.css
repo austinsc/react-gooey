@@ -1,5 +1,5 @@
 /*!
- * font-awesome-animation - v0.0.10
+ * font-awesome-animation - v0.1.0
  * https://github.com/l-lin/font-awesome-animation
  * License: MIT
  */
@@ -1064,7 +1064,7 @@
   animation: passing-reverse 3s linear infinite;
 }
 
-/* WAVE */
+/* BURST */
 
 @-webkit-keyframes burst {
   0% {
@@ -1118,4 +1118,70 @@
 .faa-parent.animated-hover:hover > .faa-burst.faa-slow {
   -webkit-animation: burst 3s infinite linear;
   animation: burst 3s infinite linear;
+}
+
+/* FALLING */
+
+@-webkit-keyframes falling {
+  0% {
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+
+  50% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateY(50%);
+    transform: translateY(50%);
+    opacity: 0;
+  }
+}
+
+@keyframes falling {
+  0% {
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+
+  50% {
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    transform: translateY(50%);
+    opacity: 0;
+  }
+}
+
+.faa-falling.animated,
+.faa-falling.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-falling {
+  -webkit-animation: falling 2s linear infinite;
+  animation: falling 2s linear infinite;
+}
+
+.faa-falling.animated.faa-fast,
+.faa-falling.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-falling.faa-fast {
+  -webkit-animation: falling 1s linear infinite;
+  animation: falling 1s linear infinite;
+}
+
+.faa-falling.animated.faa-slow,
+.faa-falling.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-falling.faa-slow {
+  -webkit-animation: falling 3s linear infinite;
+  animation: falling 3s linear infinite;
 }
