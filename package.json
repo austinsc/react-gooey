@@ -6,7 +6,7 @@
     "Emily Moore <emily.moore@rovisys.com>"
   ],
   "user": "austinsc",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "scripts": {
     "start": "webpack-dev-server",
     "docgen": "react-doc-generator ./src -o ./docs/props.md",
@@ -26,7 +26,7 @@
     "postpublish": "npm run gh-pages && npm run gh-pages:deploy",
     "postinstall": "node lib/post_install.js"
   },
-  "main": "dist",
+  "main": "dist/react-gooey.js",
   "module": "src",
   "jsnext:main": "src",
   "devDependencies": {
