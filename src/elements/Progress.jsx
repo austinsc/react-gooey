@@ -32,11 +32,11 @@ export default class Progress extends Component {
     /**
      * Specified value of the progress component.
      */
-    value: PropTypes.string,
+    value: PropTypes.any,
     /**
      * Maximum value of the progress component.
      */
-    max: PropTypes.string,
+    max: PropTypes.any,
     /**
      * CSS classes to be rendered on the root element of this component.
      */

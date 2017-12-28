@@ -6,7 +6,7 @@
     "Emily Moore <emily.moore@rovisys.com>"
   ],
   "user": "austinsc",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "scripts": {
     "start": "webpack-dev-server",
     "docgen": "react-doc-generator ./src -o ./docs/props.md",
@@ -30,7 +30,7 @@
   "module": "src",
   "jsnext:main": "src",
   "devDependencies": {
-    "babel-cli": "^6.24.1",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.11.4",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^7.0.0",
@@ -125,12 +125,12 @@
     "test:lint"
   ],
   "dependencies": {
-    "bulma": "^0.5.0",
+    "bulma": "0.6.1",
     "classnames": "^2.2.5",
     "font-awesome": "^4.6.3",
-    "font-awesome-animation": "0.0.10",
+    "font-awesome-animation": "0.1.0",
     "prop-types": "^15.5.10",
-    "react-jsonschema-form": "^0.48.2",
+    "react-jsonschema-form": "1.0.0",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "react-style-decorator": "0.0.8"
